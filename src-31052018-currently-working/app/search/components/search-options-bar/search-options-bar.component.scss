@@ -1,0 +1,12 @@
+@import '../../../../content/css/colors';
+
+.search-options-bar {
+
+  label.disabled {
+    color: $btn-disabled;
+  }
+
+  ::ng-deep .tab-group {
+    margin-bottom: 24px;
+  }
+}

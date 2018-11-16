@@ -1,0 +1,20 @@
+{
+  "userId": "3100543",
+  "firstName": "Charlie",
+  "lastName": "Brown",
+  "emailAddress": "charlie.brown@metlife.com",
+  "metnetId": "kpreyer",
+  "userRoles": [
+    {
+      "roleName": "STANDARD",
+      "description": "General Purpose Access",
+      "roleId": 1234
+    },
+    {
+      "roleName": "KNOWLEDGE",
+      "description": "Knowledge Editor Access",
+      "roleId": 4321
+    }
+  ],
+  "userPreferences": []
+}

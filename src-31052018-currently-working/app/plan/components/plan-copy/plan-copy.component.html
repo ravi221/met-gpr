@@ -1,0 +1,43 @@
+<div class="col-sm-24 col-md-24 col-lg-24 plan-copy">
+  <!-- Header -->
+  <div class="plan-header row">
+    <div class="col-lg-11">
+      <section>
+        <p *ngIf="!isDifferentCustomer" class="plan-copy-text">Copying From:</p>
+        <p *ngIf="isDifferentCustomer" class="plan-copy-text">Copying</p>
+        <h2>{{planToCopy.planName}}</h2>
+        <p *ngIf="isDifferentCustomer" class="plan-copy-text">From {{customerCopyFrom.customerName}}</p>
+      </section>
+    </div>
+    <div class="col-lg-11">
+      <p class="plan-copy-text pull-left">To Customer:</p>
+      <div class="clearfix"></div>
+      <div *ngIf="!showCustomerSelectBox">
+        <h2>{{customerToCopyTo.customerName}} #{{customerToCopyTo.customerNumber}}</h2>
+        <a (click)="changeCustomer()">Copy to a different customer</a>
+      </div>
+      <div class="plan-copy-select-customer" *ngIf="showCustomerSelectBox">
+        <gpr-auto-search #autoSearch [getRemoteData]="serviceCall" [formatDataFunction]="formatDataFunction" (onItemSelected)="itemSelected($event)"
+          placeholderText="Type a customer name or number">
+        </gpr-auto-search>
+      </div>
+    </div>
+    <div class="col-lg-1 pull-right">
+      <gpr-icon class="icon-24x24" (click)="dismissModal()" name="close-modal"></gpr-icon>
+    </div>
+  </div>
+
+  <!-- Copy Plan Body -->
+  <section class="copy-plan-body">
+    <div class="pull-left">
+      <h2 class="copy-plan-header">Create new plan(s) from copy</h2>
+    </div>
+    <div class="pull-left">
+      <gpr-help-tooltip class="help-tooltip" [maxWidth]="300" [theme]="'default'" [position]="'right'" [displayCloseIcon]="true">{{customerHelpText}}
+      </gpr-help-tooltip>
+    </div>
+    <div class="clearfix"></div>
+    <gpr-plan-input-grid planMode="copy" [plans]="plans" [customer]="customerToCopyTo" [allowScroll]="false" (plansCreate)="planCopy($event)">
+    </gpr-plan-input-grid>
+  </section>
+</div>

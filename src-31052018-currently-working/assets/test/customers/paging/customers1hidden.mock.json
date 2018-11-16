@@ -1,0 +1,17 @@
+{
+    "customers": [
+        {
+            "customerName": "Nakatomi Inc",
+            "customerNumber": 1234567890,
+            "effectiveDate": "07/20/1988",
+            "status": "Unapproved",
+            "percentageCompleted": 89,
+            "market": "Regional",
+            "hiddenStatus": true,
+            "page": 1
+        }
+    ],
+    "totalCount": 1,
+    "page": 1,
+    "pageSize": 9
+}

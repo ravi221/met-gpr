@@ -1,0 +1,30 @@
+{
+  "planId": 123456789,
+  "validations": [
+    {
+      "questionId": "questionA",
+      "messages": [
+        "This field is missing some value because PPC says so..."
+      ]
+    },
+    {
+      "questionId": "questionC",
+      "messages": [
+        "PPC don't like you right now...",
+        "This is another PPC message!"
+      ]
+    },
+    {
+      "questionId": "question2A",
+      "messages": [
+        "PPC says you better like donuts!"
+      ]
+    },
+    {
+      "questionId": "question2C",
+      "messages": [
+        "PPC doesn't like long strings!"
+      ]
+    }
+  ]
+}

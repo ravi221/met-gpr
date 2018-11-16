@@ -1,0 +1,86 @@
+@import "../../../../content/css/colors";
+@import "../../../../content/css/variables";
+
+.nav-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  background: $c-white;
+  border: none;
+  padding: 0 16px;
+  margin: 0;
+  width: 100%;
+  height: $nav-bar-height;
+  z-index: $z-index-nav;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+  .nav-progress-bar {
+    position: absolute;
+    top: $nav-bar-height;
+    left: 0;
+    right: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 33.33%;
+
+    &:first-of-type {
+      justify-content: flex-start;
+    }
+
+    &:last-of-type {
+      justify-content: flex-end;
+    }
+
+    .nav-link {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &[hidden] {
+        display: none;
+      }
+
+      a {
+        color: $c-gray-700;
+        padding: 0;
+        margin-right: 24px;
+        font-family: 'Arial', sans-serif;
+        font-size: 10px;
+        text-align: left;
+        line-height: 32px;
+
+        &.active,
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .nav-icon {
+        display: inline-block;
+        width: 32px;
+        vertical-align: middle;
+
+        &.history-nav-icon {
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+
+    .brand-icon {
+      cursor: pointer;
+    }
+  }
+}

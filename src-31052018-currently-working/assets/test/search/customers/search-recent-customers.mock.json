@@ -1,0 +1,22 @@
+{
+  "customers": [
+    {
+      "customerName": "Spacely Space Sprockets",
+      "effectiveDate": "06/01/2017",
+      "percentageCompleted": 10
+    },
+    {
+      "customerName": "Wonka Industries",
+      "effectiveDate": "06/01/2017",
+      "percentageCompleted": 60
+    },
+    {
+      "customerName": "Nakatomi Trading Corp.",
+      "effectiveDate": "07/01/2017",
+      "percentageCompleted": 30
+    }
+  ],
+  "totalCount": 3,
+  "page": 1,
+  "pageSize": 3
+}

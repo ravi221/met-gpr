@@ -1,0 +1,53 @@
+@import "../../../../content/css/colors";
+
+.plan-copy {
+  background-color: $c-white;
+}
+
+.plan-header {
+  background-color: $c-gray-50;
+  padding: 23px 16px 10px 74px;
+  h2 {
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: left;
+    color: $c-gray-700;
+    margin-bottom: 0;
+  }
+  .plan-copy-select-customer {
+    margin-top: 5px;
+  }
+}
+
+.copy-plan-body {
+  padding: 16px 0;
+
+  .copy-plan-header {
+    margin: 0 8px 40px;
+  }
+}
+
+.icon-24x24 {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  cursor: pointer;
+  position: absolute;
+  margin-top: -5px;
+}
+
+p {
+  margin: 0;
+}
+
+p.plan-copy-text {
+  height: 16px;
+  font-family: Arial;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.23;
+  text-align: left;
+  color: $c-gray-300;
+}

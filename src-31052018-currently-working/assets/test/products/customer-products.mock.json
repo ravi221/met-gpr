@@ -1,0 +1,12 @@
+[
+  {
+    "productName": "Voluntary",
+    "coverages": [
+      {
+        "coverageId": "24",
+        "coverageName": "Critical Illness",
+        "ppcVersion": "0.1"
+      }
+    ]
+  }
+]

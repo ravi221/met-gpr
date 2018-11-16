@@ -1,0 +1,31 @@
+{
+  "objects": [
+    {
+      "planName": "Plan Name A",
+      "attributeName": "Effective Date",
+      "attributeValue": "10/10/2018",
+      "effectiveDate": "10/10/2018"
+    },
+    {
+      "planName": "Plan Name A",
+      "attributeName": "Effective Date",
+      "attributeValue": "10/10/2018",
+      "effectiveDate": "10/10/2018"
+    },
+    {
+      "planName": "Plan Name A",
+      "attributeName": "Effective Date",
+      "attributeValue": "10/10/2018",
+      "effectiveDate": "10/10/2018"
+    },
+    {
+      "planName": "Plan Name A",
+      "attributeName": "Effective Date",
+      "attributeValue": "10/10/2018",
+      "effectiveDate": "10/10/2018"
+    }
+  ],
+  "totalCount": 10,
+  "page": 1,
+  "pageSize": 4
+}

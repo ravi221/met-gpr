@@ -1,0 +1,8 @@
+{
+  "mockCategory": {
+    "mockSection": {
+      "question1": [1,2],
+      "question2": [3,4]
+    }
+  }
+}

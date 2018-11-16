@@ -1,0 +1,36 @@
+@import "../../../../../content/css/colors";
+
+.card {
+  margin-bottom: 96px;
+  padding: 23px 0 32px 0;
+}
+.nav-list-stacked, .nav-list {
+  list-style: none;
+  font-size: 12px;
+  line-height: 24px;
+  padding-left: 25px;
+  margin-top: 0;
+  .nav-item {
+
+    a {
+      color: $c-gray-700;
+      opacity: 0.6;
+
+      &:active,
+      &.active {
+        opacity: 1.0;
+        color: $c-gray-700;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.nav-list {
+  padding-left: 0;
+  li {
+    display: inline-block;
+    margin: 0 32px 10px 0;
+  }
+}

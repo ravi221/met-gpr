@@ -1,0 +1,98 @@
+{
+  "formId" : "PPC_NPVPI",
+  "version" : "0.13",
+  "title" : "Non-Plat VPI",
+  "categories" : [ {
+    "categoryId" : "planInfo",
+    "label" : "Setup",
+    "state" : {
+      "isHidden" : false,
+      "isDisabled" : false
+    },
+    "rules" : {
+      "onInit" : [ ],
+      "onError" : [ ],
+      "onChange" : [ ]
+    },
+    "sections" : [ {
+      "sectionId" : "planDetails",
+      "label" : "Plan Details",
+      "order" : 1,
+      "state" : {
+        "isHidden" : false,
+        "isDisabled" : false
+      },
+      "rules" : {
+        "onInit" : [ ],
+        "onError" : [ ],
+        "onChange" : [ ]
+      },
+      "questions" : [ {
+        "questionId" : "planName",
+        "label" : "Plan Name",
+        "order" : 1,
+        "model" : "PLN_NM",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "maxLength" : 60
+        },
+        "control" : {
+          "type" : "text",
+          "hint" : "This is where a unique plan name can be entered to  name,  define or identify each plan",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          }
+        }
+      }, {
+        "questionId" : "businessUnitCode",
+        "label" : "Business Unit",
+        "order" : 2,
+        "model" : "ADMN.BUS_UNIT_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "GNA", "GVUL", "LM", "MLM", "RS", "VBS" ]
+        },
+        "control" : {
+          "type" : "select",
+          "hint" : "This identifies the service unit that is responsible for administration of the particular coverage",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Group National Accounts",
+            "value" : "GNA"
+          }, {
+            "label" : "Group Variable Universal Life",
+            "value" : "GVUL"
+          }, {
+            "label" : "Local Market/Small Market",
+            "value" : "LM"
+          }, {
+            "label" : "Mid-to-Large Market",
+            "value" : "MLM"
+          }, {
+            "label" : "Retirement & Savings",
+            "value" : "RS"
+          }, {
+            "label" : "Voluntary Benefit Service",
+            "value" : "VBS"
+          } ]
+        }
+      } ]
+    } ]
+  } ]
+}

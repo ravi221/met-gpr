@@ -1,0 +1,27 @@
+@import '../../../../content/css/colors';
+
+.build-version {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 12px;
+  display: flex;
+
+  .build-label {
+    margin: 0;
+    background: $c-gray-700;
+    color: $c-white;
+    padding: 4px 8px 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+
+  .build-value {
+    margin: 0;
+    background: $c-blue-400;
+    color: $c-white;
+    padding: 4px 8px 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "formId": "mock-config",
+  "version": "1.0.0",
+  "title": "Mock Configuration",
+  "categories": [
+    {
+      "categoryId": "mockCategory",
+      "label": "Mock Category",
+      "state": {
+        "isHidden": false,
+        "isDisabled": false
+      },
+      "rules": {
+        "onInit": [],
+        "onError": [],
+        "onChange": []
+      },
+      "sections": [
+        {
+          "sectionId": "mockSection",
+          "label": "Mock Section",
+          "order": 1,
+          "state": {
+            "isHidden": false,
+            "isDisabled": false
+          },
+          "rules": {
+            "onInit": [],
+            "onError": [],
+            "onChange": []
+          },
+          "questions": [
+            {
+              "questionId": "questionA",
+              "label": "Who likes to test?",
+              "order": 1,
+              "model": "model.questionA",
+              "viewModel": "mockCategory.mockSection.questionA",
+              "rules": {
+                "onInit": [],
+                "onError": [],
+                "onChange": [
+                  {
+                    "oneOf": [
+                      {
+                        "condition": "!isNil(this.model.questionA) && this.model.questionA !== 0",
+                        "action": [
+                          "let c1 = getControl('questionB')",
+                          "c1.state.isDisabled = false",
+                          "let s1 = getSection('mockSection2')",
+                          "s1.state.isHidden = false"
+                        ]
+                      },
+                      {
+                        "action": [
+                          "let c1 = getControl('questionB')",
+                          "c1.state.isDisabled = true",
+                          "let s1 = getSection('mockSection2')"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "condition": true,
+                    "action": [
+                      "this.model.questionB = ''"
+                    ]
+                  }
+                ]
+              },
+              "schema": {
+                "type": "number",
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ]
+              },
+              "help": {
+                "helpText": "Test help",
+                "helpUrlText": "www.metlife.com"
+              },
+              "control": {
+                "type": "select",
+                "hint": "This is the person who likes to test.",
+                "state": {
+                  "isHidden": false,
+                  "isDisabled": false,
+                  "isRequired": true
+                },
+                "choices": [
+                  {
+                    "label": "Select",
+                    "value": 0
+                  },
+                  {
+                    "label": "Nick",
+                    "value": 1
+                  },
+                  {
+                    "label": "Josh",
+                    "value": 2
+                  },
+                  {
+                    "label": "Cody",
+                    "value": 3
+                  },
+                  {
+                    "label": "Chandan",
+                    "value": 4
+                  },
+                  {
+                    "label": "Arun",
+                    "value": 5
+                  },
+                  {
+                    "label": "Murali",
+                    "value": 6
+                  }
+                ]
+              }
+            },
+            {
+              "questionId": "questionB",
+              "label": "Why do we test?",
+              "order": 2,
+              "model": "model.questionB",
+              "rules": {
+                "onInit": [],
+                "onError": [],
+                "onChange": [
+                  {
+                    "condition": "this.model.questionA === 1",
+                    "action": "setIn('this.model.questionB', 'Unit testing rocks!')"
+                  }
+                ]
+              },
+              "schema": {
+                "type": "string",
+                "maxLength": 60
+              },
+              "help": {
+                "helpText": "Test help",
+                "helpUrlText": "www.metlife.com"
+              },
+              "control": {
+                "type": "text",
+                "hint": "This explains why we should unit test.",
+                "state": {
+                  "isHidden": false,
+                  "isDisabled": true,
+                  "isRequired": false
+                }
+              }
+            },
+            {
+              "questionId": "questionC",
+              "label": "What do we use to test?",
+              "order": 3,
+              "model": "model.questionC",
+              "rules": {
+                "onInit": [],
+                "onError": [],
+                "onChange": []
+              },
+              "schema": {
+                "type": "string",
+                "maxLength": 60
+              },
+              "help": {
+                "helpText": "Test help",
+                "helpUrlText": "www.metlife.com"
+              },
+              "control": {
+                "type": "text",
+                "hint": "This explains the tools we use to test.",
+                "state": {
+                  "isHidden": false,
+                  "isDisabled": false,
+                  "isRequired": false
+                }
+              }
+            }
+          ]
+        },
+        {
+          "sectionId": "mockSection2",
+          "label": "Mock Section 2",
+          "order": 2,
+          "state": {
+            "isHidden": false,
+            "isDisabled": false
+          },
+          "rules": {
+            "onInit": [],
+            "onError": [],
+            "onChange": []
+          },
+          "questions": [
+            {
+              "questionId": "question2A",
+              "label": "Do you like donuts?",
+              "order": 1,
+              "model": "model.question2A",
+              "rules": {
+                "onInit": [],
+                "onError": [],
+                "onChange": [
+                  {
+                    "oneOf": [
+                      {
+                        "condition": "this.model.question2A === 'Y'",
+                        "action": [
+                          "let c1 = getControl('question2B')",
+                          "c1.hint = \"That's awesome!\"",
+                          "c1.state.isDisabled = false"
+                        ]
+                      },
+                      {
+                        "action": [
+                          "this.model.question2B = ''",
+                          "let c1 = getControl('question2B')",
+                          "c1.hint = \"Who doesn't like donuts?!\"",
+                          "c1.state.isDisabled = true"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "schema": {
+                "type": "string",
+                "enum": [
+                  "",
+                  "Y",
+                  "N"
+                ]
+              },
+              "help": {
+                "helpText": "Test help",
+                "helpUrlText": "www.metlife.com"
+              },
+              "control": {
+                "type": "select",
+                "hint": "Tell us you like donuts?",
+                "state": {
+                  "isHidden": false,
+                  "isDisabled": false,
+                  "isRequired": true
+                },
+                "choices": [
+                  {
+                    "label": "Select",
+                    "value": ""
+                  },
+                  {
+                    "label": "Yes",
+                    "value": "Y"
+                  },
+                  {
+                    "label": "No",
+                    "value": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "questionId": "question2B",
+              "label": "What's your favorite kind of donut?",
+              "order": 2,
+              "model": "model.question2B",
+              "rules": {
+                "onInit": [],
+                "onError": [],
+                "onChange": []
+              },
+              "schema": {
+                "type": "string",
+                "maxLength": 60
+              },
+              "help": {
+                "helpText": "Test help",
+                "helpUrlText": "www.metlife.com"
+              },
+              "control": {
+                "type": "text",
+                "hint": "",
+                "state": {
+                  "isHidden": false,
+                  "isDisabled": true,
+                  "isRequired": false
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": "mockCategory2",
+      "label": "Mock Category 2",
+      "state": {
+        "isHidden": false,
+        "isDisabled": false
+      },
+      "rules": {
+        "onInit": [],
+        "onError": [],
+        "onChange": []
+      },
+      "sections": [
+        {
+          "sectionId": "mockSection2B",
+          "label": "Mock Section 2",
+          "order": 1,
+          "state": {
+            "isHidden": false,
+            "isDisabled": false
+          },
+          "rules": {
+            "onInit": [],
+            "onError": [],
+            "onChange": []
+          },
+          "questions": [
+            {
+              "questionId": "question2C",
+              "label": "I don't like long strings....",
+              "order": 3,
+              "model": "model.questionD",
+              "rules": {
+                "onInit": [],
+                "onError": [],
+                "onChange": []
+              },
+              "schema": {
+                "type": "string",
+                "maxLength": 5
+              },
+              "help": {
+                "helpText": "Test help",
+                "helpUrlText": "www.metlife.com"
+              },
+              "control": {
+                "type": "text",
+                "hint": "I only accept 5 or less characters.",
+                "state": {
+                  "isHidden": false,
+                  "isDisabled": false,
+                  "isRequired": false
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+@import "../../../../content/css/colors";
+
+$add-remove-list-width: 600px;
+$add-remove-list-height: 400px;
+
+.add-remove-list {
+  display: flex;
+  width: $add-remove-list-width;
+  height: $add-remove-list-height;
+  background: $c-white;
+  padding: 12px 20px;
+
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .list-heading {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .selectable-list {
+      list-style: none;
+      border: 1px solid $input-border;
+      border-radius: 2px;
+      padding: 0;
+      margin: 0;
+      background: $c-white;
+      overflow-y: scroll;
+      min-width: 232px;
+      height: 100%;
+
+      .selectable-list-item {
+        padding: 4px 8px;
+        font-size: 13px;
+        margin-bottom: 1px;
+        cursor: pointer;
+        color: $c-gray-700;
+        line-height: 1.54;
+        transition: color 100ms ease-in-out, background 100ms ease-in-out;
+
+        &.selected,
+        &:hover,
+        &:focus {
+          background: $c-blue-300;
+          color: $c-white;
+        }
+      }
+    }
+  }
+
+  .unselected-list-filter {
+    margin-top: 12px;
+    border-radius: 2px;
+    border: 1px solid $input-border;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .add-remove-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    .add-remove-button {
+      background: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: 30px;
+      border: 2px solid $c-gray-400;
+      border-radius: 30px;
+      margin: 10px;
+      color: $c-gray-400;
+      transition: color 100ms ease-in-out, background 100ms ease-in-out;
+      outline: none;
+
+      &:disabled {
+        border-color: $input-border;
+        color: $input-border;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import '../../../../content/css/global';
+@import "../../../../content/css/variables";
+@import '../../../../content/css/colors';
+
+table.question-table {
+  table-layout: fixed;
+  width: 100%;
+  padding: 1px;
+  vertical-align: top;
+}
+
+table.question-table td {
+  width: 20px;
+}
+
+table.question-table td + td {
+  width: 50%;
+}
+
+table.question-table td + td + td {
+  width: 2500%
+}
+
+table.question-table td + td + td + td {
+   width: 100%;
+  text-align: right;
+}
+
+.error-flag {
+	color: red;
+	margin-left:50px;
+}
+
+.mass-update-checkbox {
+  margin-left: -65px;
+}
+
+.link {
+  color: white;
+}
+
+
+

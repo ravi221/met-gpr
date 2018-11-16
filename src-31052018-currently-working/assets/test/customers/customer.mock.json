@@ -1,0 +1,8 @@
+{
+  "customerNumber": 1,
+  "customerName": "Test Customer",
+  "effectiveDate": "01/01/2016",
+  "market": "Small Market",
+  "status": "approved",
+  "hiddenStatus": false
+}

@@ -1,0 +1,20 @@
+@import '../../../../../content/css/colors';
+
+.search-attribute-details {
+  position: relative;
+  padding: 24px 28px 12px;
+  margin: 12px 0;
+  border-bottom: 1px solid $c-gray-100;
+
+  .plan-name {
+    text-align: left;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .effective-date {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+  }
+}

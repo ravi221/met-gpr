@@ -1,0 +1,47 @@
+<fieldset class="control-group" [disabled]="config.control.state?.isDisabled"
+              [hidden]="config.control.state?.isHidden" [ngClass]="{'has-errors' : !config.control.state.isValid}">
+
+      <table class="question-table">
+        <tr>
+		  <td>
+		    <div class="checkbox-control mass-update-checkbox">
+              <input type="checkbox"
+                id="mass-update-checkbox-control-{{index}}"
+                [(ngModel)]="config.isChecked"
+                (change)="handleCheckboxChange($event.target.checked)" />
+              <label for="mass-update-checkbox-control-{{index}}"></label>
+		    </div>
+          </td>
+          <td class="number-indent">
+            <span class="control-number">{{index}}.</span>
+          </td>
+          <td>
+            <label class="control-label">{{config.label}}&nbsp;</label>
+          </td>
+		  <td>
+		    <gpr-help-tooltip [editable]="!config.control.state.isDisabled" [maxWidth]="350" [theme]="'default'" [position]="'left'" [displayCloseIcon]="true">
+              <ng-container ngProjectAs="tooltip-editor">
+                <gpr-help-text-editor #helpTextEditor
+                            [config]="config" (saveHelpText)="handleSaveHelpText()" (cancelHelpText)="onCancelHelpText()"></gpr-help-text-editor>
+              </ng-container>
+              <div>{{config.help.helpText}}</div>
+              <div class="url-link"> <a id='more-help' (click)="handleOpenHelpWindow(config.help.helpUrl)">Get more help</a></div>
+            </gpr-help-tooltip>
+          </td>
+        </tr>
+      </table>
+      <gpr-dynamic-form-control
+        [value]="value"
+        [config]="config"
+        [id]="config.formItemId"
+        [type]="config.control.type"
+        [choices]="config.control.choices"
+        [isDisabled]="config.control.state?.isDisabled"
+        [isHidden]="config.control.state?.isHidden"
+        [isValid]="config.control.state?.isValid"
+        [isRequired]="config.control.state?.isRequired"
+        (valueChanged)="onValueChanged($event)">
+      </gpr-dynamic-form-control>
+	  <p class="error-flag" *ngIf="config.isChecked">{{flagMessage}}</p>
+      <p class="control-errors" *ngFor="let message of config.control.state.messages">{{message}}</p>
+    </fieldset>

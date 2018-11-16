@@ -1,0 +1,16 @@
+$main-nav-width: 400px;
+$main-nav-padding: 24px;
+
+.main-nav-menu {
+  width: $main-nav-width;
+  height: 100vh;
+  background: white;
+  position: relative;
+
+  .main-nav-close {
+    padding: $main-nav-padding;
+    height: 64px;
+    display: inline-block;
+    cursor: pointer;
+  }
+}

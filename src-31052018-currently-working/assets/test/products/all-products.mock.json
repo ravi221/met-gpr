@@ -1,0 +1,266 @@
+{
+  "LKUP" : {
+    "PROD" : [
+      {
+        "PROD_NM" : "Disability",
+        "CVR" : [
+          {
+            "CVR_NM" : "Short Term Disability",
+            "CVR_ID" : "203000",
+            "PPC_MDL_NM" : "PPC_STD"
+          },
+          {
+            "CVR_NM" : "CBU Short Term Disability",
+            "CVR_ID" : "1234",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Voluntary Short Term Disability",
+            "CVR_ID" : "1234",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Long Term Disability",
+            "CVR_ID" : "202000",
+            "PPC_MDL_NM" : "PPC_LTD"
+          },
+          {
+            "CVR_NM" : "CBU Long Term Disability",
+            "CVR_ID" : "1234",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Voluntary Long Term Disability",
+            "CVR_ID" : "1234",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Worksite Short Term Disability",
+            "CVR_ID" : "1234",
+            "PPC_MDL_NM" : "PPC_WSTD"
+          },
+          {
+            "CVR_NM" : "Voluntary Worksite Short Term Disability",
+            "CVR_ID" : "1234",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "State Mandated Disability",
+            "CVR_ID" : "1234",
+            "PPC_MDL_NM" : ""
+          }
+        ]
+      },
+      {
+        "PROD_NM" : "Voluntary",
+        "CVR" : [
+          {
+            "CVR_NM" : "Hyatt Legal (Metlaw)",
+            "CVR_ID" : "206000",
+            "PPC_MDL_NM" : "PPC_PHyatt"
+          },
+          {
+            "CVR_NM" : "Non-Platform Hyatt (Metlaw)",
+            "CVR_ID" : "31",
+            "PPC_MDL_NM" : "PPC_NPHyatt"
+          },
+          {
+            "CVR_NM" : "Auto & Home (P&C)",
+            "CVR_ID" : "207000",
+            "PPC_MDL_NM" : "PPC_AH"
+          },
+          {
+            "CVR_NM" : "Group Accident",
+            "CVR_ID" : "406000",
+            "PPC_MDL_NM" : "PPC_GAH"
+          },
+          {
+            "CVR_NM" : "Critical Illness",
+            "CVR_ID" : "24",
+            "PPC_MDL_NM" : "PPC_CI"
+          },
+          {
+            "CVR_NM" : "Veterinary Pet Insurance (VPI)",
+            "CVR_ID" : "30",
+            "PPC_MDL_NM" : "PPC_VPI"
+          },
+          {
+            "CVR_NM" : "Non-Platform VPI",
+            "CVR_ID" : "32",
+            "PPC_MDL_NM" : "PPC_NPVPI"
+          },
+          {
+            "CVR_NM" : "GVUL - CDF Only",
+            "CVR_ID" : "21",
+            "PPC_MDL_NM" : "PPC_GVUL"
+          },
+          {
+            "CVR_NM" : "TX Life",
+            "CVR_ID" : "1234",
+            "PPC_MDL_NM" : "PPC_TXLife"
+          },
+          {
+            "CVR_NM" : "TAM/FMLA",
+            "CVR_ID" : "303000",
+            "PPC_MDL_NM" : "PPC_TAM"
+          }
+        ]
+      },
+      {
+        "PROD_NM" : "Vision",
+        "CVR" : [
+          {
+            "CVR_NM" : "Vision",
+            "CVR_ID" : "204000",
+            "PPC_MDL_NM" : "PPC_Vision"
+          }
+        ]
+      },
+      {
+        "PROD_NM" : "Life",
+        "CVR" : [
+          {
+            "CVR_NM" : "Basic Life",
+            "CVR_ID" : "2",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Business Travel Accident",
+            "CVR_ID" : "1234",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Core Buy Up Life",
+            "CVR_ID" : "1234",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Dependent AD&D",
+            "CVR_ID" : "7",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Dependent Life",
+            "CVR_ID" : "3",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Executive Life",
+            "CVR_ID" : "5",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Personal AD&D",
+            "CVR_ID" : "6",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Supplemental AD&D",
+            "CVR_ID" : "1234",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Supplemental Life",
+            "CVR_ID" : "1234",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Survivor Monthly Income Benefits",
+            "CVR_ID" : "16",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Survivors’ Income Benefit",
+            "CVR_ID" : "14",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Survivors’ Income Benefit Insurance",
+            "CVR_ID" : "17",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Voluntary AD&D'Plan",
+            "CVR_ID" : "9",
+            "PPC_MDL_NM" : ""
+          }
+        ]
+      },
+      {
+        "PROD_NM" : "Dental",
+        "CVR" : [
+          {
+            "CVR_NM" : "DHMO",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Direct Reimbursement",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "FSD",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Indemnity Hybrid Scheduled",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Indemnity R&C",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Indemnity Scheduled",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "Other",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "PDP Classic",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "PDP Copay",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "PDP Hybrid Classic",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "PDP Hybrid Value",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "PDP Multi Scheduled",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "PDP Scheduled",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          },
+          {
+            "CVR_NM" : "PDP Value",
+            "CVR_ID" : "201000",
+            "PPC_MDL_NM" : ""
+          }
+        ]
+      }
+    ]
+  }
+}

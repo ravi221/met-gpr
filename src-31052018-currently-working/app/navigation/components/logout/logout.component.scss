@@ -1,0 +1,17 @@
+@import "../../../../content/css/colors";
+
+.modal-footer {
+
+  text-align: right;
+
+  a {
+    width: 72px;
+    height: 16px;
+    font-family: Arial, 'sans-serif';
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: $c-blue-400;
+    padding: 4px 12px;
+  }
+}

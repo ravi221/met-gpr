@@ -1,0 +1,1493 @@
+{
+    "ppcModelName": "PPC_MUT",
+    "ppcVersion": "0.1",
+    "categories": [
+        {
+            "categoryId": "newPlan",
+            "label": "New Plan",
+            "order": 1,
+            "state": {
+                "isHidden": false,
+                "isDisabled": false,
+                "isRequired": false
+            },
+            "sections": [
+                {
+                    "sectionId": "setup",
+                    "label": "Setup",
+                    "order": 1,
+                    "state": {
+                        "isHidden": false,
+                        "isDisabled": false,
+                        "isRequired": false
+                    },
+                    "questions": [
+                        {
+                            "questionId": "typeOfBusiness",
+                            "label": "Type Of Business",
+                            "order": 1,
+                            "viewModel": "newPlan.setup.typeofBusiness",
+                            "model": "ADMN.PLN_ORIG_CD",
+                            "control": {
+                                "type": "radio",
+                                "hint": "The type of business represented by the plan",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "Addition",
+                                        "value": "Addition"
+                                    },
+                                    {
+                                        "label": "Extension",
+                                        "value": "Extension"
+                                    },
+                                    {
+                                        "label": "New",
+                                        "value": "New"
+                                    },
+                                    {
+                                        "label": "Revision",
+                                        "value": "Revision"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "employeesNoEligible",
+                            "label": "Employees \nNo. Eligible",
+                            "order": 2,
+                            "viewModel": "newPlan.setup.employeesNoEligible",
+                            "model": "",
+                            "control": {
+                                "type": "number",
+                                "hint": "Total Number of Employees Eligible for this coverage in the Benefit  Class/Claimbranch.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(user enters value)",
+                                        "value": "(user enters value)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "employeesNoEnrolled",
+                            "label": "Employees \nNo. Enrolled",
+                            "order": 3,
+                            "viewModel": "newPlan.setup.employeesNoEnrolled",
+                            "model": "",
+                            "control": {
+                                "type": "number",
+                                "hint": "Total Number of Employees Enrolled in this coverage for the Benefit Class/Claimbranch",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(user enters value)",
+                                        "value": "(user enters value)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "originalPlanEffectiveDate",
+                            "label": "Original Plan Effective Date",
+                            "order": 4,
+                            "viewModel": "newPlan.setup.originalPlanEffectiveDate",
+                            "model": "ORIG_EFF_DT",
+                            "control": {
+                                "type": "date",
+                                "hint": "The first date the plan became effective.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(user enters value)",
+                                        "value": "(user enters value)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "multiProductPremiumDiscount",
+                            "label": "Multi-Product Premium Discount",
+                            "order": 5,
+                            "viewModel": "newPlan.setup.multiProductPremiumDiscount",
+                            "model": "ADMN.MULT_PROD_PREM_DISC_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates if underwriting applied a discount to the customer rates due to multiple products",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "amendmentEffDateAsOf",
+                            "label": "Amendment Eff. Date As Of",
+                            "order": 6,
+                            "viewModel": "newPlan.setup.amendmentEffDateAsOf",
+                            "model": "EFF_DT",
+                            "control": {
+                                "type": "date",
+                                "hint": "The date the plan was amended.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": []
+                            }
+                        },
+                        {
+                            "questionId": "participatingRetroRated",
+                            "label": "Participating/Retro Rated",
+                            "order": 7,
+                            "viewModel": "newPlan.setup.participatingRetroRated",
+                            "model": "ADMN.PRTCP_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates whether the particular plan is participating in a dividend arrangement with MetLife.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "experienceCombinedwithAnotherCoverage",
+                            "label": "Experience Combined with Another Coverage",
+                            "order": 8,
+                            "viewModel": "newPlan.setup.experienceCombinedwithAnotherCoverage",
+                            "model": "ADMN.XPRN_COMB_CVR_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates if the experience is combined with another coverage for Retro rate (dividend) calculation purposes",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "takeoverGroupIndicator",
+                            "label": "Takeover Group Indicator",
+                            "order": 9,
+                            "viewModel": "newPlan.setup.takeoverGroupIndicator",
+                            "model": "ADMN.PRIR_CARY_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates whether or not this group had prior coverage for this benefit.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "stockCompanyPolicyIssued",
+                            "label": "Stock Company Policy Issued",
+                            "order": 10,
+                            "viewModel": "newPlan.setup.stockCompanyPolicyIssued",
+                            "model": "ADMN.MET_CO_OWN_CD",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates whether a plan was issued after MetLife was converted from a mutual company to a stock company",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "policySitusState",
+                            "label": "Policy Situs State",
+                            "order": 11,
+                            "viewModel": "newPlan.setup.policySitusState",
+                            "model": "PRVD.GVRN_SITUS_BODY_TXT",
+                            "control": {
+                                "type": "select",
+                                "hint": "Policy Situs is the jurisdiction (state) in which the Group insurance contract is delivered or issued for delivery.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(see ST_CNTRY_CD tab)",
+                                        "value": "(see ST_CNTRY_CD tab)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "issueType",
+                            "label": "Issue Type",
+                            "order": 12,
+                            "viewModel": "newPlan.setup.issueType",
+                            "model": "PRVD.CERT_ISS_TYP_CD",
+                            "control": {
+                                "type": "select",
+                                "hint": "Represents the type of Policy/Certificate to issue.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "Associations w/ individual members",
+                                        "value": "Associations w/ individual members"
+                                    },
+                                    {
+                                        "label": "Associations w/participating Employers",
+                                        "value": "Associations w/participating Employers"
+                                    },
+                                    {
+                                        "label": "MetLife Multiple Association Trust - IL",
+                                        "value": "MetLife Multiple Association Trust - IL"
+                                    },
+                                    {
+                                        "label": "MetLife Multiple Employer Trust - DC",
+                                        "value": "MetLife Multiple Employer Trust - DC"
+                                    },
+                                    {
+                                        "label": "MetLife Multiple Employer Trust - NY",
+                                        "value": "MetLife Multiple Employer Trust - NY"
+                                    },
+                                    {
+                                        "label": "MetLife Multiple Employer Trust - PA",
+                                        "value": "MetLife Multiple Employer Trust - PA"
+                                    },
+                                    {
+                                        "label": "MetLife Multiple Employer Trust - TX Educators",
+                                        "value": "MetLife Multiple Employer Trust - TX Educators"
+                                    },
+                                    {
+                                        "label": "Policyholder Trust",
+                                        "value": "Policyholder Trust"
+                                    },
+                                    {
+                                        "label": "Single Employer",
+                                        "value": "Single Employer"
+                                    },
+                                    {
+                                        "label": "Union Trust w/o participating Employers",
+                                        "value": "Union Trust w/o participating Employers"
+                                    },
+                                    {
+                                        "label": "Union Trust w/participating Employers",
+                                        "value": "Union Trust w/participating Employers"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "issueType_60014.1",
+                            "label": "Issue Type",
+                            "order": -1,
+                            "viewModel": "newPlan.setup.issueType_60014.1",
+                            "model": "PRVD.TRST_GVRN_SITUS_BODY_TXT"
+                        },
+                        {
+                            "questionId": "issueType_60014.2",
+                            "label": "Issue Type",
+                            "order": -1,
+                            "viewModel": "newPlan.setup.issueType_60014.2",
+                            "model": "PRVD.TRST_AFLT_CD"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "categoryId": "eligibilityProvisions",
+            "label": "Eligibility Provisions",
+            "order": 2,
+            "state": {
+                "isHidden": false,
+                "isDisabled": false,
+                "isRequired": false
+            },
+            "sections": [
+                {
+                    "sectionId": "eligibilityProvisions",
+                    "label": "Eligibility Provisions",
+                    "order": 1,
+                    "state": {
+                        "isHidden": false,
+                        "isDisabled": false,
+                        "isRequired": false
+                    },
+                    "questions": [
+                        {
+                            "questionId": "customersubjecttoCOBRA",
+                            "label": "Customer subject to COBRA",
+                            "order": 1,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.customersubjecttoCOBRA",
+                            "model": "",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates if the customer is subject to COBRA.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "createAdditionalCOBRAClass",
+                            "label": "Create Additional COBRA Class",
+                            "order": 2,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.createAdditionalCOBRAClass",
+                            "model": "PRVD.COBRA_ADDL_CLASS_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates if an additional class should be created for COBRA.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "enrollmentType",
+                            "label": "Enrollment Type",
+                            "order": 3,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.enrollmentType",
+                            "model": "ADMN.ENRL[*].ENRL_TYP_CD",
+                            "control": {
+                                "type": "select",
+                                "hint": "The method used for enrolling employees",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "Annual Enrollment",
+                                        "value": "Annual Enrollment"
+                                    },
+                                    {
+                                        "label": "Annual Enrollment/Evergreen",
+                                        "value": "Annual Enrollment/Evergreen"
+                                    },
+                                    {
+                                        "label": "Annual Open Enrollment - Late Entrants Allowed",
+                                        "value": "Annual Open Enrollment - Late Entrants Allowed"
+                                    },
+                                    {
+                                        "label": "Annual Open Enrollment - Late Entrants Not Allowed",
+                                        "value": "Annual Open Enrollment - Late Entrants Not Allowed"
+                                    },
+                                    {
+                                        "label": "Evergreen",
+                                        "value": "Evergreen"
+                                    },
+                                    {
+                                        "label": "No Open Enrollment",
+                                        "value": "No Open Enrollment"
+                                    },
+                                    {
+                                        "label": "One Time Open Enrollment",
+                                        "value": "One Time Open Enrollment"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "enrollmentFrequency",
+                            "label": "Enrollment Frequency",
+                            "order": 4,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.enrollmentFrequency",
+                            "model": "ADMN.ENRL[*].ENRL_FREQ_CNT",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Frequency with which enrollment occurs",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "Once every 2 years",
+                                        "value": "Once every 2 years"
+                                    },
+                                    {
+                                        "label": "Once every year",
+                                        "value": "Once every year"
+                                    },
+                                    {
+                                        "label": "Other",
+                                        "value": "Other"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "enrollmentFrequency_60017.1",
+                            "label": "Enrollment Frequency",
+                            "order": -1,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.enrollmentFrequency_60017.1",
+                            "model": "ADMN.ENRL[*].ENRL_FREQ_WIN_CNT"
+                        },
+                        {
+                            "questionId": "enrollmentFrequency_60017.2",
+                            "label": "Enrollment Frequency",
+                            "order": -1,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.enrollmentFrequency_60017.2",
+                            "model": "ADMN.ENRL[*].ENRL_FREQ_WIN_CD"
+                        },
+                        {
+                            "questionId": "enrollmentFrequency_60017.3",
+                            "label": "Enrollment Frequency",
+                            "order": -1,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.enrollmentFrequency_60017.3",
+                            "model": "ADMN.ENRL[*].ENRL_PRD_OTH_IND"
+                        },
+                        {
+                            "questionId": "enrollmentFrequencyExplainOther",
+                            "label": "Enrollment Frequency - Explain Other",
+                            "order": 5,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.enrollmentFrequencyExplainOther",
+                            "model": "ADMN.ENRL[*].ENRL_FREQ_CNT",
+                            "control": {
+                                "type": "text",
+                                "hint": "Non-standard frequency with which enrollment occurs",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(user enters value)",
+                                        "value": "(user enters value)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "enrollmentFrequencyExplainOther_60018.1",
+                            "label": "Enrollment Frequency - Explain Other",
+                            "order": -1,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.enrollmentFrequencyExplainOther_60018.1",
+                            "model": "ADMN.ENRL[*].ENRL_FREQ_WIN_CNT"
+                        },
+                        {
+                            "questionId": "enrollmentFrequencyExplainOther_60018.2",
+                            "label": "Enrollment Frequency - Explain Other",
+                            "order": -1,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.enrollmentFrequencyExplainOther_60018.2",
+                            "model": "ADMN.ENRL[*].ENRL_FREQ_WIN_CD"
+                        },
+                        {
+                            "questionId": "enrollmentFrequencyExplainOther_60018.3",
+                            "label": "Enrollment Frequency - Explain Other",
+                            "order": -1,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.enrollmentFrequencyExplainOther_60018.3",
+                            "model": "ADMN.ENRL[*].ENRL_PRD_OTH_IND"
+                        },
+                        {
+                            "questionId": "eligibleClassDescription",
+                            "label": "Eligible Class Description",
+                            "order": 6,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.eligibleClassDescription",
+                            "model": "PRVD.ELGBL_CLASS[*].ELGBL_CLASS_DSCR",
+                            "control": {
+                                "type": "text",
+                                "hint": "Class/claimbranch eligible under the plan",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": []
+                            }
+                        },
+                        {
+                            "questionId": "eligibilityTypeSelectallthatapply",
+                            "label": "Eligibility Type (Select all that apply)",
+                            "order": 7,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.eligibilityTypeSelectallthatapply",
+                            "model": "PRVD.ELGBL_TYP[*].ELGBL_TYP_CD",
+                            "control": {
+                                "type": "checkbox",
+                                "hint": "Defines the types of eligible employees.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "Active Dues Paying Member",
+                                        "value": "Active Dues Paying Member"
+                                    },
+                                    {
+                                        "label": "Active Full-time",
+                                        "value": "Active Full-time"
+                                    },
+                                    {
+                                        "label": "Active Part-time",
+                                        "value": "Active Part-time"
+                                    },
+                                    {
+                                        "label": "Actively at Work (no definition of Full-time or Part-time required)",
+                                        "value": "Actively at Work (no definition of Full-time or Part-time required)"
+                                    },
+                                    {
+                                        "label": "Disabled",
+                                        "value": "Disabled"
+                                    },
+                                    {
+                                        "label": "Retired (closed class)",
+                                        "value": "Retired (closed class)"
+                                    },
+                                    {
+                                        "label": "Retired (open class)",
+                                        "value": "Retired (open class)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "retireeMinimumAgeRequirement",
+                            "label": "Retiree Minimum Age Requirement",
+                            "order": 8,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.retireeMinimumAgeRequirement",
+                            "model": "PRVD.RTR_MIN_AGE_RQR_IND",
+                            "control": {
+                                "type": "select",
+                                "hint": "Minimum age to qualify for retiree status",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "50",
+                                        "value": "50"
+                                    },
+                                    {
+                                        "label": "55",
+                                        "value": "55"
+                                    },
+                                    {
+                                        "label": "60",
+                                        "value": "60"
+                                    },
+                                    {
+                                        "label": "65",
+                                        "value": "65"
+                                    },
+                                    {
+                                        "label": "No Age Requirement",
+                                        "value": "No Age Requirement"
+                                    },
+                                    {
+                                        "label": "Other",
+                                        "value": "Other"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "retireeMinimumAgeRequirement_60022.1",
+                            "label": "Retiree Minimum Age Requirement",
+                            "order": -1,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.retireeMinimumAgeRequirement_60022.1",
+                            "model": "PRVD.RTR_MIN_AGE_YR"
+                        },
+                        {
+                            "questionId": "retireeMinimumAgeRequirement_60022.2",
+                            "label": "Retiree Minimum Age Requirement",
+                            "order": -1,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.retireeMinimumAgeRequirement_60022.2",
+                            "model": "PRVD.RTR_MIN_AGE_RQR_OTH_IND"
+                        },
+                        {
+                            "questionId": "retireeMinimumAgeRequirementEnterOther",
+                            "label": "Retiree Minimum Age Requirement - Enter Other",
+                            "order": 9,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.retireeMinimumAgeRequirementEnterOther",
+                            "model": "PRVD.RTR_MIN_AGE_YR",
+                            "control": {
+                                "type": "number",
+                                "hint": "Non-standard minimum age to qualify for retiree status",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(User enters value)",
+                                        "value": "(User enters value)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "retireeMinimumYearsofServiceRequirement",
+                            "label": "Retiree Minimum Years of Service Requirement",
+                            "order": 10,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.retireeMinimumYearsofServiceRequirement",
+                            "model": "PRVD.RTR_MIN_SRV_RQR_IND",
+                            "control": {
+                                "type": "select",
+                                "hint": "Minimum years of service to qualify for retiree status",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "10",
+                                        "value": "10"
+                                    },
+                                    {
+                                        "label": "15",
+                                        "value": "15"
+                                    },
+                                    {
+                                        "label": "20",
+                                        "value": "20"
+                                    },
+                                    {
+                                        "label": "25",
+                                        "value": "25"
+                                    },
+                                    {
+                                        "label": "30",
+                                        "value": "30"
+                                    },
+                                    {
+                                        "label": "5",
+                                        "value": "5"
+                                    },
+                                    {
+                                        "label": "No Minimum Service Requirement",
+                                        "value": "No Minimum Service Requirement"
+                                    },
+                                    {
+                                        "label": "Other",
+                                        "value": "Other"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "retireeMinimumYearsofServiceRequirement_60024.1",
+                            "label": "Retiree Minimum Years of Service Requirement",
+                            "order": -1,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.retireeMinimumYearsofServiceRequirement_60024.1",
+                            "model": "PRVD.RTR_MIN_SRV_RQR_YR"
+                        },
+                        {
+                            "questionId": "retireeMinimumYearsofServiceRequirement_60024.2",
+                            "label": "Retiree Minimum Years of Service Requirement",
+                            "order": -1,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.retireeMinimumYearsofServiceRequirement_60024.2",
+                            "model": "PRVD.RTR_MIN_SRV_RQR_OTH_IND"
+                        },
+                        {
+                            "questionId": "retireeMinimumYearsofServiceRequirementEnterOther",
+                            "label": "Retiree Minimum Years of Service Requirement - Enter Other",
+                            "order": 11,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.retireeMinimumYearsofServiceRequirementEnterOther",
+                            "model": "PRVD.RTR_MIN_SRV_RQR_YR",
+                            "control": {
+                                "type": "number",
+                                "hint": "Non-standard minimum years of service to qualify for retiree status",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(User enters value)",
+                                        "value": "(User enters value)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "retiredbyDate",
+                            "label": "Retired by Date",
+                            "order": 12,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.retiredbyDate",
+                            "model": "PRVD.RTR_BY_DT",
+                            "control": {
+                                "type": "date",
+                                "hint": "Specific date of retirement",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": []
+                            }
+                        },
+                        {
+                            "questionId": "employeeDefinition",
+                            "label": "Employee Definition",
+                            "order": 13,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.employeeDefinition",
+                            "model": "ADMN.CUST_EMPE_DFN_OPT_CD",
+                            "control": {
+                                "type": "select",
+                                "hint": "Indicates the terminology that will be used to define an employee in the policy documents",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "Associate",
+                                        "value": "Associate"
+                                    },
+                                    {
+                                        "label": "Certificateholder",
+                                        "value": "Certificateholder"
+                                    },
+                                    {
+                                        "label": "Employee",
+                                        "value": "Employee"
+                                    },
+                                    {
+                                        "label": "Insured",
+                                        "value": "Insured"
+                                    },
+                                    {
+                                        "label": "Member",
+                                        "value": "Member"
+                                    },
+                                    {
+                                        "label": "Participant",
+                                        "value": "Participant"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "waitingPeriodWaivedforReinstatementofRehires",
+                            "label": "Waiting Period Waived for Reinstatement of Rehires",
+                            "order": 14,
+                            "viewModel": "eligibilityProvisions.eligibilityProvisions.waitingPeriodWaivedforReinstatementofRehires",
+                            "model": "PRVD.RHIRE_WP_WV_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates whether or not the waiting period is reduced for employees hired within a specific time frame.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "categoryId": "eRISAInformationHIPAA",
+            "label": "ERISA Information & HIPAA",
+            "order": 3,
+            "state": {
+                "isHidden": false,
+                "isDisabled": false,
+                "isRequired": false
+            },
+            "sections": [
+                {
+                    "sectionId": "eRISAInformationHIPAA",
+                    "label": "ERISA Information & HIPAA",
+                    "order": 1,
+                    "state": {
+                        "isHidden": false,
+                        "isDisabled": false,
+                        "isRequired": false
+                    },
+                    "questions": [
+                        {
+                            "questionId": "subjecttoERISA",
+                            "label": "Subject to ERISA",
+                            "order": 1,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.subjecttoERISA",
+                            "model": "ADMN.ERISA_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates if the Employer must provide information on whether the plan is subject to ERISA or not.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "includeERISAWordinginCertificate",
+                            "label": "Include ERISA Wording in Certificate",
+                            "order": 2,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.includeERISAWordinginCertificate",
+                            "model": "ADMN.CERT_INCL_ERISA_WRD_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Identifies if the ERISA wording is to be included in the certificate so that the certificate functions as Summary Plan Description (SPD).",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "eRISAPlanAdministrator",
+                            "label": "ERISA Plan Administrator",
+                            "order": 3,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanAdministrator",
+                            "model": "ADMN.ERISA_PLN_ADMN_CD",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Identifies what entity administers the ERISA plan.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "Customer",
+                                        "value": "Customer"
+                                    },
+                                    {
+                                        "label": "Other",
+                                        "value": "Other"
+                                    },
+                                    {
+                                        "label": "Union Maintaining Plan",
+                                        "value": "Union Maintaining Plan"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "eRISAPlanAdministratorName",
+                            "label": "ERISA Plan Administrator: Name",
+                            "order": 4,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanAdministratorName",
+                            "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD",
+                            "conditions": [
+                                {
+                                    "questionId": "roleTypeCodeERISAPA",
+                                    "value": "ERISAPA",
+                                    "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD"
+                                }
+                            ],
+                            "control": {
+                                "type": "text",
+                                "hint": "Name of the contact who administers the ERISA Plan.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(User enters value)",
+                                        "value": "(User enters value)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "eRISAPlanAdministratorStreetAddress1",
+                            "label": "ERISA Plan Administrator: Street  Address 1",
+                            "order": 5,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanAdministratorStreetAddress1",
+                            "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD",
+                            "conditions": [
+                                {
+                                    "questionId": "roleTypeCodeERISAPA_60033",
+                                    "value": "ERISAPA",
+                                    "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD"
+                                }
+                            ],
+                            "control": {
+                                "type": "text",
+                                "hint": "Street Address 1 of contact who administers ERISA Plan.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(User enters value)",
+                                        "value": "(User enters value)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "eRISAPlanAdministratorStreetAddress2",
+                            "label": "ERISA Plan Administrator: Street  Address 2",
+                            "order": 6,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanAdministratorStreetAddress2",
+                            "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD",
+                            "conditions": [
+                                {
+                                    "questionId": "roleTypeCodeERISAPA_60034",
+                                    "value": "ERISAPA",
+                                    "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD"
+                                }
+                            ],
+                            "control": {
+                                "type": "text",
+                                "hint": "Street Address 2 of contact who administers ERISA Plan.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(User enters value)",
+                                        "value": "(User enters value)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "eRISAPlanAdministratorCity",
+                            "label": "ERISA Plan Administrator: City",
+                            "order": 7,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanAdministratorCity",
+                            "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD",
+                            "conditions": [
+                                {
+                                    "questionId": "roleTypeCodeERISAPA_60035",
+                                    "value": "ERISAPA",
+                                    "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD"
+                                }
+                            ],
+                            "control": {
+                                "type": "text",
+                                "hint": "City of contact who administers ERISA Plan.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(User enters value)",
+                                        "value": "(User enters value)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "eRISAPlanAdministratorState",
+                            "label": "ERISA Plan Administrator: State",
+                            "order": 8,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanAdministratorState",
+                            "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD",
+                            "conditions": [
+                                {
+                                    "questionId": "roleTypeCodeERISAPA_60036",
+                                    "value": "ERISAPA",
+                                    "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD"
+                                }
+                            ],
+                            "control": {
+                                "type": "select",
+                                "hint": "State of contact who administers ERISA Plan.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(enumerated table)",
+                                        "value": "(enumerated table)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "eRISAPlanAdministratorZip",
+                            "label": "ERISA Plan Administrator: Zip",
+                            "order": 9,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanAdministratorZip",
+                            "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD",
+                            "conditions": [
+                                {
+                                    "questionId": "roleTypeCodeERISAPA_60037",
+                                    "value": "ERISAPA",
+                                    "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD"
+                                }
+                            ],
+                            "control": {
+                                "type": "number",
+                                "hint": "Zip code of contact who administers ERISA Plan.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(User enters value)",
+                                        "value": "(User enters value)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "eRISAPlanAdministratorZip_60037.1",
+                            "label": "ERISA Plan Administrator: Zip",
+                            "order": -1,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanAdministratorZip_60037.1",
+                            "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD",
+                            "conditions": [
+                                {
+                                    "questionId": "roleTypeCodeERISAPA_60037.1",
+                                    "value": "ERISAPA",
+                                    "model": "OWNG_ENTY[*].OWNG_ENTY_CNTCT[*].ROLE_TYP_CD"
+                                }
+                            ]
+                        },
+                        {
+                            "questionId": "includeERISAPlanYearinCertificate",
+                            "label": "Include ERISA Plan Year in Certificate",
+                            "order": 10,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.includeERISAPlanYearinCertificate",
+                            "model": "ADMN.CERT_INCL_ERISA_PLN_YR_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Will ERISA SPD Plan Year appear in the certificate?",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "eRISAPlanYearBeginsmmdd",
+                            "label": "ERISA Plan Year Begins: (mm/dd)",
+                            "order": 11,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanYearBeginsmmdd",
+                            "model": "ERISA_PLN.ERISA_PLN_YB_MO_NUM",
+                            "control": {
+                                "type": "date",
+                                "hint": "ERISA SPD Plan Year Begins",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(calendar select)",
+                                        "value": "(calendar select)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "eRISAPlanYearBeginsmmdd_60038.1",
+                            "label": "ERISA Plan Year Begins: (mm/dd)",
+                            "order": -1,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanYearBeginsmmdd_60038.1",
+                            "model": "ERISA_PLN.ERISA_PLN_YB_DAY_NUM"
+                        },
+                        {
+                            "questionId": "eRISAPlanYearEndsmmdd",
+                            "label": "ERISA Plan Year Ends: (mm/dd)",
+                            "order": 12,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanYearEndsmmdd",
+                            "model": "ERISA_PLN.ERISA_PLN_YE_MO_NUM",
+                            "control": {
+                                "type": "date",
+                                "hint": "ERISA SPD Plan Year Ends",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(calendar select)",
+                                        "value": "(calendar select)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "eRISAPlanYearEndsmmdd_60039.1",
+                            "label": "ERISA Plan Year Ends: (mm/dd)",
+                            "order": -1,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanYearEndsmmdd_60039.1",
+                            "model": "ERISA_PLN.ERISA_PLN_YE_DAY_NUM"
+                        },
+                        {
+                            "questionId": "eRISAPlanName",
+                            "label": "ERISA Plan Name",
+                            "order": 13,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanName",
+                            "model": "ERISA_PLN.ERISA_PLN_NM",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Name of the ERISA Plan",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "Customer Welfare Benefit Plan (\"Plan\")",
+                                        "value": "Customer Welfare Benefit Plan (\"Plan\")"
+                                    },
+                                    {
+                                        "label": "Plan Name or Other",
+                                        "value": "Plan Name or Other"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "eRISAPlanName_60041.1",
+                            "label": "ERISA Plan Name",
+                            "order": -1,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanName_60041.1",
+                            "model": "ERISA_PLN.ERISA_PLN_NM_OTH_IND"
+                        },
+                        {
+                            "questionId": "eRISAPlanNameEnterPlanName",
+                            "label": "ERISA Plan Name - Enter Plan Name",
+                            "order": 14,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.eRISAPlanNameEnterPlanName",
+                            "model": "ERISA_PLN.ERISA_PLN_NM",
+                            "control": {
+                                "type": "text",
+                                "hint": "The type of for the ERISA Plan",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(user enters value)",
+                                        "value": "(user enters value)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "hIPAACertified",
+                            "label": "HIPAA Certified",
+                            "order": 15,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.hIPAACertified",
+                            "model": "ADMN.HIPAA_CERT_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates if language about the Health Insurance Portability and Accountability Act (HIPAA) is to be included in the contract.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "hIPAACertificationMethod",
+                            "label": "HIPAA Certification Method",
+                            "order": 16,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.hIPAACertificationMethod",
+                            "model": "ADMN.HIPAA_CERT_TYP_CD",
+                            "control": {
+                                "type": "radio",
+                                "hint": "This attribute represents the HIPAA Certification method.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "Business Associate Addendum",
+                                        "value": "Business Associate Addendum"
+                                    },
+                                    {
+                                        "label": "Plan Sponsor Certification",
+                                        "value": "Plan Sponsor Certification"
+                                    },
+                                    {
+                                        "label": "Request Form",
+                                        "value": "Request Form"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "hIPAAIncludePrivacyOfficer",
+                            "label": "HIPAA Include Privacy Officer",
+                            "order": 17,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.hIPAAIncludePrivacyOfficer",
+                            "model": "ADMN.HIPAA_PRIV_OFC_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates whether or not the employer has a privacy officer.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "hIPAAIncludeEmployeeRightsLanguage",
+                            "label": "HIPAA Include Employee Rights Language",
+                            "order": 18,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.hIPAAIncludeEmployeeRightsLanguage",
+                            "model": "ADMN.HIPAA_EMPE_RGHT_LANG_INCL_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates if language about the Employee Rights from the Health Insurance Portability and Accountability Act is to be included in the contract.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "hIPAAIncludePrivacyComplaintLanguage",
+                            "label": "HIPAA Include Privacy Complaint Language",
+                            "order": 19,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.hIPAAIncludePrivacyComplaintLanguage",
+                            "model": "ADMN.HIPAA_PRIV_CMPLN_LANG_INCL_IND",
+                            "control": {
+                                "type": "radio",
+                                "hint": "Indicates if language about privacy complaints from the Health Insurance Portability and Accountability Act is to be included in the contract.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "questionId": "hIPAATitlesofEmployeesAccessingProtectedHealthInformation",
+                            "label": "HIPAA Titles of Employees Accessing Protected Health Information",
+                            "order": 20,
+                            "viewModel": "eRISAInformationHIPAA.eRISAInformationHIPAA.hIPAATitlesofEmployeesAccessingProtectedHealthInformation",
+                            "model": "ADMN.PHI_ACCS_TITL_TXT",
+                            "control": {
+                                "type": "text",
+                                "hint": "Indicates the job titles of the types of employees who have access to protected health information.",
+                                "state": {
+                                    "isHidden": false,
+                                    "isDisabled": false,
+                                    "isRequired": false
+                                },
+                                "choices": [
+                                    {
+                                        "label": "(user enters value)",
+                                        "value": "(user enters value)"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "id": "5a8bba7c44487639282d6b58"
+}

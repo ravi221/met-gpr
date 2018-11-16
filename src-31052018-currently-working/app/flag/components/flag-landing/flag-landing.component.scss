@@ -1,0 +1,51 @@
+@import "../../../../content/css/colors";
+
+
+article {
+  .export-button {
+    margin-bottom: 25px;
+  }
+}
+
+#flag-page-title {
+  font-family: Georgia;
+  color: $c-black;
+  padding-top: 48px;
+}
+
+.no-flags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 536px;
+  width: 100%;
+  .no-flags-text {
+    font-family: Arial;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+    color: $muted;
+  }
+}
+
+.padding-top-banner {
+  padding-top: 50px;
+}
+
+.banner {
+  margin-bottom: 50px;
+}
+
+.banner > h4 {
+  margin-bottom: 14px;
+  margin-top: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: left;
+  color: #333;
+}
+
+b, strong {
+  font-weight: 700;
+}

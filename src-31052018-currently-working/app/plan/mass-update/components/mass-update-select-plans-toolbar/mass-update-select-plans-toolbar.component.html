@@ -1,0 +1,16 @@
+<div class="mass-update-tooltip" >
+      <gpr-tooltip-content #errorTooltipContent>
+        <div class="mass-update-tooltip-content" *ngIf="!canSelectPlans">
+          <p class="mass-update-tooltip-msg">Please select at least one</p>
+        </div>
+      </gpr-tooltip-content>
+      <span gprHoverTooltip
+        [tooltipContent]="errorTooltipContent"
+        [position]="'top'"
+        [theme]="'white'"
+        [isMousedOver]="true"
+        [displayCloseIcon]="false"
+        [maxWidth]="200">
+        <button type="button" (click)="openModal()" [disabled]="!canSelectPlans" class="btn btn-secondary" >Select Plans</button>   {{checkedQuestionsCount}} Attributes selected
+      </span>
+    </div>

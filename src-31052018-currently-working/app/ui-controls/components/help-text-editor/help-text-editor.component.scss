@@ -1,0 +1,43 @@
+.help-text-editor {
+  margin: 10px 10px;
+
+  .text-editor {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    color: black
+  }
+
+  .textarea-editor {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    resize: none;
+    width: 100%;
+    //color: black;
+  }
+
+  .text-editor-label {
+    font-weight: normal;
+    margin: 0 32px 0 0;
+    width: 120px;
+    align-items: left;
+    alignment: center;
+    color: white;
+  }
+
+  .text-editor-value {
+    flex-grow: 9;
+  }
+
+  .help-text-editor-footer {
+    text-align: right;
+  }
+  textarea[name=help-text] {
+    resize: none;
+    color: black;
+  }
+}

@@ -1,0 +1,49 @@
+@import '../../../../content/css/colors';
+
+.plan-status {
+  display: flex;
+  justify-content: flex-start;
+
+  .plan-status-msg {
+    margin-right: 12px;
+  }
+}
+
+.flags-count {
+  .badge {
+    margin-left: 16px;
+  }
+}
+
+.loading-plans {
+  display: block;
+  position: relative;
+  padding: 48px 0;
+}
+
+.no-plans-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+
+  .no-plans-heading {
+    margin: 16px 0 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .no-plans-icon {
+    ::ng-deep img {
+      width: 160px;
+      padding: 20px;
+      border-radius: 160px;
+      background: $c-gray-50;
+      opacity: 0.4;
+    }
+  }
+}

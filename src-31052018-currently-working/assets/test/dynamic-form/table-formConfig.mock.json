@@ -1,0 +1,89 @@
+{
+  "formId": "mock-config",
+  "version": "1.0.0",
+  "title": "Mock Configuration",
+  "categories": [
+    {
+      "categoryId": "mockCategory",
+      "label": "Mock Category",
+      "state": {
+        "isHidden": false,
+        "isDisabled": false
+      },
+      "rules": {
+        "onInit": [],
+        "onError": [],
+        "onChange": []
+      },
+      "sections": [
+        {
+          "sectionId": "mockSection",
+          "label": "Mock Section",
+          "order": 1,
+          "state": {
+            "isHidden": false,
+            "isDisabled": false
+          },
+          "rules": {
+            "onInit": [],
+            "onError": [],
+            "onChange": []
+          },
+          "groupedQuestions": [
+            {
+              "groupId": "employeesHiredPriortoPlanInitialEffectiveDate",
+              "label": "Employees Hired Prior to Plan Initial Effective Date",
+              "type": "Table",
+              "order": 6,
+              "questions": [
+                {
+                  "questionId" : "question1",
+                  "label" : "test 1",
+                  "order" : 24,
+                  "model" : "BEN.DABL_PLN_BEN.BEN_PRD_SAL_SCHD[*].BEN_OPT_ID",
+                  "xpath" : "Organization.Customer.Agreement.Plan.PlanBenefit.BenefitProvision.BenefitCalculation.BenefitPeriod.BenefitOptionID",
+                  "viewModel" : "mockCategory.mockSection.question1",
+                  "schema" : {
+                    "type" : "CHAR",
+                    "maxLength" : 2
+                  },
+                  "control" : {
+                    "type" : "number",
+                    "hint" : "test hint",
+                    "state" : {
+                      "isHidden" : false,
+                      "isDisabled" : false,
+                      "isRequired" : false
+                    }
+                  }
+                },
+                {
+                  "questionId" : "question2",
+                  "label" : "test 2",
+                  "order" : 24,
+                  "model" : "BEN.DABL_PLN_BEN.BEN_PRD_SAL_SCHD[*].BEN_OPT_ID",
+                  "xpath" : "Organization.Customer.Agreement.Plan.PlanBenefit.BenefitProvision.BenefitCalculation.BenefitPeriod.BenefitOptionID",
+                  "viewModel" : "mockCategory.mockSection.question1",
+                  "schema" : {
+                    "type" : "CHAR",
+                    "maxLength" : 2
+                  },
+                  "control" : {
+                    "type" : "number",
+                    "hint" : "test hint",
+                    "state" : {
+                      "isHidden" : false,
+                      "isDisabled" : false,
+                      "isRequired" : false
+                    }
+                  }
+                }
+              ]
+            }
+
+          ]
+        }
+      ]
+    }
+  ]
+}

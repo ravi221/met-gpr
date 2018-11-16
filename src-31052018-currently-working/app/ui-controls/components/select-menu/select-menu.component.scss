@@ -1,0 +1,14 @@
+@import "../../../../content/css/colors";
+
+.select {
+
+  .select-label {
+    padding-right: 3px;
+    font-weight: bold;
+    color: $c-gray-700;
+  }
+
+  .select-option {
+    cursor: pointer;
+  }
+}

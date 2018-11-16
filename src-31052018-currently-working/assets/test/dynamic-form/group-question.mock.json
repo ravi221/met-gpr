@@ -1,0 +1,239 @@
+{
+  "formId": "mock-config",
+  "version": "1.0.0",
+  "title": "Mock Configuration",
+  "categories": [
+    {
+      "categoryId": "mockCategory",
+      "label": "Mock Category",
+      "state": {
+        "isHidden": false,
+        "isDisabled": false
+      },
+      "rules": {
+        "onInit": [],
+        "onError": [],
+        "onChange": []
+      },
+      "sections": [
+        {
+          "sectionId": "mockSection",
+          "label": "Mock Section",
+          "order": 1,
+          "state": {
+            "isHidden": false,
+            "isDisabled": false
+          },
+          "rules": {
+            "onInit": [],
+            "onError": [],
+            "onChange": []
+          },
+          "groupedQuestions": [
+            {
+              "groupId": "employeesHiredPriortoPlanInitialEffectiveDate",
+              "label": "Employees Hired Prior to Plan Initial Effective Date",
+              "type": "Grouping",
+              "order": 6,
+              "questions": [
+                {
+                  "questionId": "question1",
+                  "label": "Eligibility Waiting Period Duration Count",
+                  "order": 6,
+                  "model": "PRVD.PRSNT_MBR_ELGBL_WP_IND",
+                  "xpath": "Organization.Customer.Agreement.Plan.WaitingPeriod.WaitingPeriodIndicator",
+                  "viewModel": "mockCategory.mockSection.question1",
+                  "conditions": [
+                    {
+                      "xpath": "Organization.Customer.Agreement.Plan.WaitingPeriod.EnrollmentPeriodTypeCode",
+                      "value": "INIT"
+                    }
+                  ],
+                  "schema": {
+                    "type": "CHAR",
+                    "enum": [
+                      "Y",
+                      "N"
+                    ]
+                  },
+                  "control": {
+                    "type": "radio",
+                    "hint": "Represents count used in defining the Eligibility Waiting Period.",
+                    "state": {
+                      "isHidden": false,
+                      "isDisabled": false,
+                      "isRequired": false
+                    },
+                    "choices": [
+                      {
+                        "label": "No",
+                        "value": "N",
+                        "order": 1
+                      },
+                      {
+                        "label": "Yes",
+                        "value": "Y",
+                        "order": 2
+                      }
+                    ]
+                  },
+                  "dependentQuestionIds": [
+                    "employeesHiredPriortoPlanInitialEffectiveDateEligibilityWaitingPeriodDurationCount_40030.1",
+                    "employeesHiredPriortoPlanInitialEffectiveDateEligibilityWaitingPeriodDurationCount_40030.2"
+                  ]
+                },
+                {
+                  "questionId": "question2",
+                  "label": "Eligibility Waiting Period Duration Count Detail",
+                  "order": 7,
+                  "model": "PRVD.PRSNT_MBR_ELGBL_WP_CNT",
+                  "xpath": "Organization.Customer.Agreement.Plan.WaitingPeriod.WaitingPeriodCount",
+                  "viewModel": "mockCategory.mockSection.question2",
+                  "conditions": [
+                    {
+                      "xpath": "Organization.Customer.Agreement.Plan.WaitingPeriod.EnrollmentPeriodTypeCode",
+                      "value": "INIT"
+                    }
+                  ],
+                  "schema": {
+                    "type": "DECIMAL",
+                    "multipleOf": 1,
+                    "minimum": 0,
+                    "maximum": 999
+                  },
+                  "control": {
+                    "type": "text",
+                    "hint": "Represents count used in defining the Eligibility Waiting Period",
+                    "state": {
+                      "isHidden": false,
+                      "isDisabled": false,
+                      "isRequired": false
+                    }
+                  }
+                },
+                {
+                  "questionId": "question3",
+                  "label": "Eligibility Waiting Period Duration",
+                  "order": 8,
+                  "model": "PRVD.PRSNT_MBR_ELGBL_WP_DUR_UOM_CD",
+                  "xpath": "Organization.Customer.Agreement.Plan.WaitingPeriod.WaitingPeriodUnitofMeasureCode",
+                  "viewModel": "mockCategory.mockSection.question3",
+                  "conditions": [
+                    {
+                      "xpath": "Organization.Customer.Agreement.Plan.WaitingPeriod.EnrollmentPeriodTypeCode",
+                      "value": "INIT"
+                    }
+                  ],
+                  "schema": {
+                    "type": "CHAR",
+                    "enum": [
+                      "DY",
+                      "HR",
+                      "MTH",
+                      "WK",
+                      "YR"
+                    ]
+                  },
+                  "control": {
+                    "type": "radio",
+                    "hint": "Defines the mode for the Eligibility Waiting Period",
+                    "state": {
+                      "isHidden": false,
+                      "isDisabled": false,
+                      "isRequired": false
+                    },
+                    "choices": [
+                      {
+                        "label": "Day(s)",
+                        "value": "DY",
+                        "order": 1
+                      },
+                      {
+                        "label": "Hour(s)",
+                        "value": "HR",
+                        "order": 2
+                      },
+                      {
+                        "label": "Month(s)",
+                        "value": "MTH",
+                        "order": 3
+                      },
+                      {
+                        "label": "Week(s)",
+                        "value": "WK",
+                        "order": 4
+                      },
+                      {
+                        "label": "Year(s)",
+                        "value": "YR",
+                        "order": 5
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "groupId" : "alcoholDrug",
+              "label" : "Alcohol/Drug",
+              "type" : "radioButtonOther",
+              "order" : 11,
+              "questions" : [ {
+                "questionId": "radioButtons",
+                "label": "Radio Buttons",
+                "order": 11,
+                "model": "RDIO_BTN",
+                "viewModel": "mockCategory.mockSection.radioButtons",
+                "xpath": "test",
+                "schema": {
+                  "type": "CHAR",
+                  "enum": ["Y", "other"]
+                },
+                "control" : {
+                  "type" : "radio",
+                  "hint" : "Its a test",
+                  "state" : {
+                    "isHidden" : false,
+                    "isDisabled" : false,
+                    "isRequired" : false
+                  },
+                  "choices": [ {
+                    "label" : "Other",
+                    "value" : "other",
+                    "order" : 1
+                  }, {
+                    "label" : "Yes",
+                    "value" : "Y",
+                    "order" : 2
+                  } ]
+                }
+
+
+              }, {
+                "questionId": "textBox",
+                "label": "Text Box",
+                "order":12,
+                "model": "TXT_BX",
+                "viewModel": "mockCategory.mockSection.textBox",
+                "xpath": "test1",
+                "schema": {
+                  "type": "VARCHAR",
+                  "maxLength": 60
+                },
+                "control": {
+                  "type": "text",
+                  "state": {
+                    "isRequired": false,
+                    "isDisabled": true,
+                    "isHidden": false
+                  }
+                }
+              }]
+            }
+
+          ]
+        }
+      ]
+    }
+  ]
+}

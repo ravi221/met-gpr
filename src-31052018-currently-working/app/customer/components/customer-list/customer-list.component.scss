@@ -1,0 +1,45 @@
+@import "../../../../content/css/colors";
+
+.customer-status {
+  font-weight: bold;
+}
+
+.customer-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 60px;
+
+  .customer-action {
+    line-height: 1.43;
+    text-align: left;
+    color: $c-blue-400;
+    font-weight: bold;
+    margin-bottom: 2px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.customer-flags {
+  padding-left: 12px;
+}
+
+.no-customers-msg {
+  display: block;
+  margin-top: 10px;
+  opacity: 0.5;
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: $c-gray-700;
+  text-align: center;
+
+  &[hidden] {
+    display: none;
+  }
+}

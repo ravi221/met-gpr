@@ -1,0 +1,33 @@
+@import "../../../../content/css/colors";
+
+.filter-links {
+  display: block;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+
+  .filter-link {
+    display: inline-block;
+    font-family: 'Arial', serif;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1.6;
+    text-align: left;
+    text-transform: uppercase;
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    > a {
+      font-weight: 400;
+      color: $inactive-gray;
+
+      &.active {
+        color: $c-blue-400;
+        font-weight: bold;
+      }
+    }
+  }
+}

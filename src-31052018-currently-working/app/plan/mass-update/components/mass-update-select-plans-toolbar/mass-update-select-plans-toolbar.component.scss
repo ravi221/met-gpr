@@ -1,0 +1,19 @@
+@import '../../../../../content/css/colors';
+
+[disabled] {
+  pointer-events: none;
+}
+
+.mass-update-tooltip{
+  margin-left: 70px;
+  margin-top: 20px;
+}
+
+.mass-update-tooltip-content {
+  padding: 10px 10px 10px 14px;
+  .mass-update-tooltip-msg {
+    color: $c-black;
+    font-size: 14px;
+    font-family: 'Arial', serif;
+  }
+}

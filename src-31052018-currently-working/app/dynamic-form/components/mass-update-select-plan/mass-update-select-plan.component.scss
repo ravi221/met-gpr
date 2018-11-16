@@ -1,0 +1,103 @@
+@import '../../../../content/css/global';
+@import "../../../../content/css/variables";
+@import '../../../../content/css/colors';
+
+.mass-update-selected-plans-info {
+  width: 100%;
+  display: table;
+  margin-left: 0px;
+}
+
+.select-all-checkbox {
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.select-product-checkbox {
+  padding: 10px;
+  margin-left: 60px;
+}
+
+.select-plans-checkbox {
+  margin-left: 90px;
+  padding: 10px;
+}
+
+.expand-plans {
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+.category-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .category-info-row {
+    display: flex;
+  }
+
+  .category-label-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 240px;
+    margin-left: 8px;
+
+    .category-label {
+      margin: 0;
+    }
+
+    .category-label-status {
+      display: flex;
+
+      span {
+        font-size: 14px;
+      }
+
+      gpr-plan-error-tooltip {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .category-icon {
+    cursor: pointer;
+  }
+
+  .category-action-buttons {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  span {
+    margin-right: 12px;
+    &.red {
+      color: $c-red-400;
+    }
+    &.yellow {
+      color: $c-yellow;
+    }
+    &.green {
+      color: $c-green-700;
+    }
+  }
+
+  .yellow {
+    color: $c-yellow;
+  }
+
+  .red {
+    color: $c-red-400;
+  }
+
+  .green {
+    color: $c-green-700
+  }
+}

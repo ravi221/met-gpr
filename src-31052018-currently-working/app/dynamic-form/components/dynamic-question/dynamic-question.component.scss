@@ -1,0 +1,26 @@
+@import '../../../../content/css/global';
+@import "../../../../content/css/variables";
+
+table.question-table {
+  table-layout: fixed;
+  width: 100%;
+  padding: 1px;
+  vertical-align: top;
+}
+
+table.question-table td {
+  width: 50px;
+}
+
+table.question-table td + td {
+  width: 80%;
+}
+
+table.question-table td + td + td {
+  width: auto;
+  text-align: right;
+}
+
+.url-link {
+  color: white;
+}

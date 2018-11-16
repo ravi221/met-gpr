@@ -1,0 +1,16 @@
+@import '../../../../../content/css/colors';
+
+.search-result-title {
+  font-size: 20px;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+
+  span {
+    white-space: pre;
+
+    &.highlight {
+      color: $c-blue-300;
+    }
+  }
+}

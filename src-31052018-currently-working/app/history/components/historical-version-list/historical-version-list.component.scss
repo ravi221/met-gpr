@@ -1,0 +1,23 @@
+@import "../../../../content/css/colors";
+
+.section {
+  padding: 14px 32px;
+
+  .version-info {
+    flex-grow: 1;
+
+    .version-title {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: $c-gray-700;
+    }
+
+    .version-details {
+      font-size: 12px;
+      span {
+        margin-right: 15px;
+      }
+    }
+  }
+}

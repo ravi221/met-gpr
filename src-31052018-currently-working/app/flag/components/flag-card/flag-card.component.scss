@@ -1,0 +1,61 @@
+@import "../../../../content/css/colors";
+@import "../../../../content/css/global";
+
+.flags-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px 20px;
+
+  .flag {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .flag-info {
+      margin: 4px 0 0 12px;
+
+      .flag-plan-name {
+        font-size: 14px;
+        color: $c-gray-700;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+      }
+
+      .flag-question-name {
+        font-size: 14px;
+        color: $c-gray-700;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 95%;
+  display: inline-block;
+}
+
+.see-all-link {
+  display: block;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.no-flags-message {
+  padding: 16px 20px 18px;
+  display: block;
+  opacity: .5;
+  color: $c-gray-700;
+}

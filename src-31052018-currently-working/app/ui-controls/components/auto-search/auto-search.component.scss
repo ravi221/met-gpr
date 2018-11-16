@@ -1,0 +1,54 @@
+@import "../../../../content/css/colors";
+@import "../../../../content/css/variables";
+
+.autoSearch {
+  width: 288px;
+  padding: 8px 12px;
+  border: 1px solid $input-border;
+}
+
+.suggestions {
+  position: absolute;
+  width: 288px;
+  z-index: $z-index-auto-search;
+
+  height: 350px;
+  overflow-y: scroll;
+
+  border: 1px solid $input-border;
+  border-top: none;
+  background: $c-white;
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: $c-gray-700;
+
+      &.complete-selected a {
+        background-color: $c-blue-400;
+        color: $c-white;
+      }
+
+      a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        font-weight: bold;
+
+        span {
+          font-weight: normal;
+        }
+
+        &:hover {
+          background-color: $c-blue-400;
+          color: $c-white;
+        }
+      }
+    }
+  }
+}

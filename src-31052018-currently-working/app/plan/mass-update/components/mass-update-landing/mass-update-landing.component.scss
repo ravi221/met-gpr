@@ -1,0 +1,41 @@
+@import "../../../../../content/css/colors";
+
+.mass-update-content{
+	padding: 15px 15px;
+	p {
+		&.mass-content {
+		  margin: 30px 33px;
+		}
+	}
+
+	.mass-update-info {
+	  display: flex;
+	  padding: 17px 27px;
+
+	  .mass-update-info-row {
+		display: flex;
+	  }
+	  
+	  .mass-update-label-info {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		min-width: 240px;
+		margin-left: 8px;
+
+		.mass-update-label {
+		  margin-bottom: -20px;
+		}
+		
+		span {
+		   font-size: 14px;
+		}
+	  }
+
+	  .mass-update-action-buttons {
+		flex-grow: 1;
+		display: flex;
+		justify-content: flex-end;
+	  }
+	}
+}

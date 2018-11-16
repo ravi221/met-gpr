@@ -1,0 +1,46 @@
+@import "../../../../content/css/colors";
+@import "../../../../content/css/global";
+
+.tooltip-container {
+  position:left;
+  width: 300px;
+  min-height: 100px;
+}
+
+.resolve-flag-text {
+  opacity: 0.5;
+  font-family: Arial;
+  font-size: 13px;
+  line-height: 1.54;
+  text-align: left;
+  color: $c-gray-700;
+
+}
+
+.created-date {
+  width: 115px;
+  height: 20px;
+  opacity: 0.5;
+  font-family: Arial;
+  font-size: 12px;
+  line-height: 1.67;
+  text-align: left;
+  color: $muted;
+}
+
+.created-by {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.43;
+  text-align: left;
+  color: $c-blue-400;
+}
+
+.tag-text {
+  min-height: 120px;
+}
+
+.resolver-img {
+  cursor: pointer;
+}

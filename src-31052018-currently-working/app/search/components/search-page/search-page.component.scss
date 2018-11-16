@@ -1,0 +1,11 @@
+
+.search-page {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  .search-title-sort {
+    display: flex;
+    justify-content: space-between;
+  }
+}

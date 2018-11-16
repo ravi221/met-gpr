@@ -1,0 +1,41 @@
+<gpr-breadcrumbs></gpr-breadcrumbs>
+    <div class="banner">
+      <h4><strong>Mass Update Tool</strong></h4>
+    </div>
+	<div class="row">
+      <div class="col-md-18">
+        <gpr-card>
+		<div class="mass-update-content">
+			<section>
+				<h3><strong>Cross Product Plan Attributes</strong></h3>
+				<p class="mass-content"><label>To use, fill out a section below, select (one or many) attributes to send, then select plan to send to. You may reuse <br/>to send unique data to send plans</label></p>
+				<p class="mass-content"><label>NOTE: The data below will not automatically sync with plans and may not reflect data currently existing within plans</label></p>
+            </section>
+
+			<!-- Mass Update Category Info --->
+			<section class="mass-update-info" *ngFor="let categories of categoryInfo; let i=index;">
+				<!-- Category Icon -->
+				<gpr-icon [name]="'plandoc'" [state]="" class="doc-icon"></gpr-icon>
+				<!-- Category Info --->
+				<section class="mass-update-info-row">
+					<section class="mass-update-label-info">
+						<label class="mass-update-label">{{categories.label}}</label>
+						<gpr-mass-update-select-plans-tooltip
+                          [selectedPlansResponse]="selectedPlansResponse" 
+                          [index]="i">
+						</gpr-mass-update-select-plans-tooltip>
+					</section>
+				</section>
+				<!-- Category Actions -->
+				<section class="mass-update-action-buttons">
+				  <button class="btn btn-secondary" (click)="actionClick(categories.actionBtnLabel)">START</button>
+				</section>
+			</section>
+		</div>
+		</gpr-card>
+	  </div>
+	  <div class="col-md-6">
+		<gpr-activity-card [customer] = "customer"></gpr-activity-card>
+		<gpr-flag-card [customer]="customer"></gpr-flag-card>
+      </div>
+	</div>

@@ -1,0 +1,14 @@
+@import "../../../../content/css/variables";
+
+.scroll-to-top {
+  position: fixed;
+  z-index: $z-index-scroll-to-top;
+  right: 0;
+  bottom: 55px;
+  transform: translateX(150%);
+  min-width: 50px;
+
+  &.in {
+    transform: translateX(-16px);
+  }
+}

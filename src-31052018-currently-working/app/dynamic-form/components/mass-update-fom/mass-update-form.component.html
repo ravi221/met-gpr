@@ -1,0 +1,25 @@
+<div>
+	  <h3>{{activeSectionLabel}}</h3>
+	  <div class="checkbox-control mass-update-checkbox">
+	   <input type="checkbox" id="selectAll-checkbox-1"  (change)="onSelectAllQuestions($event.target.checked)" [(ngModel)]="areAllPlansSelected">
+       <label for="selectAll-checkbox-1" class="control-label">Select All Attributes</label>
+	  </div>
+      <ul class="control-list">
+        <li *ngFor="let formItemConfig of questions; let i = index;">
+          <gpr-mass-update-question
+            [config]="formItemConfig"
+            [index]="i + 1"
+            [model]="model"
+            [plan]="plan"
+            [customerNumber]="customerNumber"
+			(valueChanged)="countCheckedQuestions($event)">
+          </gpr-mass-update-question>
+        </li>
+      </ul>
+      <gpr-mass-update-select-plans-toolbar
+        [canSelectPlans]="canSelectPlans"
+        [checkedQuestionsCount]="checkedQuestionsCount"
+		(handleSelectPlansModal)="handleSelectPlansModal()">
+      </gpr-mass-update-select-plans-toolbar>
+
+    </div>

@@ -1,0 +1,26 @@
+<gpr-breadcrumbs></gpr-breadcrumbs>
+    <div class="banner">
+      <h4><strong>Placeholder for Mass Category Information</strong></h4>
+    </div>
+	<div class="row">
+      <div class="col-md-6">
+        <gpr-flag-card [customer]="customer"></gpr-flag-card>
+      </div>
+      <div class="col-md-18">
+        <gpr-card>
+          <div class="card">
+            <gpr-mass-update-form
+			  [model]="model"
+              [config]="config"
+              [customerNumber]="customer?.customerNumber">
+            </gpr-mass-update-form>
+			<div *ngIf="config" class="controls text-right">
+            </div>
+          </div>
+        </gpr-card>
+      </div>
+    <gpr-mass-update-save [model]="model"
+                          [customerNumber]="customer?.customerNumber"
+                          [planStatus]="plan?.status"
+                          [planId]="plan?.planId" ></gpr-mass-update-save>
+    </div>

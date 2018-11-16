@@ -1,0 +1,57 @@
+@import "../../../../content/css/colors";
+
+#flag-section {
+  background-color: $c-white;
+  margin-bottom: 30px;
+  padding: 14px 32px;
+}
+
+#flag-header {
+  padding-top: 28px;
+  padding-bottom: 32px;
+  overflow: hidden;
+  .lead-right {
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .flags-count {
+      opacity: 0.3;
+      font-family: Arial;
+      font-size: 17px;
+      font-weight: bold;
+      line-height: 1.43;
+      text-align: left;
+      color: $c-gray-700;
+      padding-right: 20px;
+    }
+    .resolve-link {
+      font-family: Arial;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      color: $c-blue-400;
+      cursor: pointer;
+    }
+  }
+}
+
+.customer-title {
+  margin-left: 0;
+  font-family: Georgia;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.17;
+  text-align: left;
+  color: $c-gray-700;
+  float: left;
+}
+
+.flag-off {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+
+

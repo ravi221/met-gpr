@@ -1,0 +1,11 @@
+.card {
+  padding: 26px 32px 32px 32px;
+
+  p {
+    &.subtitle {
+      display: inline-block;
+      margin-right: 24px;
+      margin-bottom: 36px;
+    }
+  }
+}

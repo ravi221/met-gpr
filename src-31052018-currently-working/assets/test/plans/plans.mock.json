@@ -1,0 +1,51 @@
+{
+  "page": 1,
+  "pageSize": 10,
+  "totalCount": 4,
+  "plans": [
+    {
+      "completionPercentage": 10,
+      "coverageId": "31",
+      "effectiveDate": "2017-01-01",
+      "flagsCount": 0,
+      "hasErrors": true,
+      "lastUpdatedTimestamp": "2016-07-01",
+      "planId": "1111131",
+      "planName": "My Non-Plat Hyatt Plan",
+      "status": "New"
+    },
+    {
+      "completionPercentage": 10,
+      "coverageId": "31",
+      "effectiveDate": "2017-01-01",
+      "flagsCount": 0,
+      "hasErrors": true,
+      "lastUpdatedTimestamp": "2016-07-01",
+      "planId": "1111131",
+      "planName": "My Non-Plat Hyatt Plan",
+      "status": "New"
+    },
+    {
+      "completionPercentage": 10,
+      "coverageId": "31",
+      "effectiveDate": "2017-01-01",
+      "flagsCount": 0,
+      "hasErrors": true,
+      "lastUpdatedTimestamp": "2016-07-01",
+      "planId": "1111131",
+      "planName": "My Non-Plat Hyatt Plan",
+      "status": "New"
+    },
+    {
+      "completionPercentage": 10,
+      "coverageId": "31",
+      "effectiveDate": "2017-01-01",
+      "flagsCount": 0,
+      "hasErrors": true,
+      "lastUpdatedTimestamp": "2016-07-01",
+      "planId": "1111131",
+      "planName": "My Non-Plat Hyatt Plan",
+      "status": "New"
+    }
+  ]
+}

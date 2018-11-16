@@ -1,0 +1,23 @@
+@import "../../../../content/css/colors";
+
+.section {
+  padding: 0 32px 30px;
+
+  .plan-info {
+    flex-grow: 1;
+
+    .plan-name {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: $c-gray-700;
+    }
+
+    .plan-details {
+      font-size: 12px;
+      span {
+        margin-right: 15px;
+      }
+    }
+  }
+}

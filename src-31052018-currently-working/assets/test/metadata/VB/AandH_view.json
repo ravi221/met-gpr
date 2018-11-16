@@ -1,0 +1,760 @@
+{
+  "formId" : "PPC_AH",
+  "version" : "0.38",
+  "title" : "Auto And Home",
+  "categories" : [ {
+    "categoryId" : "setup",
+    "label" : "Setup",
+    "state" : {
+      "isHidden" : false,
+      "isDisabled" : false
+    },
+    "rules" : {
+      "onInit" : [ ],
+      "onError" : [ ],
+      "onChange" : [ ]
+    },
+    "sections" : [ {
+      "sectionId" : "planDetails",
+      "label" : "Plan Details",
+      "order" : 1,
+      "state" : {
+        "isHidden" : false,
+        "isDisabled" : false
+      },
+      "rules" : {
+        "onInit" : [ {
+          "condition": "getIn('MAPPED') === true",
+          "action": ["setState('planFinancialArrangementCode', 'isDisabled', true)", "setState('personalDependentCode', 'isDisabled', true)"]
+        } ],
+        "onError" : [ ],
+        "onChange" : [ ]
+      },
+      "questions" : [ {
+        "questionId" : "planName",
+        "label" : "Plan Name",
+        "order" : 1,
+        "model" : "PLN_NM",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "maxLength" : 60
+        },
+        "control" : {
+          "type" : "text",
+          "hint" : "This is where a unique plan name can be entered to  name,  define or identify each plan",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          }
+        }
+      }, {
+        "questionId" : "personalDependentCode",
+        "label" : "PD Code",
+        "order" : 3,
+        "model" : "PRVD.PER_DPND_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "A", "B", "C", "D", "E", "N", "P" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "Identifies whether the plan covers employee only or covers employee and dependents. P = Employee B=Dependents",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Member/Employee + Spouse",
+            "value" : "A"
+          }, {
+            "label" : "Both - Personal/Member and Dependent",
+            "value" : "B"
+          }, {
+            "label" : "Member/Employee + Child",
+            "value" : "C"
+          }, {
+            "label" : "Dependent",
+            "value" : "D"
+          }, {
+            "label" : "Member/Employee + Family",
+            "value" : "E"
+          }, {
+            "label" : "Not Applicable",
+            "value" : "N"
+          }, {
+            "label" : "Personal/Member/Employee",
+            "value" : "P"
+          } ]
+        }
+      }, {
+        "questionId" : "planFinancialArrangementCode",
+        "label" : "Financial Arrangement",
+        "order" : 4,
+        "model" : "ADMN.CLM_PROC_SPRT.PLN_FIN_ARNG_CD",
+        "rules" : {
+          "onInit" : [  ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "AO", "FI", "MP" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "The identifier which determines who's money is used to pay a claim Fully Insured = MetLife",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Administrative Only",
+            "value" : "AO"
+          }, {
+            "label" : "Fully Insured",
+            "value" : "FI"
+          }, {
+            "label" : "Minimum Premium",
+            "value" : "MP"
+          } ]
+        }
+      }, {
+        "questionId" : "metlifeCompanyOwnershipCode",
+        "label" : "Stock Company Policy",
+        "order" : 5,
+        "model" : "ADMN.MET_CO_OWN_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "MUTL", "STCK" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "Indicates whether a plan was issued after Metlife was converted from a mutual company to a stock company. A Stock Company policy should be used if the customer was effective 04/07/00 or later. The answer to this question, plus the answer to whether a plan is Participating or not determines whether a plan is Participating, Non-Participating, Retro Rated or Non-Retro Rated.",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Mutual",
+            "value" : "MUTL"
+          }, {
+            "label" : "Stock",
+            "value" : "STCK"
+          } ]
+        }
+      }, {
+        "questionId" : "participatingIndicator",
+        "label" : "Participating/Retro Rated",
+        "order" : 6,
+        "model" : "ADMN.PRTCP_IND",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "Y", "N" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "What is the Financial Arrangement\nParticipating\\Retro, we can return a dividend if there is a premium surplus (more premium than needed to cover claims, reserves and expenses) and/or ask for a retro payment of premium to cover loses up to a specified amount.   With non-participating we set the rate and either we win or lose based on the experience.",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Yes",
+            "value" : "Y"
+          }, {
+            "label" : "No",
+            "value" : "N"
+          } ]
+        }
+      }, {
+        "questionId" : "metLifeChoicePartnerCarrierIndicator",
+        "label" : "MetLife Choice",
+        "order" : 7,
+        "model" : "ADMN.MET_CHS_PRTNR_CARY_IND",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "Y", "N" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "A Yes/No indicator that identifies whether the sold plan included the MetLife Choice which determines whether the products bills through Metlife or a Multi Carrier",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Yes",
+            "value" : "Y"
+          }, {
+            "label" : "No",
+            "value" : "N"
+          } ]
+        }
+      }, {
+        "questionId" : "difficultyCode",
+        "label" : "Case Difficulty",
+        "order" : 8,
+        "model" : "PRVD.DFCLT_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "EASY", "HARD", "MEDIUM" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "Indicator to show how difficult a case was to implement by the installations team",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "EASY",
+            "value" : "EASY"
+          }, {
+            "label" : "HARD",
+            "value" : "HARD"
+          }, {
+            "label" : "MEDIUM",
+            "value" : "MEDIUM"
+          } ]
+        }
+      }, {
+        "questionId" : "eligibleCount",
+        "label" : "Eligibles",
+        "order" : 10,
+        "model" : "PRVD.ELGBL_CLASS.ELGBL_CNT",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "integer",
+          "multipleOf" : 1,
+          "minimum" : 0,
+          "maximum" : 9999999
+        },
+        "control" : {
+          "type" : "number",
+          "hint" : "A field to enter the number of eligible employees for a particular product or coverage",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          }
+        }
+      }, {
+        "questionId" : "nonStandardEligibilityDescription",
+        "label" : "Eligible(s) Description",
+        "order" : 11,
+        "model" : "ADMN.N_STD_ELGBL_DSCR",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "maxLength" : 60
+        },
+        "control" : {
+          "type" : "text",
+          "hint" : "A field to enter a multiple description of what constitutes eligible employees",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          }
+        }
+      }, {
+        "questionId" : "paymentMethodCode",
+        "label" : "Payroll Deduction Offered",
+        "order" : 12,
+        "model" : "ADMN.PY_MTHD.PY_MTHD_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ {
+            "condition" : "getIn('ADMN.PY_MTHD.PY_MTHD_CD') === '6'",
+            "action" : ["setState('payrollLocationCount', 'isDisabled', false)",
+              "setState('payrollScheduleCount', 'isDisabled', false)", "setState('payrollLocationCount', 'isRequired', true)",
+              "setState('payrollScheduleCount', 'isRequired', true)"]
+          }, {
+            "condition" : "getIn('ADMN.PY_MTHD.PY_MTHD_CD') !== '6'",
+            "action" : ["setState('payrollLocationCount', 'isDisabled', true)",
+              "setState('payrollScheduleCount', 'isDisabled', true)", "setState('payrollLocationCount', 'isRequired', false)",
+              "setState('payrollScheduleCount', 'isRequired', false)"]
+          }  ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "2", "26", "5", "6", "7", "9", "CHK", "CKACCT", "DRAFT", "EMPRPD", "FWT", "NON", "NOT6", "REIMB", "SAP", "SAVACCT", "TCA" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "Is payroll deduction allowed as a method to pay for insurance coverage? - Only for VBS products (A&H, PFL, Hyatt, VPI)",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Regular or Direct Billing",
+            "value" : "2"
+          }, {
+            "label" : "Pre-Authorized Check",
+            "value" : "26"
+          }, {
+            "label" : "List Bill",
+            "value" : "5"
+          }, {
+            "label" : "Payroll Deduction",
+            "value" : "6"
+          }, {
+            "label" : "Electronic Funds Transfer",
+            "value" : "7"
+          }, {
+            "label" : "Credit Card Billing",
+            "value" : "9"
+          }, {
+            "label" : "Check",
+            "value" : "CHK"
+          }, {
+            "label" : "Checking Account",
+            "value" : "CKACCT"
+          }, {
+            "label" : "Draft",
+            "value" : "DRAFT"
+          }, {
+            "label" : "Employer Paid",
+            "value" : "EMPRPD"
+          }, {
+            "label" : "Federal Reserve Funds/Wire Transfer",
+            "value" : "FWT"
+          }, {
+            "label" : "Non-Payment Data",
+            "value" : "NON"
+          }, {
+            "label" : "Not payroll deduction - Unknown",
+            "value" : "NOT6"
+          }, {
+            "label" : "Reimbursement",
+            "value" : "REIMB"
+          }, {
+            "label" : "Self-Applied Premium Billing",
+            "value" : "SAP"
+          }, {
+            "label" : "Savings Account",
+            "value" : "SAVACCT"
+          }, {
+            "label" : "Total Control Account",
+            "value" : "TCA"
+          } ]
+        }
+      }, {
+        "questionId" : "payrollLocationCount",
+        "label" : "# of Payroll Locations",
+        "order" : 13,
+        "model" : "ADMN.PYRL_LOC_CNT",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "integer",
+          "multipleOf" : 1,
+          "minimum" : 0,
+          "maximum" : 999
+        },
+        "control" : {
+          "type" : "number",
+          "hint" : "A field that allows the user to input the number of payroll location used for billing on CBS.",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          }
+        }
+      }, {
+        "questionId" : "payrollScheduleCount",
+        "label" : "# of Payroll Schedules",
+        "order" : 14,
+        "model" : "ADMN.PYRL_SCHD_CNT",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "integer",
+          "multipleOf" : 1,
+          "minimum" : 0,
+          "maximum" : 999
+        },
+        "control" : {
+          "type" : "number",
+          "hint" : "A field that allows the user to input the number of payroll schedules used for billing on Corporate Billing System (CBS)/ Group Account File (GAF)",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          }
+        }
+      }, {
+        "questionId" : "owningEntityID",
+        "label" : "GPC Code",
+        "order" : 15,
+        "model" : "OWNG_ENTY.OWNG_ENTY_ID",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "maxLength" : 80
+        },
+        "control" : {
+          "type" : "text",
+          "hint" : "This is a unique code generated by Group Account File (GAF) to identify the group within mybenefits, GAF & CBS",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          }
+        }
+      }, {
+        "questionId" : "payrollSoftwareCode",
+        "label" : "Payroll Software",
+        "order" : 31,
+        "model" : "ADMN.PYRL_SFTWR_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "integer",
+          "enum" : [ 0, 1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 2, 20, 21, 3, 4, 5, 6, 7, 8, 9 ]
+        },
+        "control" : {
+          "type" : "select",
+          "hint" : "An indicator that determines the external payroll software system (if any) used by the product",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Not Applicable",
+            "value" : 0
+          }, {
+            "label" : "ADP",
+            "value" : 1
+          }, {
+            "label" : "Genesys",
+            "value" : 10
+          }, {
+            "label" : "In-house",
+            "value" : 11
+          }, {
+            "label" : "Lawson",
+            "value" : 12
+          }, {
+            "label" : "Meditech",
+            "value" : 13
+          }, {
+            "label" : "MSA Payroll",
+            "value" : 14
+          }, {
+            "label" : "Peoplesoft",
+            "value" : 15
+          }, {
+            "label" : "ProBusiness",
+            "value" : 16
+          }, {
+            "label" : "SAP",
+            "value" : 17
+          }, {
+            "label" : "Sftwr 2000",
+            "value" : 18
+          }, {
+            "label" : "Tesseret",
+            "value" : 19
+          }, {
+            "label" : "Advantis",
+            "value" : 2
+          }, {
+            "label" : "Unisys",
+            "value" : 20
+          }, {
+            "label" : "CostPoint",
+            "value" : 21
+          }, {
+            "label" : "Ceridian",
+            "value" : 3
+          }, {
+            "label" : "Comp Assoc",
+            "value" : 4
+          }, {
+            "label" : "Cyborg",
+            "value" : 5
+          }, {
+            "label" : "Dave",
+            "value" : 6
+          }, {
+            "label" : "Deltek",
+            "value" : 7
+          }, {
+            "label" : "Dun/Brad",
+            "value" : 8
+          }, {
+            "label" : "Genecare",
+            "value" : 9
+          } ]
+        }
+      }, {
+        "questionId" : "humanResourcesSoftwareCode",
+        "label" : "HR Software",
+        "order" : 32,
+        "model" : "PRVD.HR_SFTWR_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "integer",
+          "enum" : [ 0, 1, 10, 11, 12, 13, 14, 15, 2, 3, 4, 5, 6, 7, 8, 9 ]
+        },
+        "control" : {
+          "type" : "select",
+          "hint" : "An indicator that determines the Human Resource Software (if any) used by customer",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Not Applicable",
+            "value" : 0
+          }, {
+            "label" : "ADP",
+            "value" : 1
+          }, {
+            "label" : "Peoplesoft",
+            "value" : 10
+          }, {
+            "label" : "SAP",
+            "value" : 11
+          }, {
+            "label" : "Spectrum 2000",
+            "value" : 12
+          }, {
+            "label" : "Win 95",
+            "value" : 13
+          }, {
+            "label" : "HRMS Enterprise",
+            "value" : 14
+          }, {
+            "label" : "CostPoint",
+            "value" : 15
+          }, {
+            "label" : "Ceridan",
+            "value" : 2
+          }, {
+            "label" : "Classic Open",
+            "value" : 3
+          }, {
+            "label" : "Cyborg",
+            "value" : 4
+          }, {
+            "label" : "Deltek",
+            "value" : 5
+          }, {
+            "label" : "Gencare",
+            "value" : 6
+          }, {
+            "label" : "In-house",
+            "value" : 7
+          }, {
+            "label" : "Lawson",
+            "value" : 8
+          }, {
+            "label" : "Meditech",
+            "value" : 9
+          } ]
+        }
+      }, {
+        "questionId" : "payrollVendorCode",
+        "label" : "Payroll Vendor",
+        "order" : 33,
+        "model" : "ADMN.PYRL_VND_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "integer",
+          "enum" : [ 0, 1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 2, 20, 21, 22, 23, 24, 25, 3, 4, 5, 6, 7, 8, 9 ]
+        },
+        "control" : {
+          "type" : "select",
+          "hint" : "An indicator that determines the external payroll vendor (if any) used by the product",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Not Applicable",
+            "value" : 0
+          }, {
+            "label" : "ADP",
+            "value" : 1
+          }, {
+            "label" : "None",
+            "value" : 10
+          }, {
+            "label" : "ProBusiness",
+            "value" : 11
+          }, {
+            "label" : "Several",
+            "value" : 12
+          }, {
+            "label" : "Tesseret",
+            "value" : 13
+          }, {
+            "label" : "Paylogix",
+            "value" : 14
+          }, {
+            "label" : "Darwin",
+            "value" : 15
+          }, {
+            "label" : "Mercer",
+            "value" : 16
+          }, {
+            "label" : "UltimatePro",
+            "value" : 17
+          }, {
+            "label" : "Watson Wyatt",
+            "value" : 18
+          }, {
+            "label" : "ACS",
+            "value" : 19
+          }, {
+            "label" : "Benefits Management Systems",
+            "value" : 2
+          }, {
+            "label" : "Fidelity",
+            "value" : 20
+          }, {
+            "label" : "Trion",
+            "value" : 21
+          }, {
+            "label" : "Stone Partners",
+            "value" : 22
+          }, {
+            "label" : "Hewitt Enterprise",
+            "value" : 23
+          }, {
+            "label" : "Hewitt Non-Enterprise",
+            "value" : 24
+          }, {
+            "label" : "Motivano",
+            "value" : 25
+          }, {
+            "label" : "Ceridian",
+            "value" : 3
+          }, {
+            "label" : "Comp Assoc",
+            "value" : 4
+          }, {
+            "label" : "Deltek",
+            "value" : 5
+          }, {
+            "label" : "Dun/Brad",
+            "value" : 6
+          }, {
+            "label" : "Hewitt",
+            "value" : 7
+          }, {
+            "label" : "Lawson",
+            "value" : 8
+          }, {
+            "label" : "Meditech",
+            "value" : 9
+          } ]
+        }
+      }, {
+        "questionId" : "enrollmentSystemCode",
+        "label" : "MPowered Enrollment",
+        "order" : 68,
+        "model" : "ADMN.ENRL_SYS_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "MPE", "NOTMPE" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "A Yes/No indicator that Benefit Focus (Third Party Enroller) will assist in the enrollment of the sold plan",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "M-Powered Enrollment",
+            "value" : "MPE"
+          }, {
+            "label" : "Not M-Powered Enrollment - Unknown",
+            "value" : "NOTMPE"
+          } ]
+        }
+      } ]
+    } ]
+  } ]
+}

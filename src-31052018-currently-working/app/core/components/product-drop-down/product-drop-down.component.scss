@@ -1,0 +1,52 @@
+@import "../../../../content/css/colors";
+@import "../../../../content/css/variables";
+
+.product-drop-down {
+
+  .material-icons {
+    vertical-align: bottom;
+  }
+
+  .select {
+    display: flex;
+    min-width: 40px;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid #bbbbbb;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .drop-down-list {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+
+    &.product-list {
+      width: 125px;
+    }
+
+    &.coverage-list {
+      left: 174px;
+      overflow-y: scroll;
+      max-height: 290px;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px;
+      border-left: 1px solid #bbbbbb;
+      border-right: 1px solid #bbbbbb;
+      background: $c-white;
+      white-space: nowrap;
+
+      &:hover, &.active {
+        background: $c-blue-300;
+        color: $c-white;
+      }
+    }
+  }
+}

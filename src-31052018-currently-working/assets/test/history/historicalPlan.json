@@ -1,0 +1,148 @@
+[
+  {
+    "planId": 540125415,
+    "planName": "Dental Fully Insured Value Mac (v2)",
+    "effectiveDate": "06/01/17",
+    "planStatus": "In Revision",
+    "historicalVersions": [
+      {
+        "versionName": "v2 Completed",
+        "userInfo": {
+          "firstName":"Cassandra",
+          "lastName": "Peterson",
+          "emailAddress": "cpaterson@metlife.com",
+          "metnetId": "cpaterson"
+        },
+        "lastUpdatedTimestamp": "05/21/17 4:10pm",
+        "historyAttributes": [
+          {
+            "attributeName": "Plan Design Type",
+            "attributeDescription": "(v1: Standard) (Graded 3 yr Plan)",
+            "userInfo": {
+              "firstName":"Cassandra",
+              "lastName": "Peterson",
+              "emailAddress": "cpaterson@metlife.com",
+              "metnetId": "cpaterson"
+            },
+            "lastUpdatedTimestamp": "05/21/17 3:00pm",
+            "comments": [
+              {
+                "commentId": 6264,
+                "commentText": "Test Comment",
+                "lastUpdatedBy": "Josh Returns",
+                "lastUpdatedTimestamp": "05/21/17 3:00pm"
+              },
+              {
+                "commentId": 6234,
+                "commentText": "Test Comment",
+                "lastUpdatedBy": "Josh Returns",
+                "lastUpdatedTimestamp": "05/21/17 3:00pm"
+              }
+            ]
+          },
+          {
+            "attributeName": "Employee Plan Contribution Type Code",
+            "attributeDescription": "(v1: Partially Contributory) (Non-Contributory)",
+            "userInfo": {
+              "firstName":"Cassandra",
+              "lastName": "Peterson",
+              "emailAddress": "cpaterson@metlife.com",
+              "metnetId": "cpaterson"
+            },
+            "lastUpdatedTimestamp": "05/21/17 11:10am"
+          }
+        ]
+      },
+      {
+        "versionName": "v1 Completed",
+        "userInfo": {
+          "firstName":"Cassandra",
+          "lastName": "Peterson",
+          "emailAddress": "cpaterson@metlife.com",
+          "metnetId": "cpaterson"
+        },
+        "lastUpdatedTimestamp": "11/20/16 4:10pm"
+      }
+    ]
+  },
+  {
+    "planId": 540125555,
+    "planName": "WSTD EFT Portable (v2)",
+    "effectiveDate": "04/07/17",
+    "planStatus": "Active",
+    "historicalVersions": [
+      {
+        "versionName": "v2 Completed",
+        "userInfo": {
+          "firstName":"Cassandra",
+          "lastName": "Peterson",
+          "emailAddress": "cpaterson@metlife.com",
+          "metnetId": "cpaterson"
+        },
+        "lastUpdatedTimestamp": "04/17/17 4:10pm",
+        "historyAttributes": [
+          {
+            "attributeName": "Timely Entrant Waiting Period",
+            "attributeDescription": "(v1: None) (12 Mo wait for Major & Ortho)",
+            "userInfo": {
+              "firstName":"Cassandra",
+              "lastName": "Peterson",
+              "emailAddress": "cpaterson@metlife.com",
+              "metnetId": "cpaterson"
+            },
+            "lastUpdatedTimestamp": "04/17/17 4:10pm"
+          },
+          {
+            "attributeName": "Allocation of Services Type",
+            "attributeDescription": "(v1: Standard) (Graded 3 yr Plan)",
+            "userInfo": {
+              "firstName":"Cassandra",
+              "lastName": "Peterson",
+              "emailAddress": "cpaterson@metlife.com",
+              "metnetId": "cpaterson"
+            },
+            "lastUpdatedTimestamp": "04/07/17 4:10pm",
+            "comments": [
+              {
+                "commentId": 6244,
+                "commentText": "Test Comment",
+                "lastUpdatedBy": "Josh Returns",
+                "lastUpdatedTimestamp": "04/17/17 4:10pm"
+              }
+            ]
+          },
+          {
+            "attributeName": "Automatically deduct overpayments from future clams",
+            "attributeDescription": "(v1: Yes, from any family member) (Yes, from individual only)",
+            "userInfo": {
+              "firstName":"Cassandra",
+              "lastName": "Peterson",
+              "emailAddress": "cpaterson@metlife.com",
+              "metnetId": "cpaterson"
+            },
+            "lastUpdatedTimestamp": "04/07/17 4:10pm",
+            "comments": [
+              {
+                "commentId": 6284,
+                "commentText": "Test Comment",
+                "lastUpdatedBy": "Josh Returns",
+                "lastUpdatedTimestamp": "04/17/17 4:10pm"
+              }
+            ]
+          },
+          {
+            "attributeName": "Consecutive months Approach",
+            "attributeDescription": "(v1: Standard) (Graded 3 yr Plan)",
+            "userInfo": {
+              "firstName":"Cassandra",
+              "lastName": "Peterson",
+              "emailAddress": "cpaterson@metlife.com",
+              "metnetId": "cpaterson"
+            },
+            "lastUpdatedTimestamp": "04/17/17 4:10pm"
+          }
+        ]
+      }
+    ]
+  }
+]

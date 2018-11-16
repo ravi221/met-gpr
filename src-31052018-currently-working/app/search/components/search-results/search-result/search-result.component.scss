@@ -1,0 +1,39 @@
+@import '../../../../../content/css/colors';
+
+.search-result {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+
+  &:hover {
+    border-color: $c-blue-300;
+
+    .search-result-info {
+
+      ::ng-deep .search-result-title,
+      .search-result-subtitle{
+        color: $c-blue-300;
+      }
+    }
+  }
+
+  .search-result-info {
+    margin-left: 24px;
+    flex-grow: 1;
+    text-align: left;
+
+    .search-result-subtitle {
+      font-family: 'Arial', sans-serif;
+      color: $c-gray-200;
+      font-size: 16px;
+      font-weight: 400;
+      margin: 8px 0 0;
+    }
+  }
+
+  .search-result-more-info {
+    align-self: flex-start;
+  }
+}

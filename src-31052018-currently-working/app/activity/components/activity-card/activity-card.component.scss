@@ -1,0 +1,14 @@
+@import "../../../../content/css/colors";
+@import "../../../../content/css/global";
+
+.activity-card {
+  padding: 15px 22px 17px;
+
+  .activity-text {
+    font-size: .9em;
+  }
+
+  .timestamp {
+    color: $muted;
+  }
+}

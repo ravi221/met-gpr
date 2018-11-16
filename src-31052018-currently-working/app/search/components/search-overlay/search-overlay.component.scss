@@ -1,0 +1,28 @@
+@import '../../../../content/css/colors';
+@import '../../../../content/css/variables';
+
+.search-overlay {
+  width: 100vw;
+  padding: 60px 20% 24px;
+  background: $c-white;
+  min-height: 400px;
+  max-height: 100vh;
+  overflow-y: scroll;
+
+  .close-search-overlay {
+    position: absolute;
+    top: 12px;
+    right: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      text-decoration: none;
+
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+}

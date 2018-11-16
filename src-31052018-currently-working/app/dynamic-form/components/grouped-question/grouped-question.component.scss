@@ -1,0 +1,36 @@
+@import '../../../../content/css/global';
+@import "../../../../content/css/variables";
+
+li {
+  label.control-label {
+  }
+  padding-left:35px;
+  padding-bottom:16px;
+  padding-top:16px;
+
+  .grouped-question {
+    border-bottom: none;
+  }
+}
+table.question-table {
+  table-layout: fixed;
+  width: 100%;
+  padding: 1px;
+  vertical-align: top;
+}
+
+table.question-table td {
+  width: 50px;
+}
+
+table.question-table td + td {
+  width: 80%;
+}
+
+table.question-table td + td + td {
+  width: auto;
+  text-align: right;
+}
+.url-link {
+  color: white;
+}

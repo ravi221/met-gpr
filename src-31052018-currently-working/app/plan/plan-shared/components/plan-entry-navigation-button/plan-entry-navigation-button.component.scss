@@ -1,0 +1,18 @@
+@import "../../../../../content/css/colors";
+@import "../../../../../content/css/buttons";
+
+.next,
+.previous{
+    max-width: 320px;
+}
+.previous{
+    padding-top:10px;
+}
+a{
+    font-weight: bold;
+    color: $c-gray-700;
+}
+.material-icons{
+    height: 18px;
+    margin-top: -10px;
+}

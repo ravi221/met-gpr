@@ -1,0 +1,30 @@
+@import "../../../../content/css/colors";
+
+.main-landing {
+  margin-bottom: 200px;
+
+  .user-name {
+    display: inline-block;
+    width: 100%;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 0.88;
+    text-align: center;
+    color: $c-gray-700;
+    margin: 20px 0 0;
+  }
+
+  .toggle-icon {
+    float: right;
+    padding: 0 35px 20px 0;
+
+    label {
+      font-weight: 400;
+      color: $inactive-gray;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

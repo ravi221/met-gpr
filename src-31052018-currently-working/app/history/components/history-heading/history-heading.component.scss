@@ -1,0 +1,41 @@
+@import "../../../../content/css/colors";
+
+.section {
+  padding: 14px 32px;
+
+  .header {
+    display: flex;
+
+    .customer-info {
+      flex-grow: 1;
+
+      .customer-title {
+        font-family: Georgia, sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        color: $c-gray-700;
+      }
+
+      .customer-details {
+        font-size: 12px;
+        span {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    ::ng-deep .toggle-label {
+      font-weight: bold;
+      color: $c-gray-700;
+    }
+
+    .select {
+      margin-right: 30px;
+    }
+  }
+
+  hr {
+    margin: 10px 0;
+  }
+
+}

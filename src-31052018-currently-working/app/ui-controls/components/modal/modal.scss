@@ -1,0 +1,144 @@
+@import "../../../../content/css/variables";
+@import "../../../../content/css/colors";
+
+.modal {
+  position: fixed;
+  top: $nav-bar-height;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-modal;
+  display: none;
+  outline: 0;
+
+  &.show {
+    display: flex !important;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 1;
+  }
+}
+
+.modal-dialog {
+  position: relative;
+  width: 35%;
+  margin: 0 auto;
+  transform: perspective(1px);
+
+  &.modal-sm {
+    width: 20%;
+  }
+  &.modal-med {
+    width: 45%;
+  }
+  &.modal-lg {
+    width: 75%;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  .modal-dialog {
+    margin: 0;
+  }
+}
+
+.modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: $c-white;
+  background-clip: padding-box;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), 0 8px 8px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  outline: 0;
+  padding: 32px 20px 20px 40px;
+}
+
+.modal-body {
+  margin-bottom: 30px;
+
+  p {
+    font-family: Arial, 'sans-serif';
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    color: $c-gray-700;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  .modal-heading {
+    margin: 0;
+  }
+
+  .close-icon {
+    padding-right: 16px;
+    cursor: pointer;
+  }
+}
+.help-tooltip{
+  margin-top:25px;
+}
+
+.modal-footer {
+  text-align: right;
+
+  a {
+    width: 72px;
+    height: 16px;
+    font-family: Arial, 'sans-serif';
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: $c-blue-400;
+    padding: 4px 12px;
+  }
+}
+
+.modal, .modal-open {
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-modal-backdrop;
+  background-color: $c-black;
+
+  &.fade {
+    opacity: 0;
+  }
+
+  &.show {
+    opacity: 0.64;
+  }
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 150ms linear;
+}
+
+.plan-create-container .modal-dialog,
+.plan-copy-container .modal-dialog {
+  width: 1150px;
+}
+
+.plan-copy-container .modal-content {
+  padding: 0;
+}
+
+
+.mass-update-select-plan {
+  overflow: scroll;
+}

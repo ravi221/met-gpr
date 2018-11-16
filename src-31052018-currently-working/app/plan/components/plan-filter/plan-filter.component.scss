@@ -1,0 +1,32 @@
+.plan-filter {
+  margin: 40px 28px;
+
+  .filter {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &[hidden] {
+      display: none;
+    }
+
+    .filter-label {
+      font-weight: normal;
+      margin: 0 32px 0 0;
+      width: 100px;
+    }
+
+    .filter-value {
+      flex-grow: 9;
+    }
+
+    .filter-plan-name {
+      padding: 8px 12px;
+    }
+  }
+
+  .plan-filter-footer {
+    text-align: right;
+  }
+}

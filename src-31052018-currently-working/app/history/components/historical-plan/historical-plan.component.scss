@@ -1,0 +1,28 @@
+@import "../../../../content/css/colors";
+
+.historical-plan {
+  margin-bottom: 20px;
+
+  .icon {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .plan-info {
+    flex-grow: 1;
+
+    .plan-name {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: $c-gray-700;
+    }
+
+    .plan-details {
+      font-size: 12px;
+      span {
+        margin-right: 15px;
+      }
+    }
+  }
+}

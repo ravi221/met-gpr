@@ -1,0 +1,47 @@
+@import '../../../../../content/css/global';
+@import "../../../../../content/css/variables";
+
+.open-table-btn {
+  margin-left: 75px;
+}
+div.flex-container-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 250px;
+}
+
+div.flex-container-column {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    padding: 5px;
+  }
+  .row-number{
+    height:50px !important;
+  }
+  .table-header {
+    font-weight:bold;
+    height: 50px;
+  }
+
+  .table-content {
+    min-height: 50px;
+  }
+  .drop-down {
+    height: 40px;
+    min-width: 100px;
+    margin-left: -75px;
+  }
+
+  .table-content-remove {
+    min-height: 50px !important;
+    align-items: center;
+    padding: 5px;
+  }
+}
+.add-row {
+  font-weight: bold;
+  padding: 0;
+}

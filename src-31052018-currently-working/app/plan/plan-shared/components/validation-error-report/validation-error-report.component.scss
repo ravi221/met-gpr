@@ -1,0 +1,70 @@
+@import "../../../../../content/css/colors";
+
+.validation-error-report {
+  padding: 20px 40px;
+
+  .validation-error-title {
+    font-size: 32px;
+  }
+
+  .validation-errors {
+    overflow: hidden;
+    overflow-y: scroll;
+    max-height: 75vh;
+    padding: 20px 32px;
+
+    .error-label {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    .error-message {
+      font-family: 'Arial', sans-serif;
+      color: $c-red-400;
+      font-size: 16px;
+      margin: 4px 0 24px;
+    }
+
+    .validation-category-error {
+      margin: 0 0 56px;
+    }
+
+    .validation-section-error {
+      margin: 0 0 40px;
+    }
+
+    .section-errors-header {
+      display: flex;
+
+      .section-label {
+        margin-left: 40px;
+      }
+    }
+
+    .validation-question-error {
+      margin-left: 52px;
+
+      .question-label {
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        margin: 0;
+        font-weight: 400;
+      }
+
+      .question-error {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .no-validation-errors {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+
+}

@@ -1,0 +1,29 @@
+@import "../../main-nav-menu.component";
+@import "../../../../../content/css/colors";
+
+.main-nav-header {
+  padding: 0 $main-nav-padding;
+  margin-bottom: 35px;
+  width: $main-nav-width;
+}
+
+.main-nav-content {
+  width: $main-nav-width;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/*.main-nav-content::-webkit-scrollbar {
+  width: 6px;
+  background-color: $c-gray-50;
+} 
+.main-nav-content::-webkit-scrollbar-thumb {
+  background-color: $c-blue-600;
+}*/
+
+.horizontal-rule {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  opacity: 0.1;
+  background-color: $c-black;
+}

@@ -1,0 +1,31 @@
+@import "../../../../content/css/colors";
+
+.filter-chips {
+  display: block;
+  list-style: none;
+  margin: 8px 0 16px;
+  padding-left: 0;
+
+  .filter-chip {
+    background: $c-gray-100;
+    color: $c-gray-700;
+    text-transform: uppercase;
+    padding: 4px 12px 4px 14px;
+    font-size: 12px;
+    border-radius: 16px;
+    font-weight: 400;
+
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .filter-chip-value {
+      margin-right: 8px;
+    }
+
+    .filter-chip-remove {
+      cursor: pointer;
+    }
+  }
+}
+

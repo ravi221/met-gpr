@@ -1,0 +1,13 @@
+@import "../../../../content/css/colors";
+
+.filter-menu {
+  a {
+    color: $inactive-gray;
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  .material-icons {
+    vertical-align: bottom;
+  }
+}

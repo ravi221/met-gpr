@@ -1,0 +1,25 @@
+@import "../../../../content/css/colors";
+
+.user-info {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  color: $c-black;
+
+  .user-name {
+    font-weight: bold;
+  }
+
+  .user-metnet {
+    display: block;
+    margin: -2px 0 -3px;
+  }
+
+  .user-email {
+    color: $c-blue-400;
+  }
+
+  .user-icon {
+    margin: 0 16px 8px 0;
+  }
+}

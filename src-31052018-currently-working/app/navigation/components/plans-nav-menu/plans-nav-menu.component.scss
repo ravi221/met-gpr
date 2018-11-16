@@ -1,0 +1,26 @@
+@import "../../../../content/css/colors";
+
+.nav-menu-error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  color: $c-red-400;
+
+  span {
+    margin-left: 12px;
+  }
+}
+
+:host ::ng-deep {
+  .filter-bar {
+    padding: 0;
+    margin-left: 100px;
+  }
+  .filter-menu {
+    width: 85px;
+  }
+  .nav-icon img {
+    vertical-align: 0;
+  }
+}

@@ -1,0 +1,45 @@
+@import "../../main-nav-menu.component";
+
+.nav-row {
+  display: inline-block;
+  height: 72px;
+  padding: 15px $main-nav-padding;
+  cursor: pointer;
+  width:$main-nav-width;
+
+  .nav-icon-wrapper {
+    .nav-icon {
+      float: left;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .nav-info {
+    width: 295px;
+    float: left;
+    padding-left: 10px;
+
+    .nav-row-title {
+      font-weight: bold;
+    }
+
+    .nav-row-subtitle {
+      color: #bcbcbc;
+    }
+  }
+
+  .more-icon-wrapper {
+    visibility: hidden;
+    bottom: 30px;
+    float: right;
+  }
+
+  &:hover {
+    color: #0061a0;
+
+    .more-icon-wrapper {
+      visibility: visible;
+    }
+  }
+}

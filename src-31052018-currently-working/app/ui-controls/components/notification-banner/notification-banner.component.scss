@@ -1,0 +1,52 @@
+@import '../../../../content/css/colors';
+@import '../../../../content/css/variables';
+
+.notification-banner {
+  width: 100%;
+  height: $nav-bar-height;
+  padding: 0 40px 0 20px;
+  position: fixed;
+  top: $nav-bar-height;
+  left: 0;
+  z-index: $z-index-notification-banner;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $c-gray-700;
+
+  &.info {
+    background: $c-blue-400;
+  }
+
+  &.warning {
+    background: $c-yellow;
+  }
+
+  &.error {
+    background: $c-berry;
+    color: $c-white;
+  }
+
+  &.success {
+    background: $c-green-400;
+    color: $c-white;
+  }
+
+  .notification-icon {
+    padding-bottom: 4px;
+    margin-right: 20px;
+  }
+
+  .notification-heading {
+    margin: 0;
+    flex-grow: 1;
+    font-family: 'Arial', serif;
+    color: inherit;
+    font-size: 14px;
+  }
+
+  .notification-close {
+    cursor: pointer;
+  }
+}

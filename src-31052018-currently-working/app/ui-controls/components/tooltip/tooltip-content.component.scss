@@ -1,0 +1,123 @@
+@import '../../../../content/css/colors';
+@import '../../../../content/css/variables';
+
+//$arrow-container should be twice the width of arrow-size
+$arrow-size: 10px;
+$arrow-container: 20px;
+
+.tooltip-content {
+  position: fixed;
+  z-index: $z-index-tooltip;
+  padding-right: 32px;
+  border-radius: 2px;
+  visibility: hidden;
+  font: normal 14px/1.4 Arial, sans-serif;
+  box-shadow: 1px 1px 3px 0 $c-gray-300;
+
+  &.visible {
+    visibility: visible;
+  }
+
+  &.no-close-icon {
+    padding-right: 0;
+  }
+
+  &.default {
+    background-color: $c-gray-700;
+    color: $off-white;
+
+    .tooltip-arrow.right {
+      background-color: $c-gray-700;
+    }
+
+    .tooltip-arrow.left {
+      background-color: $c-gray-700;
+    }
+
+    .tooltip-arrow.top {
+      background-color: $c-gray-700;
+    }
+
+    .tooltip-arrow.bottom {
+      background-color: $c-gray-700;
+    }
+  }
+
+  &.white {
+    background-color: $c-white;
+
+    .tooltip-arrow.right {
+      background-color: $c-white;
+      box-shadow: -3px 3px 3px -2px $c-gray-300;
+    }
+
+    .tooltip-arrow.left {
+      background-color: $c-white;
+      box-shadow: 3px -3px 3px -2px $c-gray-300;
+    }
+
+    .tooltip-arrow.top {
+      background-color: $c-white;
+
+      box-shadow: 3px 2px 3px -2px $c-gray-300;
+    }
+
+    .tooltip-arrow.bottom {
+      background-color: $c-white;
+      box-shadow: -2px -1px 3px -2px $c-gray-300;
+    }
+
+    .tooltip-close {
+      color: $c-gray-300;
+    }
+  }
+
+  .tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    &.right {
+      top: 40%;
+      left: -$arrow-size;
+      height: $arrow-container;
+      width: $arrow-container;
+      transform: rotate(45deg);
+      z-index: -1;
+    }
+
+    &.left {
+      top: 40%;
+      height: $arrow-container;
+      width: $arrow-container;
+      right: -$arrow-size;
+      transform: rotate(45deg);
+      z-index: -1;
+    }
+
+    &.top {
+      bottom: -$arrow-size;
+      left: 48%;
+      height: $arrow-container;
+      width: $arrow-container;
+      transform: rotate(45deg);
+      z-index: -1;
+    }
+
+    &.bottom {
+      top: -$arrow-size;
+      left: 48%;
+      height: $arrow-container;
+      width: $arrow-container;
+      transform: rotate(45deg);
+      z-index: -1;
+
+    }
+  }
+
+  .tooltip-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: inherit;
+  }
+}

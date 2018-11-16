@@ -1,0 +1,21 @@
+@import '../../../../content/css/colors';
+
+.category-section-row {
+  cursor: pointer;
+  padding: 0 0 12px 64px;
+
+  span {
+    padding-left: 20px;
+    font-size: 85%;
+    &.red {
+      color: $c-red-400;
+    }
+    &.yellow {
+      color: $c-yellow;
+    }
+    &.green {
+      color: $c-green-700;
+    }
+  }
+
+}

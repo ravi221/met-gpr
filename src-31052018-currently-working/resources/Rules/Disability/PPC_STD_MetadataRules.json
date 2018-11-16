@@ -1,0 +1,6788 @@
+{
+  "_id": ObjectId("5ad50207918773a8fc2cb080"),
+  "coverageId": "203000",
+  "ppcModelName": "PPC_STD",
+  "ppcVersion": "1.107",
+  "categoryRules": [
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getCustomerMarketSegmentId() === '4'",
+          "action": [
+            "enable(['employeesNoEligible', 'multiProductPremiumDiscount'])",
+            "setIn('continuationofInsurance.strike.continuationDuetoaStrike', '3')",
+            "setIn('continuationofInsurance.leaveofAbsence.continuationDuetoLeaveofAbsencePeriod', 2)",
+            "setIn('eligibilityProvisions.dateofEligibility.eligibilityWaitingPeriod', 'Y')"
+          ]
+        },
+        {
+          "condition": "getCustomerMarketSegmentId() !== '4'",
+          "action": [
+            "disable(['employeesNoEligible', 'multiProductPremiumDiscount'])",
+            "setIn('continuationofInsurance.leaveofAbsence.continuationDuetoLeaveofAbsencePeriod', 'NONE')"
+          ]
+        },
+        {
+          "condition": "includes(getCustomerMarketSegmentId(), ['4', '5', '6'])",
+          "action": [
+            "setIn('definitions.domesticPartners.proofofDomesticPartnership', 1)",
+            "setIn('contract.policy.amendmentEffDateAsOf', getIn('generalPlanProvisions.generalPlanProvisions.originalPlanEffectiveDate'))"
+          ]
+        }
+      ],
+      "ruleId": 1
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 2
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 3
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 4
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 5
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 6
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 7
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 8
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 9
+    },
+    {
+      "categoryId": "evidenceofInsurability",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 10
+    },
+    {
+      "categoryId": "specialServices",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 11
+    }
+  ],
+  "questionRules": [
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "originalPlanEffectiveDate",
+      "ruleId": 1,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [
+        {
+          "action": [
+            "enable('amendmentEffDateAsOf')"
+          ],
+          "condition": "includes(['REVISION', 'ADDITION', 'EXTEND'], getIn('generalPlanProvisions.generalPlanProvisions.typeofBusiness'))"
+        },
+        {
+          "action": [
+            "disable('amendmentEffDateAsOf')"
+          ],
+          "condition": "!includes(['REVISION', 'ADDITION', 'EXTEND'], getIn('generalPlanProvisions.generalPlanProvisions.typeofBusiness'))"
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "action": [
+            "enable('amendmentEffDateAsOf')"
+          ],
+          "condition": "includes(['REVISION', 'ADDITION', 'EXTEND'], getIn('generalPlanProvisions.generalPlanProvisions.typeofBusiness'))"
+        }
+      ],
+      "questionId": "typeofBusiness",
+      "ruleId": 2,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "trustSitus",
+      "ruleId": 3,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "issueType",
+      "ruleId": 4,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "issueType_40004.1",
+      "ruleId": 5,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "issueType_40004.2",
+      "ruleId": 6,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "trustSitusStateSpecific",
+      "ruleId": 7,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eTResidentsofacertainState",
+      "ruleId": 8,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eTResidentsofacertainState_40006.1",
+      "ruleId": 9,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "stockCompanyPolicyIssued",
+      "ruleId": 10,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "financialArrangementPlanType",
+      "ruleId": 11,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanAdministrator",
+      "ruleId": 12,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanAdministratorName",
+      "ruleId": 13,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanAdministratorStreetAddress1",
+      "ruleId": 14,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanAdministratorStreetAddress2",
+      "ruleId": 15,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanAdministratorCity",
+      "ruleId": 16,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanAdministratorState",
+      "ruleId": 17,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanAdministratorZip",
+      "ruleId": 18,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanAdministratorZip_40015.1",
+      "ruleId": 19,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "initialRateGuarantee",
+      "ruleId": 20,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "initialRateGuarantee_40016.1",
+      "ruleId": 21,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "rateGuaranteePeriodDetail",
+      "ruleId": 22,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [
+        {
+          "condition": "!includes([3, 5], getIn('generalPlanProvisions.generalPlanProvisions.contractType'))",
+          "action": [
+            "enable('organDonorBenefit')"
+          ]
+        },
+        {
+          "condition": "includes([3, 5], getIn('generalPlanProvisions.generalPlanProvisions.contractType'))",
+          "action": [
+            "disable('organDonorBenefit')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "!includes([3, 5], getIn('generalPlanProvisions.generalPlanProvisions.contractType'))",
+          "action": [
+            "enable('organDonorBenefit')"
+          ]
+        }
+      ],
+      "questionId": "contractType",
+      "ruleId": 23,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "priorDisabilityInsuranceCarrier",
+      "ruleId": 24,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eligibleClassDescription",
+      "ruleId": 25,
+      "sectionId": "eligibleClasses"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeesNoEnrolled",
+      "ruleId": 26,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeeParticipation",
+      "ruleId": 27,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "fullTimeDurationCount",
+      "ruleId": 28,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "fullTimeDurationCount_40026.1",
+      "ruleId": 29,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "fullTimeDurationCountDetail",
+      "ruleId": 30,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "fullTimeDurationPeriod",
+      "ruleId": 31,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "fullTimeDurationMode",
+      "ruleId": 32,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeesHiredPriortoPlanInitialEffectiveDateEligibilityWaitingPeriodDurationCount",
+      "ruleId": 33,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeesHiredPriortoPlanInitialEffectiveDateEligibilityWaitingPeriodDurationCount_40030.1",
+      "ruleId": 34,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeesHiredPriortoPlanInitialEffectiveDateEligibilityWaitingPeriodDurationCount_40030.2",
+      "ruleId": 35,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeesHiredPriortoPlanInitialEffectiveDateEligibilityWaitingPeriodDurationCountDetail",
+      "ruleId": 36,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeesHiredPriortoPlanInitialEffectiveDateEligibilityWaitingPeriodDuration",
+      "ruleId": 37,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeesHiredOnorAfterPlanInitialEffectiveDateEligibilityWaitingPeriodDurationCount",
+      "ruleId": 38,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeesHiredOnorAfterPlanInitialEffectiveDateEligibilityWaitingPeriodDurationCount_40033.1",
+      "ruleId": 39,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeesHiredOnorAfterPlanInitialEffectiveDateEligibilityWaitingPeriodDurationCount_40033.2",
+      "ruleId": 40,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeesHiredOnorAfterPlanInitialEffectiveDateEligibilityWaitingPeriodDurationCountDetail",
+      "ruleId": 41,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeesHiredOnorAfterPlanInitialEffectiveDateEligibilityWaitingPeriodDuration",
+      "ruleId": 42,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "enrollmentType",
+      "ruleId": 43,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "enrollmentFrequency",
+      "ruleId": 44,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "enrollmentFrequency_40037.1",
+      "ruleId": 45,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "enrollmentFrequency_40037.2",
+      "ruleId": 46,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "enrollmentFrequency_40037.3",
+      "ruleId": 47,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "enrollmentFrequencyExplainOther",
+      "ruleId": 48,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "automaticEnrollment",
+      "ruleId": 49,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "enrollmentPeriodDuration",
+      "ruleId": 50,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "enrollmentPeriodMode",
+      "ruleId": 51,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "qualifyingEventsDetail",
+      "ruleId": 52,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "qualifyingEventsTimePeriodDetail",
+      "ruleId": 53,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "dateBenefitsEnd",
+      "ruleId": 54,
+      "sectionId": "dateInsuranceEnds"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "dateBenefitsCoverageEndDetail",
+      "ruleId": 55,
+      "sectionId": "dateInsuranceEnds"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "coverageEffective",
+      "ruleId": 56,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "coverageEffectiveDetail",
+      "ruleId": 57,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "changesintheClassSalaryEffectiveDatesDetail",
+      "ruleId": 58,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "claimsReportedtoMetLifeBy",
+      "ruleId": 59,
+      "sectionId": "submission"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "proofofDisabilityProvidedWithinDaysMonthsatEndofEliminationPeriod",
+      "ruleId": 60,
+      "sectionId": "certificate"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "proofofDisabilityPeriodMode",
+      "ruleId": 61,
+      "sectionId": "certificate"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "planisa24HourPlanorNonOccupationalonlyPlan",
+      "ruleId": 62,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [
+        {
+          "condition": "getIn('disabilityInsurance.preExistingConditions.preExistingCondition') === 'OTHER'",
+          "action": [
+            "enable('preExisitingConditionLimitationTwoProngorThreeProngPreEx')"
+          ]
+        },
+        {
+          "condition": "getIn('disabilityInsurance.preExistingConditions.preExistingCondition') !== 'OTHER'",
+          "action": [
+            "disable('preExisitingConditionLimitationTwoProngorThreeProngPreEx')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('disabilityInsurance.preExistingConditions.preExistingCondition') === 'OTHER'",
+          "action": [
+            "enable('preExisitingConditionLimitationTwoProngorThreeProngPreEx')"
+          ]
+        }
+      ],
+      "questionId": "preExistingCondition",
+      "ruleId": 63,
+      "sectionId": "preExistingConditions"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "preExistingAppliestoBenefitAmountsOver",
+      "ruleId": 64,
+      "sectionId": "preExistingConditions"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "preExistingLimitedBenefitAmountIndicateApplicableAmount",
+      "ruleId": 65,
+      "sectionId": "preExistingConditions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "definitionofDisabilityDetail",
+      "ruleId": 66,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitEndWhenSocialSecurityDefinitionofDisability",
+      "ruleId": 67,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentageofSalaryContinuanceifOtherThan100",
+      "ruleId": 68,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "delayBenefitsUntilEmployerPaidSickLeaveorSalaryContinuanceisExhausted",
+      "ruleId": 69,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "recoveryFromaDisabilityAfterCompletingtheEliminationPeriodDuration",
+      "ruleId": 70,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "recoveryFromaDisabilityAfterCompletingtheEliminationPeriodDuration_40068.1",
+      "ruleId": 71,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "recoveryFromaDisabilityAfterCompletingtheEliminationPeriodDuration_40068.2",
+      "ruleId": 72,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "waiverofPremium",
+      "ruleId": 73,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumisWaived",
+      "ruleId": 74,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "whenPremiumisWaivedDetail",
+      "ruleId": 75,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "weeklyPredisabilityEarningsStartDate",
+      "ruleId": 76,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "weeklyPredisabilityEarningsStartDateDetail",
+      "ruleId": 77,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.commissionsCalculationType') === 'AVG'",
+          "action": [
+            "enable(['commissionsAverageMode', 'commissionsAveragePeriod'])"
+          ]
+        },
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.commissionsCalculationType') !== 'AVG'",
+          "action": "disable(['commissionsAverageMode', 'commissionsAveragePeriod'])"
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.commissionsCalculationType') === 'AVG'",
+          "action": [
+            "enable(['commissionsAverageMode', 'commissionsAveragePeriod'])"
+          ]
+        },
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.commissionsCalculationType') !== 'AVG'",
+          "action": "disable(['commissionsAverageMode', 'commissionsAveragePeriod'])"
+        }
+      ],
+      "questionId": "commissionsCalculationType",
+      "ruleId": 78,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "commissionsCalculationTypeDetail",
+      "ruleId": 79,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "commissionsApplicableto",
+      "ruleId": 80,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.bonusCalculationType') === 'AVG'",
+          "action": [
+            "enable(['bonusAverageMode', 'bonusAveragePeriod'])"
+          ]
+        },
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.bonusCalculationType') !== 'AVG'",
+          "action": "disable(['bonusAverageMode', 'bonusAveragePeriod'])"
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.bonusCalculationType') === 'AVG'",
+          "action": "enable(['bonusAverageMode', 'bonusAveragePeriod'])"
+        },
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.bonusCalculationType') !== 'AVG'",
+          "action": "disable(['bonusAverageMode', 'bonusAveragePeriod'])"
+        }
+      ],
+      "questionId": "bonusCalculationType",
+      "ruleId": 81,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "bonusCalculationTypeDetail",
+      "ruleId": 82,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "bonusesApplicableto",
+      "ruleId": 83,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitIntegrationMethodDetail",
+      "ruleId": 84,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "typeOfSocialSecurityOffset",
+      "ruleId": 85,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "offsetsThatShouldbeDelayed",
+      "ruleId": 86,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "offsetsThatShouldbeDelayed_40086.1",
+      "ruleId": 87,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "offsetsThatShouldbeDelayed_40086.2",
+      "ruleId": 88,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "lengthofTimetoDelayOffset",
+      "ruleId": 89,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "offsetsEstimatedbyOtherIncome",
+      "ruleId": 90,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "offsetsThatAreEstimated",
+      "ruleId": 91,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "incomeTypesThatAreNotOffset",
+      "ruleId": 92,
+      "sectionId": "incomeWhichWillNotReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "reasonableAttorneyFeesCarveOut",
+      "ruleId": 93,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [
+        {
+          "condition": "doesAnswerContainAny('disabilityInsurance.disabilityBenefits.rehabilitationIncentives', 'Work Incentive')",
+          "action": [
+            "enable('workIncentiveMaximumPercent')"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('disabilityInsurance.disabilityBenefits.rehabilitationIncentives', 'Work Incentive')",
+          "action": [
+            "disable('workIncentiveMaximumPercent')"
+          ]
+        },
+        {
+          "condition": "doesAnswerContainAny('disabilityInsurance.disabilityBenefits.rehabilitationIncentives', 'Rehab Program Incentive')",
+          "action": [
+            "require('rehabilitationPeriod')",
+            "enable(['rehabilitationPeriod', 'rehabilitationMode'])"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('disabilityInsurance.disabilityBenefits.rehabilitationIncentives', 'Rehab Program Incentive')",
+          "action": [
+            "optionalize('rehabilitationPeriod')",
+            "disable(['rehabilitationPeriod', 'rehabilitationMode'])"
+          ]
+        },
+        {
+          "condition": "doesAnswerContainAny('disabilityInsurance.disabilityBenefits.rehabilitationIncentives', ['Child Care', 'Rehab Program Incentive', 'Work Incentive', 'Moving Expense', 'Family Care'])",
+          "action": [
+            "enable('rehabilitationRehabilitation')"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('disabilityInsurance.disabilityBenefits.rehabilitationIncentives', ['Child Care', 'Rehab Program Incentive', 'Work Incentive', 'Moving Expense', 'Family Care'])",
+          "action": [
+            "disable('rehabilitationRehabilitation')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "doesAnswerContainAny('disabilityInsurance.disabilityBenefits.rehabilitationIncentives', 'Work Incentive')",
+          "action": [
+            "enable('workIncentiveMaximumPercent')"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('disabilityInsurance.disabilityBenefits.rehabilitationIncentives', 'Work Incentive')",
+          "action": [
+            "disable('workIncentiveMaximumPercent')"
+          ]
+        },
+        {
+          "condition": "doesAnswerContainAny('disabilityInsurance.disabilityBenefits.rehabilitationIncentives', 'Rehab Program Incentive')",
+          "action": [
+            "require('rehabilitationPeriod')",
+            "enable(['rehabilitationPeriod', 'rehabilitationMode'])"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('disabilityInsurance.disabilityBenefits.rehabilitationIncentives', 'Rehab Program Incentive')",
+          "action": [
+            "optionalize('rehabilitationPeriod')",
+            "disable(['rehabilitationPeriod', 'rehabilitationMode'])"
+          ]
+        },
+        {
+          "condition": "doesAnswerContainAny('disabilityInsurance.disabilityBenefits.rehabilitationIncentives', ['Child Care', 'Rehab Program Incentive', 'Work Incentive', 'Moving Expense', 'Family Care'])",
+          "action": [
+            "enable('rehabilitationRehabilitation')"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('disabilityInsurance.disabilityBenefits.rehabilitationIncentives', ['Child Care', 'Rehab Program Incentive', 'Work Incentive', 'Moving Expense', 'Family Care'])",
+          "action": [
+            "disable('rehabilitationRehabilitation')"
+          ]
+        }
+      ],
+      "questionId": "rehabilitationIncentives",
+      "ruleId": 94,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "rehabilitationIncentives_40092.1",
+      "ruleId": 95,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "workIncentiveFormula",
+      "ruleId": 96,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "workIncentiveFormulaDetail",
+      "ruleId": 97,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "indicateStartDateforWorkIncentive",
+      "ruleId": 98,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "worksiteModificationIncentiveProvision",
+      "ruleId": 99,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "familyCareIncentiveBenefitAmount",
+      "ruleId": 100,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "familyCareIncentiveBenefitDuration",
+      "ruleId": 101,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "aggregateCapApplytotheFamilyCareIncentive",
+      "ruleId": 102,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [
+        {
+          "condition": "getIn('definitions.domesticPartners.domesticPartnerEligibletoReceiveBenefitsinEventofInsuredDeath') === 'Y'",
+          "action": [
+            "enable('proofofDomesticPartnership')"
+          ]
+        },
+        {
+          "condition": "getIn('definitions.domesticPartners.domesticPartnerEligibletoReceiveBenefitsinEventofInsuredDeath') !== 'Y'",
+          "action": [
+            "disaable('proofofDomesticPartnership')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('definitions.domesticPartners.domesticPartnerEligibletoReceiveBenefitsinEventofInsuredDeath') === 'Y'",
+          "action": [
+            "enable('proofofDomesticPartnership')"
+          ]
+        },
+        {
+          "condition": "getIn('definitions.domesticPartners.domesticPartnerEligibletoReceiveBenefitsinEventofInsuredDeath') !== 'Y'",
+          "action": [
+            "disaable('proofofDomesticPartnership')"
+          ]
+        }
+      ],
+      "questionId": "domesticPartnerEligibletoReceiveBenefitsinEventofInsuredDeath",
+      "ruleId": 103,
+      "sectionId": "domesticPartners"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "domesticPartnerOptionDetail",
+      "ruleId": 104,
+      "sectionId": "domesticPartners"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "domesticPartnershipOtherDuration",
+      "ruleId": 105,
+      "sectionId": "domesticPartners"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "domesticPartnershipOtherMode",
+      "ruleId": 106,
+      "sectionId": "domesticPartners"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.singleSumPregnancyBenefit') === 'Y'",
+          "action": [
+            "enable(['activelyatWorkProvisionRequired', 'singleSumPregnancyBenefitAmount'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.singleSumPregnancyBenefit') !== 'Y'",
+          "action": [
+            "disable(['activelyatWorkProvisionRequired', 'singleSumPregnancyBenefitAmount'])"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.singleSumPregnancyBenefit') === 'Y",
+          "action": [
+            "enable(['activelyatWorkProvisionRequired', 'singleSumPregnancyBenefitAmount'])"
+          ]
+        }
+      ],
+      "questionId": "singleSumPregnancyBenefit",
+      "ruleId": 107,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeeAssistanceProgramEAP",
+      "ruleId": 108,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeeAssistanceProgramEAP_40112.1",
+      "ruleId": 109,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeeAssistanceProgramEAP_40112.2",
+      "ruleId": 110,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('claims.premiumDeductions.premiumDeductionServiceCoverageOptions') !== 'N' && getIn('generalPlanProvisions.generalPlanProvisions.financialArrangement') === 'FULINS'",
+          "action": [
+            "enable(['premiumCheckName'])"
+          ]
+        },
+        {
+          "condition": "getIn('claims.premiumDeductions.premiumDeductionServiceCoverageOptions') === 'N' || getIn('generalPlanProvisions.generalPlanProvisions.financialArrangement') !== 'FULINS'",
+          "action": [
+            "disable(['premiumCheckName'])"
+          ]
+        }
+      ],
+      "questionId": "premiumDeductionServiceCoverageOptions",
+      "ruleId": 111,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumDeductionServiceStreet",
+      "ruleId": 112,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumDeductionServiceCity",
+      "ruleId": 113,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumDeductionServiceState",
+      "ruleId": 114,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumDeductionServiceState_40124.1",
+      "ruleId": 115,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumDeductionServiceState_40124.2",
+      "ruleId": 116,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumDeductionServiceZipCode",
+      "ruleId": 117,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumDeductionServiceZipCode_40125.1",
+      "ruleId": 118,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumDeductionServiceZipCode_40125.2",
+      "ruleId": 119,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumDeductionServiceZipCode_40125.3",
+      "ruleId": 120,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumDeductionServiceZipCode_40125.4",
+      "ruleId": 121,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumDeductionServiceAddressforAllLocations",
+      "ruleId": 122,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitChecksDraftsStreet",
+      "ruleId": 123,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitChecksDraftsCity",
+      "ruleId": 124,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitChecksDraftsState",
+      "ruleId": 125,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitChecksDraftsState_40129.1",
+      "ruleId": 126,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitChecksDraftsState_40129.2",
+      "ruleId": 127,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitChecksDraftsZipCode",
+      "ruleId": 128,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitChecksDraftsZipCode_40130.1",
+      "ruleId": 129,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitChecksDraftsZipCode_40130.2",
+      "ruleId": 130,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitChecksDraftsZipCode_40130.3",
+      "ruleId": 131,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitChecksDraftsZipCode_40130.4",
+      "ruleId": 132,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "correspondenceStreet",
+      "ruleId": 133,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "correspondenceCity",
+      "ruleId": 134,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "correspondenceState",
+      "ruleId": 135,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "correspondenceState_40134.1",
+      "ruleId": 136,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "correspondenceState_40134.2",
+      "ruleId": 137,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "correspondenceZipCode",
+      "ruleId": 138,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "correspondenceZipCode_40135.1",
+      "ruleId": 139,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "correspondenceZipCode_40135.2",
+      "ruleId": 140,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "correspondenceZipCode_40135.3",
+      "ruleId": 141,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "correspondenceZipCode_40135.4",
+      "ruleId": 142,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoInjuryorSickness",
+      "ruleId": 143,
+      "sectionId": "injurySickness"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoInjuryorSicknessDetail",
+      "ruleId": 144,
+      "sectionId": "injurySickness"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoInjuryorSicknessPeriod",
+      "ruleId": 145,
+      "sectionId": "injurySickness"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoInjuryorSicknessMode",
+      "ruleId": 146,
+      "sectionId": "injurySickness"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoLeaveofAbsenceDetail",
+      "ruleId": 147,
+      "sectionId": "leaveofAbsence"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoLayoffDetail",
+      "ruleId": 148,
+      "sectionId": "layoff"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoStrikeDetail",
+      "ruleId": 149,
+      "sectionId": "strike"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoaStrikePeriod",
+      "ruleId": 150,
+      "sectionId": "strike"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoaStrikeMode",
+      "ruleId": 151,
+      "sectionId": "strike"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoMilitaryLeaveDetail",
+      "ruleId": 152,
+      "sectionId": "militaryLeave"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoMilitaryLeaveMode",
+      "ruleId": 153,
+      "sectionId": "militaryLeave"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoSabbaticalsDetail",
+      "ruleId": 154,
+      "sectionId": "sabbatical"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoSabbaticalsPeriod",
+      "ruleId": 155,
+      "sectionId": "sabbatical"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoSabbaticalsMode",
+      "ruleId": 156,
+      "sectionId": "sabbatical"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [
+        {
+          "condition": "getIn('claims.tax.includesERFICAMatch') === 'Y'",
+          "action": [
+            "enable('fICARate')",
+            "require('fICARate')"
+          ]
+        },
+        {
+          "condition": "getIn('claims.tax.includesERFICAMatch') !== 'Y'",
+          "action": [
+            "disable('fICARate')",
+            "optionalize('fICARate')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('claims.tax.includesERFICAMatch') === 'Y'",
+          "action": [
+            "enable('fICARate')",
+            "require('fICARate')"
+          ]
+        },
+        {
+          "condition": "getIn('claims.tax.includesERFICAMatch') !== 'Y'",
+          "action": [
+            "disable('fICARate')",
+            "optionalize('fICARate')"
+          ]
+        }
+      ],
+      "questionId": "includesERFICAMatch",
+      "ruleId": 157,
+      "sectionId": "tax"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "grossUp",
+      "ruleId": 158,
+      "sectionId": "tax"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "taxReportingMethod",
+      "ruleId": 159,
+      "sectionId": "tax"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "cumulativeReportforATP",
+      "ruleId": 160,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "includeERISAWordinginCertificate",
+      "ruleId": 161,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "includeERISAPlanNumberinCertificate",
+      "ruleId": 162,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "includeERISAPlanYearinCertificate",
+      "ruleId": 163,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "policyNumber",
+      "ruleId": 164,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "amendmentEffDateAsOf",
+      "ruleId": 165,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "whenQualifyingEventChangesTakeEffect",
+      "ruleId": 166,
+      "sectionId": "dateinsurancetakeseffect"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "qualifyingEventChangesTakeEffectDetail",
+      "ruleId": 167,
+      "sectionId": "dateinsurancetakeseffect"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [
+        {
+          "condition": "getIn('continuationofInsurance.changetoPartTime.continuationDuetoChangetoPartTimeStatus') === 2",
+          "action": [
+            "enable('continuationduetoChangetoPartTimeStatusMode')"
+          ]
+        },
+        {
+          "condition": "getIn('continuationofInsurance.changetoPartTime.continuationDuetoChangetoPartTimeStatus') !== 2",
+          "action": [
+            "disable('continuationduetoChangetoPartTimeStatusMode')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('continuationofInsurance.changetoPartTime.continuationDuetoChangetoPartTimeStatus') === 2",
+          "action": [
+            "enable('continuationduetoChangetoPartTimeStatusMode')"
+          ]
+        }
+      ],
+      "questionId": "continuationDuetoChangetoPartTimeStatus",
+      "ruleId": 168,
+      "sectionId": "changetoPartTime"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoChangetoPartTimeStatusTimePeriod",
+      "ruleId": 169,
+      "sectionId": "changetoPartTime"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoChangetoPartTimeStatusDetail",
+      "ruleId": 170,
+      "sectionId": "changetoPartTime"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "rehireWaitingPeriodWaivedforReinstatementofRehires",
+      "ruleId": 171,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "rehireTimePeriodRehiredWithin",
+      "ruleId": 172,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "rehireTimePeriodRehiredWithin_40178.1",
+      "ruleId": 173,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "rehireTimePeriodRehiredWithin_40178.2",
+      "ruleId": 174,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "rehireTimePeriodRehiredWithinDetail",
+      "ruleId": 175,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeeDefinition",
+      "ruleId": 176,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eligibilityType",
+      "ruleId": 177,
+      "sectionId": "eligibleClasses"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [
+        {
+          "condition": "getIn('contract.performanceGuarantees.performanceGuarantees') === 'Y'",
+          "action": [
+            "enable(['performanceGuaranteesType', 'performanceGuaranteesBasedOn', 'performanceGuaranteesMeasuredWithin', 'performanceGuaranteesNotSubjecttoanAggregateMaximum', 'performanceGuaranteesRateReduction'])"
+          ]
+        },
+        {
+          "condition": "getIn('contract.performanceGuarantees.performanceGuarantees') !== 'Y'",
+          "action": [
+            "disable(['performanceGuaranteesType', 'performanceGuaranteesBasedOn', 'performanceGuaranteesMeasuredWithin', 'performanceGuaranteesNotSubjecttoanAggregateMaximum', 'performanceGuaranteesRateReduction'])"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('contract.performanceGuarantees.performanceGuarantees') === 'Y'",
+          "action": [
+            "enable(['performanceGuaranteesType', 'performanceGuaranteesBasedOn', 'performanceGuaranteesMeasuredWithin', 'performanceGuaranteesNotSubjecttoanAggregateMaximum', 'performanceGuaranteesRateReduction'])"
+          ]
+        },
+        {
+          "condition": "getIn('contract.performanceGuarantees.performanceGuarantees') !== 'Y'",
+          "action": [
+            "disable(['performanceGuaranteesType', 'performanceGuaranteesBasedOn', 'performanceGuaranteesMeasuredWithin', 'performanceGuaranteesNotSubjecttoanAggregateMaximum', 'performanceGuaranteesRateReduction'])"
+          ]
+        }
+      ],
+      "questionId": "experienceCombinedwithAnotherCoverage",
+      "ruleId": 178,
+      "sectionId": "performanceGuarantees"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "convertedFromPreviousAdminSystem",
+      "ruleId": 179,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "partTimeDurationCount",
+      "ruleId": 180,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "partTimeDurationCount_40186.1",
+      "ruleId": 181,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "partTimeDurationCount_40186.2",
+      "ruleId": 182,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "partTimeDurationCountDetail",
+      "ruleId": 183,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "partTimeDurationPeriod",
+      "ruleId": 184,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "partTimeDurationMode",
+      "ruleId": 185,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "customerSummaryPlanDescription",
+      "ruleId": 186,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "planOriginationCode",
+      "ruleId": 187,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "retroRateCoverageExperienceCombinedIndicator",
+      "ruleId": 188,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flexPlan",
+      "ruleId": 189,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "section125Plan",
+      "ruleId": 190,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanNumber",
+      "ruleId": 191,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "fiduciary",
+      "ruleId": 192,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "claimOffice",
+      "ruleId": 193,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "claimTeam",
+      "ruleId": 194,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "abstractIndicator",
+      "ruleId": 195,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "iDRequired",
+      "ruleId": 196,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eligiblityWaitingPeriodEffectiveCode",
+      "ruleId": 197,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "coverageEffectiveAfterCompletionoftheEigibilityWaitingPeriod",
+      "ruleId": 198,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eligibilityWaitingPeriodLengthofTime",
+      "ruleId": 199,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eligibilityWaitingPeriodMode",
+      "ruleId": 200,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "decreaseCoverageRule",
+      "ruleId": 201,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "qualifyingEventTimeLimitDaysforCoverageChanges",
+      "ruleId": 202,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "whenChangestoCoverageCanOccur",
+      "ruleId": 203,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "qualifyingEventTimeLimitDaysforCoverageIncreases",
+      "ruleId": 204,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "discontinueCoverageRule",
+      "ruleId": 205,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "qualifyingEventTimeLimitDaystoDiscontinueCoverage",
+      "ruleId": 206,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "lateSubmissionPeriod",
+      "ruleId": 207,
+      "sectionId": "certificate"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "lateSubmissionPeriodMode",
+      "ruleId": 208,
+      "sectionId": "certificate"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "occupationDisability",
+      "ruleId": 209,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "preExistingLimitDeferredforAllEmployees",
+      "ruleId": 210,
+      "sectionId": "preExistingConditions"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "preExistingTreatmentPeriod",
+      "ruleId": 211,
+      "sectionId": "preExistingConditions"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "preExistingTreatmentMode",
+      "ruleId": 212,
+      "sectionId": "preexistingConditions"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "preExistingTreatmentFreePeriod",
+      "ruleId": 213,
+      "sectionId": "preExistingConditions"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "preExistingTreatmentFreeMode",
+      "ruleId": 214,
+      "sectionId": "preExistingConditions"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "preExistingLimitPeriod",
+      "ruleId": 215,
+      "sectionId": "preExistingConditions"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "preExistingLimitMode",
+      "ruleId": 216,
+      "sectionId": "preExistingConditions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "disabilityDefinitionType",
+      "ruleId": 217,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitDisabilityDate",
+      "ruleId": 218,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "accidentProvisionCode",
+      "ruleId": 219,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "aMPMRuleIndicator",
+      "ruleId": 220,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "sTDBenefitPaymentsStartCode",
+      "ruleId": 221,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "firstTreatmentMaximumDays",
+      "ruleId": 222,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "preAdmissionTestIndicator",
+      "ruleId": 223,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "recoveryFromaDisabilityAfterCompletingEliminationPeriod",
+      "ruleId": 224,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "recoveryFromaDisabilityAfterCompletingEliminationMode",
+      "ruleId": 225,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "disabilityChangeDateCode",
+      "ruleId": 226,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "disabilityChangePeriod",
+      "ruleId": 227,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "disabilityChangeMode",
+      "ruleId": 228,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "paymentPeriod",
+      "ruleId": 229,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "prePartumPeriod",
+      "ruleId": 230,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "prePartumMode",
+      "ruleId": 231,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "postPartumPeriod",
+      "ruleId": 232,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "postPartumMode",
+      "ruleId": 233,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "salaryCode",
+      "ruleId": 234,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "breakoutofFlatDollarAmount",
+      "ruleId": 235,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "minimumGuaranteedIssueFlatDollarAmount",
+      "ruleId": 236,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumGuaranteedIssueFlatDollarAmount",
+      "ruleId": 237,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumSimplifiedIssueAmount",
+      "ruleId": 238,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "minimumBenefitProRataCode",
+      "ruleId": 239,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "calculationBasisCode",
+      "ruleId": 240,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitProrateCode",
+      "ruleId": 241,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "variedWeek",
+      "ruleId": 242,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "weekPayBasis",
+      "ruleId": 243,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "workWeekSchedule",
+      "ruleId": 244,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "holidayProvision",
+      "ruleId": 245,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitFlatAmount",
+      "ruleId": 246,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbySalaryRangeOption",
+      "ruleId": 247,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbySalaryRangeBenefitFixedAmount",
+      "ruleId": 248,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbySalaryRangeSalaryFromAmount",
+      "ruleId": 249,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbySalaryRangeSalaryToAmount",
+      "ruleId": 250,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbySalaryRangeSalaryMode",
+      "ruleId": 251,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountRangingfromaMinimumtoaMaximumBenefitMinimumAmount",
+      "ruleId": 252,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatAmountByLengthofServiceOption",
+      "ruleId": 253,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatAmountByLengthofServiceServiceFromYears",
+      "ruleId": 254,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatAmountByLengthofServiceServiceFromMonths",
+      "ruleId": 255,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatAmountByLengthofServiceServiceToYears",
+      "ruleId": 256,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatAmountByLengthofServiceServiceToMonths",
+      "ruleId": 257,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatAmountByLengthofServiceBenefitFixedAmount",
+      "ruleId": 258,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountByDifferentBenefitPeriodsOption",
+      "ruleId": 259,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountByDifferentBenefitPeriodsBenefitFixedAmount",
+      "ruleId": 260,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountByDifferentBenefitPeriodsBenefitFromPeriod",
+      "ruleId": 261,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountByDifferentBenefitPeriodsBenefitToPeriod",
+      "ruleId": 262,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitFlatAmountbyLengthofServiceBenefitRatePeriodMode",
+      "ruleId": 263,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofBasicEarningsOption",
+      "ruleId": 264,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofBasicEarningsBenefitMinimumAmount",
+      "ruleId": 265,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentoftheFirstDollarAmountofEarningsPlusPercentoftheExcessOption",
+      "ruleId": 266,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentoftheFirstDollarAmountofEarningsPlusPercentoftheExcessSalaryFromAmount",
+      "ruleId": 267,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentoftheFirstDollarAmountofEarningsPlusPercentoftheExcessSalaryToAmount",
+      "ruleId": 268,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentoftheFirstDollarAmountofEarningsPlusPercentoftheExcessSalaryPercent",
+      "ruleId": 269,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentoftheFirstDollarAmountofEarningsPlusPercentoftheExcessSalaryMode",
+      "ruleId": 270,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentoftheFirstDollarAmountofEarningsPlusPercentoftheExcessBenefitMinimumAmount",
+      "ruleId": 271,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentoftheFirstDollarAmountofEarningsPlusPercentoftheExcessBenefitMaximumAmount",
+      "ruleId": 272,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofEarningsbyDifferentBenefitPeriodsOption",
+      "ruleId": 273,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofEarningsbyDifferentBenefitPeriodsSalaryPercent",
+      "ruleId": 274,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofEarningsbyDifferentBenefitPeriodsBenefitFromPeriod",
+      "ruleId": 275,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofEarningsbyDifferentBenefitPeriodsBenefitToPeriod",
+      "ruleId": 276,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofSalarybyBenefitPeriodwithMinMaxBenefitRatePeriodMode",
+      "ruleId": 277,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "secondBaseBenefitDateCode",
+      "ruleId": 278,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofSalaryBasedonYearsofServicewithMultipleBenefitPeriodsOption",
+      "ruleId": 279,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofSalaryBasedonYearsofServicewithMultipleBenefitPeriodsServiceFromYears",
+      "ruleId": 280,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofSalaryBasedonYearsofServicewithMultipleBenefitPeriodsServiceFromMonths",
+      "ruleId": 281,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofSalaryBasedonYearsofServicewithMultipleBenefitPeriodsServiceToYears",
+      "ruleId": 282,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofSalaryBasedonYearsofServicewithMultipleBenefitPeriodsServiceToMonths",
+      "ruleId": 283,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofSalaryBasedonYearsofServicewithMultipleBenefitPeriodsSalaryPercent",
+      "ruleId": 284,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofSalaryBasedonYearsofServicewithMultipleBenefitPeriodsSalaryMode",
+      "ruleId": 285,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofSalaryBasedonYearsofServicewithMultipleBenefitPeriodsBenefitFromPeriod",
+      "ruleId": 286,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofSalaryBasedonYearsofServicewithMultipleBenefitPeriodsBenefitToPeriod",
+      "ruleId": 287,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofSalarybyLengthofServiceandBenefitPeriodBenefitRatePeriodMode",
+      "ruleId": 288,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbyLengthofServiceandSalaryRangeServiceFromYears",
+      "ruleId": 289,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbyLengthofServiceandSalaryRangeServiceFromMonths",
+      "ruleId": 290,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbyLengthofServiceandSalaryRangeServiceToYears",
+      "ruleId": 291,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbyLengthofServiceandSalaryRangeServiceToMonths",
+      "ruleId": 292,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbyLengthofServiceandSalaryRangeSalaryFromAmount",
+      "ruleId": 293,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbyLengthofServiceandSalaryRangeSalaryToAmount",
+      "ruleId": 294,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbyLengthofServiceandSalaryRangeSalaryMode",
+      "ruleId": 295,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbyLengthofServiceandSalaryRangeBenefitFixedAmount",
+      "ruleId": 296,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "baseBenefitRoundoffAmount",
+      "ruleId": 297,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [
+        {
+          "condition": "getIn('scheduleofBenefits.eliminationPeriod.retroactiveProvision') !== 'Y'",
+          "action": [
+            "disable(['retroactiveMode', 'retroactiveBenefitPeriod'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.eliminationPeriod.retroactiveProvision') === 'Y'",
+          "action": "enable(['retroactiveMode', 'retroactiveBenefitPeriod'])"
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('scheduleofBenefits.eliminationPeriod.retroactiveProvision') === 'N'",
+          "action": "disable(['retroactiveMode', 'retroactiveBenefitPeriod'])"
+        }
+      ],
+      "questionId": "retroactiveProvision",
+      "ruleId": 298,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "retroactiveMode",
+      "ruleId": 299,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.commissionsCalculationType') === 'N'",
+          "action": "enable(['predisabilityEarningsDefinition', 'includedPreDisabilityEarningsDefinitionforThisPlan'])"
+        },
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.commissionsCalculationType') !== 'N'",
+          "action": "disable(['predisabilityEarningsDefinition', 'includedPreDisabilityEarningsDefinitionforThisPlan'])"
+        },
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.commissionsCalculationType') === 'Y'",
+          "action": "enable(['otherNonStandardPredisabilityEarningsDescription'])"
+        },
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.commissionsCalculationType') !== 'Y'",
+          "action": "disable(['otherNonStandardPredisabilityEarningsDescription'])"
+        }
+      ],
+      "onClick": [
+      ],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.commissionsCalculationType') === 'N'",
+          "action": "enable(['predisabilityEarningsDefinition', 'includedPreDisabilityEarningsDefinitionforThisPlan'])"
+        },
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.commissionsCalculationType') !== 'N'",
+          "action": "disable(['predisabilityEarningsDefinition', 'includedPreDisabilityEarningsDefinitionforThisPlan'])"
+        },
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.commissionsCalculationType') === 'Y'",
+          "action": "enable(['otherNonStandardPredisabilityEarningsDescription'])"
+        },
+        {
+          "condition": "getIn('definitions.preDisabilityEarnings.commissionsCalculationType') !== 'Y'",
+          "action": "disable(['otherNonStandardPredisabilityEarningsDescription'])"
+        }
+      ],
+      "questionId": "nonStandardPredisabilityEarningsIndicator",
+      "ruleId": 300,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "commissionsAverageMode",
+      "ruleId": 301,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "bonusAverageMode",
+      "ruleId": 302,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeeParticipatesinRailroadRetirementActorFICA",
+      "ruleId": 303,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "zeroBenefitProcedureIndicator",
+      "ruleId": 304,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "limitedLiabilityYearCode",
+      "ruleId": 305,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "limitedLiabilityEndMonth",
+      "ruleId": 306,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceServiceFromYears",
+      "ruleId": 307,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceServiceFromMonths",
+      "ruleId": 308,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceServiceFromWeeks",
+      "ruleId": 309,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceServiceToYears",
+      "ruleId": 310,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceServiceToMonths",
+      "ruleId": 311,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceServiceToWeeks",
+      "ruleId": 312,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceEmployeeAgeFromYears",
+      "ruleId": 313,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceEmployeeAgeFromMonths",
+      "ruleId": 314,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceEmployeeAgeToYears",
+      "ruleId": 315,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceEmployeeAgeToMonths",
+      "ruleId": 316,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceStopPaymentYears",
+      "ruleId": 317,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceStopPaymentMonths",
+      "ruleId": 318,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceMaximumDurationCode",
+      "ruleId": 319,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceMaximumDurationType",
+      "ruleId": 320,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceMaximumDurationPeriod",
+      "ruleId": 321,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationServiceMaximumDurationMode",
+      "ruleId": 322,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatAmountByLengthofServiceServiceRangeCode",
+      "ruleId": 323,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationDurationMaximumDurationCode",
+      "ruleId": 324,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationDurationMaximumDurationType",
+      "ruleId": 325,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationDurationMaximumDurationPeriod",
+      "ruleId": 326,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumDurationDurationMaximumDurationMode",
+      "ruleId": 327,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "workIncentiveMaximumPercent",
+      "ruleId": 328,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "rehabilitationPercent",
+      "ruleId": 329,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "rehabilitationPeriod",
+      "ruleId": 330,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "rehabilitationMode",
+      "ruleId": 331,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maximumPercentforSocialSecurityCarveout",
+      "ruleId": 332,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "estimatedSocialSecurityCalculateIndicator",
+      "ruleId": 333,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "socialSecurityColaIndicator",
+      "ruleId": 334,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "vermontCivilUnionPartnersCovered",
+      "ruleId": 335,
+      "sectionId": "domesticPartners"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "earlyInterventionProgram",
+      "ruleId": 336,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumCheckName",
+      "ruleId": 337,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "checkLegend",
+      "ruleId": 338,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [
+        {
+          "condition": "getIn('claims.claimProcessing.benefitCheckFrequency') === 'BIWK'",
+          "action": [
+            "enable('biWeeklyCheckDayCode')"
+          ]
+        },
+        {
+          "condition": "getIn('claims.claimProcessing.benefitCheckFrequency') !== 'BIWK'",
+          "action": [
+            "disable('biWeeklyCheckDayCode')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('claims.claimProcessing.benefitCheckFrequency') === 'BIWK'",
+          "action": [
+            "enable('biWeeklyCheckDayCode')"
+          ]
+        }
+      ],
+      "questionId": "benefitCheckFrequency",
+      "ruleId": 339,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitCheckDay",
+      "ruleId": 340,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitCheckDayControlCode",
+      "ruleId": 341,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "biWeeklyCheckDayCode",
+      "ruleId": 342,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [
+        {
+          "condition": "getIn('claims.distribution.eFTBankDepositDateCode') === 'SPECBIZDYFLW'",
+          "action": [
+            "enable('eFTBankDepositDayCount')"
+          ]
+        },
+        {
+          "condition": "getIn('claims.distribution.eFTBankDepositDateCode') !== 'SPECBIZDYFLW'",
+          "action": [
+            "disable('eFTBankDepositDayCount')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('claims.distribution.eFTBankDepositDateCode') === 'SPECBIZDYFLW'",
+          "action": [
+            "enable('eFTBankDepositDayCount')"
+          ]
+        },
+        {
+          "condition": "getIn('claims.distribution.eFTBankDepositDateCode') !== 'SPECBIZDYFLW'",
+          "action": [
+            "disable('eFTBankDepositDayCount')"
+          ]
+        }
+      ],
+      "questionId": "eFTBankDepositDateCode",
+      "ruleId": 343,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eFTBankDepositDayCount",
+      "ruleId": 344,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "approvalCustomerDistributionCount",
+      "ruleId": 345,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "formLetterMedicalDistribution",
+      "ruleId": 346,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "correspondent",
+      "ruleId": 347,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "proRata",
+      "ruleId": 348,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "reimbursable",
+      "ruleId": 349,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "adjustmentAmountMode",
+      "ruleId": 350,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "adjustmentStartPeriod",
+      "ruleId": 351,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "adjustmentEndPeriod",
+      "ruleId": 352,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "adjustmentPeriodMode",
+      "ruleId": 353,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "adjustmentAmountType",
+      "ruleId": 354,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "adjustmentPercent",
+      "ruleId": 355,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "adjustmentAmount",
+      "ruleId": 356,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "recoveryPercent",
+      "ruleId": 357,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "maxRecoveryAmount",
+      "ruleId": 358,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "recoveryProcedureCode",
+      "ruleId": 359,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "checkNotIssuePeriod",
+      "ruleId": 360,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "checkNotIssuePeriod_40417.1",
+      "ruleId": 361,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "checkNotIssueMode",
+      "ruleId": 362,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "dateBenefitsCoverageEnd",
+      "ruleId": 363,
+      "sectionId": "dateInsuranceEnds"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "leaveofAbsenceTerminationDateRuleCode",
+      "ruleId": 364,
+      "sectionId": "leaveofAbsence"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "isSabbaticalAllowedforTrainingandEducationPurposes",
+      "ruleId": 365,
+      "sectionId": "sabbatical"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "salaryTax",
+      "ruleId": 366,
+      "sectionId": "tax"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "taxWithholdingCode",
+      "ruleId": 367,
+      "sectionId": "tax"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "taxablePercent",
+      "ruleId": 368,
+      "sectionId": "tax"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [
+        {
+          "condition": "getIn('eligibilityProvisions.enrollmentProcess.employeeContributionPercent') > 0",
+          "action": [
+            "enableQuestions('employeeContributionsTaxedBy')"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.enrollmentProcess.employeeContributionPercent') <= 0",
+          "action": "disable('employeeContributionsTaxedBy')"
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('eligibilityProvisions.enrollmentProcess.employeeContributionPercent') > 0",
+          "action": "enable('employeeContributionsTaxedBy')"
+        }
+      ],
+      "questionId": "employeeContributionPercent",
+      "ruleId": 369,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "minimumAmountVoluntaryFIT",
+      "ruleId": 370,
+      "sectionId": "tax"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "minimumAmountVoluntarySIT",
+      "ruleId": 371,
+      "sectionId": "tax"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "lTDReportWeeks",
+      "ruleId": 372,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "numberMaximumSocialSecurityPayment",
+      "ruleId": 373,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "workersCompensationCode",
+      "ruleId": 374,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "policyholderAttributeRequired",
+      "ruleId": 375,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "policySitusState",
+      "ruleId": 376,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [
+        {
+          "condition": "getIn('generalPlanProvisions.generalPlanProvisions.financialArrangement') === 'FULINS'",
+          "action": [
+            "enable('performanceGuaranteesRateReduction')"
+          ]
+        },
+        {
+          "condition": "getIn('generalPlanProvisions.generalPlanProvisions.financialArrangement') !== 'FULINS'",
+          "action": [
+            "disable('performanceGuaranteesRateReduction')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('generalPlanProvisions.generalPlanProvisions.financialArrangement') === 'FULINS'",
+          "action": [
+            "enable('performanceGuaranteesRateReduction')"
+          ]
+        }
+      ],
+      "questionId": "financialArrangement",
+      "ruleId": 377,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [
+        {
+          "condition": "getIn('eRISAInformation.eRISAInformation.subjecttoERISA') === 'Y'",
+          "action": [
+            "enable(['eRISAPlanYearBeginsmmdd', 'eRISAPlanYearEndsmmdd', 'eRISAPlanName', 'eRISAPlanSponsorTaxID'])"
+          ]
+        },
+        {
+          "condition": "getIn('eRISAInformation.eRISAInformation.subjecttoERISA') !== 'Y'",
+          "action": [
+            "disable(['eRISAPlanYearBeginsmmdd', 'eRISAPlanYearEndsmmdd', 'eRISAPlanName', 'eRISAPlanSponsorTaxID'])"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('eRISAInformation.eRISAInformation.subjecttoERISA') === 'Y'",
+          "action": [
+            "enable(['eRISAPlanYearBeginsmmdd', 'eRISAPlanYearEndsmmdd', 'eRISAPlanName', 'eRISAPlanSponsorTaxID'])"
+          ]
+        },
+        {
+          "condition": "getIn('eRISAInformation.eRISAInformation.subjecttoERISA') !== 'Y'",
+          "action": [
+            "disable(['eRISAPlanYearBeginsmmdd', 'eRISAPlanYearEndsmmdd', 'eRISAPlanName', 'eRISAPlanSponsorTaxID'])"
+          ]
+        }
+      ],
+      "questionId": "subjecttoERISA",
+      "ruleId": 378,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanYearBeginsmmdd",
+      "ruleId": 379,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanYearBeginsmmdd_40453.1",
+      "ruleId": 380,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanYearEndsmmdd",
+      "ruleId": 381,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanYearEndsmmdd_40454.1",
+      "ruleId": 382,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanName",
+      "ruleId": 383,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eRISAPlanSponsorTaxID",
+      "ruleId": 384,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "coreBuyUpCode",
+      "ruleId": 385,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeesNoEligible",
+      "ruleId": 386,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [
+        {
+          "condition": "getIn('eligibilityProvisions.dateofEligibility.eligibilityWaitingPeriod') === 'Y'",
+          "action": "enable(['futureIncreaseChangesWillbeEffectiveDetail'])"
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.dateofEligibility.eligibilityWaitingPeriod') !== 'Y'",
+          "action": "disable(['futureIncreaseChangesWillbeEffectiveDetail'])"
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('eligibilityProvisions.dateofEligibility.eligibilityWaitingPeriod') === 'Y'",
+          "action": "enable(['futureIncreaseChangesWillbeEffectiveDetail'])"
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.dateofEligibility.eligibilityWaitingPeriod') !== 'Y'",
+          "action": "disable(['futureIncreaseChangesWillbeEffectiveDetail'])"
+        }
+      ],
+      "questionId": "eligibilityWaitingPeriod",
+      "ruleId": 387,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [
+        {
+          "condition": "getIn('eligibilityProvisions.enrollmentProcess.qualifyingEvents') === '- Other'",
+          "action": [
+            "enable(['qualifyingEventsDetail'])"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.enrollmentProcess.qualifyingEvents') !== '- Other'",
+          "action": [
+            "disable(['qualifyingEventsDetail'])"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('eligibilityProvisions.enrollmentProcess.qualifyingEvents') === '- Other'",
+          "action": [
+            "enable(['qualifyingEventsDetail'])"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.enrollmentProcess.qualifyingEvents') !== '- Other'",
+          "action": [
+            "disable(['qualifyingEventsDetail'])"
+          ]
+        }
+      ],
+      "questionId": "qualifyingEvents",
+      "ruleId": 388,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "qualifyingEvents_40463",
+      "ruleId": 389,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [
+        {
+          "condition": "getIn('eligibilityProvisions.enrollmentProcess.qualifyingEventsTimePeriod') === 'Other'",
+          "action": [
+            "enable('qualifyingEventsTimePeriodDetail')"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.enrollmentProcess.qualifyingEventsTimePeriod') !== 'Other'",
+          "action": [
+            "disable('qualifyingEventsTimePeriodDetail')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('eligibilityProvisions.enrollmentProcess.qualifyingEventsTimePeriod') === 'Other'",
+          "action": [
+            "enable('qualifyingEventsTimePeriodDetail')"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.enrollmentProcess.qualifyingEventsTimePeriod') !== 'Other'",
+          "action": [
+            "disable('qualifyingEventsTimePeriodDetail')"
+          ]
+        }
+      ],
+      "questionId": "qualifyingEventsTimePeriod",
+      "ruleId": 390,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "qualifyingEventsTimePeriod_40464.1",
+      "ruleId": 391,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "evidenceofInsurability",
+      "onChange": [
+        {
+          "condition": "getIn('evidenceofInsurability.evidenceofInsurability.medicalEvidenceofInsurabilityRequired') === 14",
+          "action": [
+            "enable('continuationDuetoLeaveofAbsencePeriod')"
+          ]
+        },
+        {
+          "condition": "getIn('evidenceofInsurability.evidenceofInsurability.medicalEvidenceofInsurabilityRequired') !== 14",
+          "action": [
+            "disable('continuationDuetoLeaveofAbsencePeriod')"
+          ]
+        },
+        {
+          "condition": "getIn('evidenceofInsurability.evidenceofInsurability.medicalEvidenceofInsurabilityRequired') === 2",
+          "action": [
+            "enable('continuationDuetoLeaveofAbsenceMode')"
+          ]
+        },
+        {
+          "condition": "getIn('evidenceofInsurability.evidenceofInsurability.medicalEvidenceofInsurabilityRequired') !== 2",
+          "action": [
+            "disable('continuationDuetoLeaveofAbsenceMode')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('evidenceofInsurability.evidenceofInsurability.medicalEvidenceofInsurabilityRequired') === 14",
+          "action": [
+            "enable('continuationDuetoLeaveofAbsencePeriod')"
+          ]
+        },
+        {
+          "condition": "getIn('evidenceofInsurability.evidenceofInsurability.medicalEvidenceofInsurabilityRequired') === 2",
+          "action": [
+            "enable('continuationDuetoLeaveofAbsenceMode')"
+          ]
+        }
+      ],
+      "questionId": "medicalEvidenceofInsurabilityRequired",
+      "ruleId": 392,
+      "sectionId": "evidenceofInsurability"
+    },
+    {
+      "categoryId": "evidenceofInsurability",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "medicalEvidenceofInsurabilityDetail",
+      "ruleId": 393,
+      "sectionId": "evidenceofInsurability"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "activelyatWorkProvisionRequired",
+      "ruleId": 394,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "changesintheClassSalaryEffectiveDates",
+      "ruleId": 395,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [
+        {
+          "condition": "doesAnswerContainAny('definitions.definitionofDisability.definitionofDisability', ['1', '3', '4', '5', '6', '9'])",
+          "action": "enable(['definitionofDisabilityEnhanced'])"
+        },
+        {
+          "condition": "!doesAnswerContainAny('definitions.definitionofDisability.definitionofDisability', ['1', '3', '4', '5', '6', '9'])",
+          "action": "disable(['definitionofDisabilityEnhanced'])"
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "doesAnswerContainAny('definitions.definitionofDisability.definitionofDisability', ['1', '3', '4', '5', '6', '9'])",
+          "action": "enable(['definitionofDisabilityEnhanced'])"
+        },
+        {
+          "condition": "!doesAnswerContainAny('definitions.definitionofDisability.definitionofDisability', ['1', '3', '4', '5', '6', '9'])",
+          "action": "disable(['definitionofDisabilityEnhanced'])"
+        }
+      ],
+      "questionId": "definitionofDisability",
+      "ruleId": 396,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "definitionofDisabilityCriteria",
+      "ruleId": 397,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "lTDOwnOccupationEarningsTestPercentageofPreDisabilityEarningsSTDWSTDCALNONCALPercentageofPreDisabilityEarnings",
+      "ruleId": 398,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "indicateAnyOccupationEarningsTestPercentageofPredisabilityEarnings",
+      "ruleId": 399,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "durationStartDate",
+      "ruleId": 400,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "firstDayHospitalizationProvision",
+      "ruleId": 401,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "planProvisionWhenSurgeryPerformedinApprovedOutpatientFacility",
+      "ruleId": 402,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "outpatientSurgeryCode",
+      "ruleId": 403,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "firstDayofDisabilityDetermined",
+      "ruleId": 404,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "policyholderContinuesSalaryDuringthePeriodofDisability",
+      "ruleId": 405,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "economyIndicator",
+      "ruleId": 406,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitRateMode",
+      "ruleId": 407,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') === '04'",
+          "action": [
+            "enable(['serviceRangeCode', 'flatAmountByLengthofServiceServiceFromWeeks'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') !== '04'",
+          "action": [
+            "disable(['serviceRangeCode', 'flatAmountByLengthofServiceServiceFromWeeks'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') === 'C'",
+          "action": [
+            "enable(['enhancedBenefitPercentage', 'percentofBasicEarningsPercentageofSalary'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') !== 'C'",
+          "action": [
+            "disable(['enhancedBenefitPercentage', 'percentofBasicEarningsPercentageofSalary'])"
+          ]
+        },
+        {
+          "condition": "doesAnswerContainAny('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets', ['A', 'B', 'C', 'D', 'K'])",
+          "action": [
+            "enable(['percentofBasicEarningsPercentageofSalary'])"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets', ['A', 'B', 'C', 'D', 'K])",
+          "action": [
+            "disable(['percentofBasicEarningsPercentageofSalary', 'percentofBasicEarningsBenefitMaximumAmount'])"
+          ]
+        },
+        {
+          "condition": "doesAnswerContainAny('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets', ['01', '02', '04', '07', '03', '26'])",
+          "action": [
+            "enable(['incrementalFlatAmountsuptoaPercentSalaryCapFlatBenefit'])"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets', ['01', '02', '04', '07', '03', '26'])",
+          "action": [
+            "disable(['incrementalFlatAmountsuptoaPercentSalaryCapFlatBenefit'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') === '04')",
+          "action": [
+            "enable(['flatAmountByLengthofServiceServiceToWeeks', 'flatAmountByLengthofServiceServiceFromWeeks'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') !== '04')",
+          "action": [
+            "disable(['flatAmountByLengthofServiceServiceToWeeks', 'flatAmountByLengthofServiceServiceFromWeeks'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') === 'E'",
+          "action": [
+            "enable(['incrementalFlatAmountsuptoaPercentSalaryCapMultipleFlatDollarAmountIndicator'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') !== 'E'",
+          "action": [
+            "disable(['incrementalFlatAmountsuptoaPercentSalaryCapMultipleFlatDollarAmountIndicator'])"
+          ]
+        },
+        {
+          "condition": "includes(getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets'), ['K', '26'])",
+          "action": [
+            "enable(['flatAmountByLengthofServiceServiceRangeCode'])"
+          ]
+        },
+        {
+          "condition": "includes(getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets'), ['K', '26'])",
+          "action": [
+            "disable(['flatAmountByLengthofServiceServiceRangeCode'])"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') === '04'",
+          "action": [
+            "enable(['serviceRangeCode', 'flatAmountByLengthofServiceServiceFromWeeks'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') !== '04'",
+          "action": [
+            "disable(['serviceRangeCode', 'flatAmountByLengthofServiceServiceFromWeeks'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') === 'C'",
+          "action": [
+            "enable(['enhancedBenefitPercentage', 'percentofBasicEarningsPercentageofSalary'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') !== 'C'",
+          "action": [
+            "disable(['enhancedBenefitPercentage', 'percentofBasicEarningsPercentageofSalary'])"
+          ]
+        },
+        {
+          "condition": "doesAnswerContainAny('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets', ['A', 'B', 'C', 'D', 'K'])",
+          "action": [
+            "enable(['percentofBasicEarningsPercentageofSalary'])"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets', ['A', 'B', 'C', 'D', 'K])",
+          "action": [
+            "disable(['percentofBasicEarningsPercentageofSalary', 'percentofBasicEarningsBenefitMaximumAmount'])"
+          ]
+        },
+        {
+          "condition": "doesAnswerContainAny('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets', ['01', '02', '04', '07', '03', '26'])",
+          "action": [
+            "enable(['incrementalFlatAmountsuptoaPercentSalaryCapFlatBenefit'])"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets', ['01', '02', '04', '07', '03', '26'])",
+          "action": [
+            "disable(['incrementalFlatAmountsuptoaPercentSalaryCapFlatBenefit'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') === '04')",
+          "action": [
+            "enable(['flatAmountByLengthofServiceServiceToWeeks', 'flatAmountByLengthofServiceServiceFromWeeks', 'flatAmountByLengthofServiceServiceRangeCode'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') !== '04')",
+          "action": [
+            "disable(['flatAmountByLengthofServiceServiceToWeeks', 'flatAmountByLengthofServiceServiceFromWeeks', 'flatAmountByLengthofServiceServiceRangeCode'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') === 'E'",
+          "action": [
+            "enable(['incrementalFlatAmountsuptoaPercentSalaryCapMultipleFlatDollarAmountIndicator'])"
+          ]
+        },
+        {
+          "condition": "getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets') !== 'E'",
+          "action": [
+            "disable(['incrementalFlatAmountsuptoaPercentSalaryCapMultipleFlatDollarAmountIndicator'])"
+          ]
+        },
+        {
+          "condition": "includes(['E', 'Y'], getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets'))",
+          "action": [
+            "enable(['incrementalFlatAmountsuptoaPercentSalaryCapMultipleFlatDollarAmount'])"
+          ]
+        },
+        {
+          "condition": "!includes(['E', 'Y'], getIn('scheduleofBenefits.benefitAmount.weeklyBenefitBeforeOffsets'))",
+          "action": [
+            "disable(['incrementalFlatAmountsuptoaPercentSalaryCapMultipleFlatDollarAmount'])"
+          ]
+        }
+      ],
+      "questionId": "weeklyBenefitBeforeOffsets",
+      "ruleId": 408,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "enhancedBenefitPercentage",
+      "ruleId": 409,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [
+        {
+          "condition": "doesAnswerContainAny('scheduleofBenefits.benefitAmount.minimumBenefitCodeAfterOffsets', ['Greater of $20 or 10% of Benefit(G)', 'Greater of $25 or 15% of Benefit (G)', 'Greater of $50 or 15% of Benefit (G)', 'Missouri - Minimum benefit of greater of 15% of monthly benefit or $50', 'Overridable Other Percentage amount (2)', 'Overridable Other Percentage amount of Salary (7)'])",
+          "action": [
+            "enable(['minimumWeeklyMonthlyBenefitPercentage', 'minimumWeeklyMonthlyBenefitAfterOffsets'])"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('scheduleofBenefits.benefitAmount.minimumBenefitCodeAfterOffsets', ['Greater of $20 or 10% of Benefit(G)', 'Greater of $25 or 15% of Benefit (G)', 'Greater of $50 or 15% of Benefit (G)', 'Missouri - Minimum benefit of greater of 15% of monthly benefit or $50', 'Overridable Other Percentage amount (2)', 'Overridable Other Percentage amount of Salary (7)'])",
+          "action": "disable(['minimumWeeklyMonthlyBenefitPercentage', 'minimumWeeklyMonthlyBenefitAfterOffsets'])"
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "doesAnswerContainAny('scheduleofBenefits.benefitAmount.minimumBenefitCodeAfterOffsets', ['Greater of $20 or 10% of Benefit(G)', 'Greater of $25 or 15% of Benefit (G)', 'Greater of $50 or 15% of Benefit (G)', 'Missouri - Minimum benefit of greater of 15% of monthly benefit or $50', 'Overridable Other Percentage amount (2)', 'Overridable Other Percentage amount of Salary (7)'])",
+          "action": [
+            "enable(['minimumWeeklyMonthlyBenefitPercentage', 'minimumWeeklyMonthlyBenefitAfterOffsets'])"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('scheduleofBenefits.benefitAmount.minimumBenefitCodeAfterOffsets', ['Greater of $20 or 10% of Benefit(G)', 'Greater of $25 or 15% of Benefit (G)', 'Greater of $50 or 15% of Benefit (G)', 'Missouri - Minimum benefit of greater of 15% of monthly benefit or $50', 'Overridable Other Percentage amount (2)', 'Overridable Other Percentage amount of Salary (7)'])",
+          "action": "disable(['minimumWeeklyMonthlyBenefitPercentage', 'minimumWeeklyMonthlyBenefitAfterOffsets'])"
+        }
+      ],
+      "questionId": "minimumBenefitCodeAfterOffsets",
+      "ruleId": 410,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "minimumBenefitCodeAfterOffsets_40490.1",
+      "ruleId": 411,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "minimumBenefitCodeAfterOffsets_40490.2",
+      "ruleId": 412,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "minimumBenefitCodeAfterOffsets_40490.3",
+      "ruleId": 413,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "minimumWeeklyMonthlyBenefitPercentage",
+      "ruleId": 414,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "minimumWeeklyMonthlyBenefitAfterOffsets",
+      "ruleId": 415,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "minimumBenefitSubjecttoRehabIncentives",
+      "ruleId": 416,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountRangingfromaMinimumtoaMaximumBenefitMaximumAmount",
+      "ruleId": 417,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofBasicEarningsPercentageofSalary",
+      "ruleId": 418,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofBasicEarningsBenefitMaximumAmount",
+      "ruleId": 419,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "incrementalFlatAmountsuptoaPercentSalaryCapFlatBenefit",
+      "ruleId": 420,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitRoundOffPriortoOffsets",
+      "ruleId": 421,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "benefitRoundOffAfterOffsets",
+      "ruleId": 422,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "payBenefitsWhenReturntoWorkDateWithin7DaysofPrognosisDate",
+      "ruleId": 423,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "retroactiveBenefitPeriod",
+      "ruleId": 424,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "predisabilityEarningsDefinition",
+      "ruleId": 425,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "includedPreDisabilityEarningsDefinitionforThisPlan",
+      "ruleId": 426,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "commissionsAveragePeriod",
+      "ruleId": 427,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "bonusAveragePeriod",
+      "ruleId": 428,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [
+        {
+          "condition": "getIn('disabilityInsurance.incomeWhichWillReduceBenefit.offsets').length === 0",
+          "action": [
+            "enable(['offsetsareFrozenatInitialAmount'])"
+          ]
+        },
+        {
+          "condition": "getIn('disabilityInsurance.incomeWhichWillReduceBenefit.offsets').length !== 0",
+          "action": [
+            "disable('offsetsareFrozenatInitialAmount')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('disabilityInsurance.incomeWhichWillReduceBenefit.offsets').length === 0",
+          "action": [
+            "enable(['offsetsareFrozenatInitialAmount'])"
+          ]
+        },
+        {
+          "condition": "getIn('disabilityInsurance.incomeWhichWillReduceBenefit.offsets').length !== 0",
+          "action": [
+            "disable('offsetsareFrozenatInitialAmount')"
+          ]
+        }
+      ],
+      "questionId": "offsets",
+      "ruleId": 429,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [
+        {
+          "condition": "getIn('disabilityInsurance.incomeWhichWillReduceBenefit.benefitIntegrationMethod') === 3",
+          "action": [
+            "enable(['sourcePlanFirstPercentage', 'sourcePlanSecondPercentage', 'backdoorPlanFirstPercentage', 'backdoorPlanSecondPercentage'])"
+          ]
+        },
+        {
+          "condition": "getIn('disabilityInsurance.incomeWhichWillReduceBenefit.benefitIntegrationMethod') === 4",
+          "action": "enable('backdoorPlanSecondPercentage')"
+        },
+        {
+          "condition": "getIn('disabilityInsurance.incomeWhichWillReduceBenefit.benefitIntegrationMethod') !== 3",
+          "action": [
+            "disable(['sourcePlanFirstPercentage', 'sourcePlanSecondPercentage', 'backdoorPlanFirstPercentage', 'backdoorPlanSecondPercentage'])"
+          ]
+        },
+        {
+          "condition": "getIn('disabilityInsurance.incomeWhichWillReduceBenefit.benefitIntegrationMethod') !== 4",
+          "action": "disable('backdoorPlanSecondPercentage')"
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('disabilityInsurance.incomeWhichWillReduceBenefit.benefitIntegrationMethod') === 3",
+          "action": [
+            "enable(['sourcePlanFirstPercentage', 'sourcePlanSecondPercentage', 'backdoorPlanFirstPercentage', 'backdoorPlanSecondPercentage'])"
+          ]
+        },
+        {
+          "condition": "getIn('disabilityInsurance.incomeWhichWillReduceBenefit.benefitIntegrationMethod') === 4",
+          "action": [
+            "enable('backdoorPlanSecondPercentage')"
+          ]
+        }
+      ],
+      "questionId": "benefitIntegrationMethod",
+      "ruleId": 430,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "offsetsareFrozenatInitialAmount",
+      "ruleId": 431,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "rehabilitationRehabilitation",
+      "ruleId": 432,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "costofLivingFreeze",
+      "ruleId": 433,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "isThereaSurvivorBenefit",
+      "ruleId": 434,
+      "sectionId": "additionalLongTermBenefit"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [
+        {
+          "condition": "getIn('definitions.domesticPartners.proofofDomesticPartnership') !== 'NONE'",
+          "action": [
+            "enable('domesticPartnerRelationship')"
+          ]
+        },
+        {
+          "condition": "getIn('definitions.domesticPartners.proofofDomesticPartnership') === 'NONE'",
+          "action": [
+            "disable('domesticPartnerRelationship')"
+          ]
+        },
+        {
+          "condition": "getIn('definitions.domesticPartners.proofofDomesticPartnership') !== 'STREGIS'",
+          "action": [
+            "enable('domesticPartnershipDuration')"
+          ]
+        },
+        {
+          "condition": "getIn('definitions.domesticPartners.proofofDomesticPartnership') === 'STREGIS'",
+          "action": [
+            "disable('domesticPartnershipDuration')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('definitions.domesticPartners.proofofDomesticPartnership') !== 'NONE'",
+          "action": [
+            "enable('domesticPartnerRelationship')"
+          ]
+        },
+        {
+          "condition": "getIn('definitions.domesticPartners.proofofDomesticPartnership') === 'NONE'",
+          "action": [
+            "disable('domesticPartnerRelationship')"
+          ]
+        },
+        {
+          "condition": "getIn('definitions.domesticPartners.proofofDomesticPartnership') !== 'STREGIS'",
+          "action": [
+            "enable('domesticPartnershipDuration')"
+          ]
+        },
+        {
+          "condition": "getIn('definitions.domesticPartners.proofofDomesticPartnership') === 'STREGIS'",
+          "action": [
+            "disable('domesticPartnershipDuration')"
+          ]
+        }
+      ],
+      "questionId": "proofofDomesticPartnership",
+      "ruleId": 435,
+      "sectionId": "domesticPartners"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "domesticPartnerRelationship",
+      "ruleId": 436,
+      "sectionId": "domesticPartners"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "domesticPartnershipDuration",
+      "ruleId": 437,
+      "sectionId": "domesticPartners"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "domesticPartnershipDuration_40527.1",
+      "ruleId": 438,
+      "sectionId": "domesticPartners"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "domesticPartnershipDuration_40527.2",
+      "ruleId": 439,
+      "sectionId": "domesticPartners"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "organDonorBenefit",
+      "ruleId": 440,
+      "sectionId": "additionalShortTermBenefit"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "premiumDeductionServiceReportCutCheck",
+      "ruleId": 441,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "bankBlockNumber",
+      "ruleId": 442,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "sendBenefitChecksDraftsTo",
+      "ruleId": 443,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [
+        {
+          "condition": "getIn('claims.distribution.policyholderEFTElectronicFundTransfer') === 'Y'",
+          "action": [
+            "enable('eFTBankDepositDateCode')"
+          ]
+        },
+        {
+          "condition": "getIn('claims.distribution.policyholderEFTElectronicFundTransfer') !== 'Y'",
+          "action": [
+            "disable('eFTBankDepositDateCode')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('claims.distribution.policyholderEFTElectronicFundTransfer') === 'Y'",
+          "action": [
+            "enable('eFTBankDepositDateCode')"
+          ]
+        },
+        {
+          "condition": "getIn('claims.distribution.policyholderEFTElectronicFundTransfer') !== 'Y'",
+          "action": [
+            "disable('eFTBankDepositDateCode')"
+          ]
+        }
+      ],
+      "questionId": "policyholderEFTElectronicFundTransfer",
+      "ruleId": 444,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "paymentAfterOffsetsCanbeUsedtoRecoveranOverpayment",
+      "ruleId": 445,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "takeoverGroupIndicator",
+      "ruleId": 446,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [
+        {
+          "condition": "getIn('continuationofInsurance.leaveofAbsence.continuationDuetoLeaveofAbsence') === '14'",
+          "action": [
+            "enable('continuationDuetoLeaveofAbsencePeriod')"
+          ]
+        },
+        {
+          "condition": "getIn('continuationofInsurance.leaveofAbsence.continuationDuetoLeaveofAbsence') !== '14'",
+          "action": [
+            "disable('continuationDuetoLeaveofAbsencePeriod')"
+          ]
+        },
+        {
+          "condition": "getIn('continuationofInsurance.leaveofAbsence.continuationDuetoLeaveofAbsence') === '2'",
+          "action": [
+            "enable('continuationDuetoLeaveofAbsenceMode')"
+          ]
+        },
+        {
+          "condition": "getIn('continuationofInsurance.leaveofAbsence.continuationDuetoLeaveofAbsence') !== '2'",
+          "action": [
+            "disable('continuationDuetoLeaveofAbsenceMode')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('continuationofInsurance.leaveofAbsence.continuationDuetoLeaveofAbsence') === '14'",
+          "action": [
+            "enable('continuationDuetoLeaveofAbsencePeriod')"
+          ]
+        },
+        {
+          "condition": "getIn('continuationofInsurance.leaveofAbsence.continuationDuetoLeaveofAbsence') === '2'",
+          "action": [
+            "enable('continuationDuetoLeaveofAbsenceMode')"
+          ]
+        }
+      ],
+      "questionId": "continuationDuetoLeaveofAbsence",
+      "ruleId": 447,
+      "sectionId": "leaveofAbsence"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoLeaveofAbsencePeriod",
+      "ruleId": 448,
+      "sectionId": "leaveofAbsence"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoLeaveofAbsenceMode",
+      "ruleId": 449,
+      "sectionId": "leaveofAbsence"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [
+        {
+          "condition": "getIn('continuationofInsurance.layoff.continuationDuetoLayoff') === 2",
+          "action": [
+            "enable(['continuationDuetoLayoffMode', 'continuationDuetoLayoffPeriod'])"
+          ]
+        },
+        {
+          "condition": "getIn('continuationofInsurance.layoff.continuationDuetoLayoff') !== 2",
+          "action": [
+            "disable(['continuationDuetoLayoffMode', 'continuationDuetoLayoffPeriod'])"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('continuationofInsurance.layoff.continuationDuetoLayoff') === 2",
+          "action": [
+            "enable(['continuationDuetoLayoffMode', 'continuationDuetoLayoffPeriod'])"
+          ]
+        },
+        {
+          "condition": "getIn('continuationofInsurance.layoff.continuationDuetoLayoff') !== 2",
+          "action": [
+            "disable(['continuationDuetoLayoffMode', 'continuationDuetoLayoffPeriod'])"
+          ]
+        }
+      ],
+      "questionId": "continuationDuetoLayoff",
+      "ruleId": 450,
+      "sectionId": "layoff"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoLayoffPeriod",
+      "ruleId": 451,
+      "sectionId": "layoff"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoLayoffMode",
+      "ruleId": 452,
+      "sectionId": "layoff"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoaStrike",
+      "ruleId": 453,
+      "sectionId": "strike"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [
+        {
+          "condition": "doesAnswerContainAny('continuationofInsurance.militaryLeave.continuationDuetoMilitaryLeave', ['2', '1', '4', '14'])",
+          "action": [
+            "enable('isSabbaticalAllowedforTrainingandEducationPurposes')"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('continuationofInsurance.militaryLeave.continuationDuetoMilitaryLeave', ['2', '1', '4', '14'])",
+          "action": [
+            "disable('isSabbaticalAllowedforTrainingandEducationPurposes')"
+          ]
+        },
+        {
+          "condition": "doesAnswerContainAny('continuationofInsurance.militaryLeave.continuationDuetoMilitaryLeave', ['2'])",
+          "action": [
+            "enable('continuationDuetoMilitaryLeavePeriod')"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('continuationofInsurance.militaryLeave.continuationDuetoMilitaryLeave', ['2'])",
+          "action": [
+            "disable('continuationDuetoMilitaryLeavePeriod')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "doesAnswerContainAny('continuationofInsurance.militaryLeave.continuationDuetoMilitaryLeave', ['2', '1', '4', '14'])",
+          "action": [
+            "enable('isSabbaticalAllowedforTrainingandEducationPurposes')"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('continuationofInsurance.militaryLeave.continuationDuetoMilitaryLeave', ['2', '1', '4', '14'])",
+          "action": [
+            "disable('isSabbaticalAllowedforTrainingandEducationPurposes')"
+          ]
+        },
+        {
+          "condition": "doesAnswerContainAny('continuationofInsurance.militaryLeave.continuationDuetoMilitaryLeave', ['2'])",
+          "action": [
+            "enable('continuationDuetoMilitaryLeavePeriod')"
+          ]
+        },
+        {
+          "condition": "!doesAnswerContainAny('continuationofInsurance.militaryLeave.continuationDuetoMilitaryLeave', ['2'])",
+          "action": [
+            "disable('continuationDuetoMilitaryLeavePeriod')"
+          ]
+        }
+      ],
+      "questionId": "continuationDuetoMilitaryLeave",
+      "ruleId": 454,
+      "sectionId": "militaryLeave"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoMilitaryLeavePeriod",
+      "ruleId": 455,
+      "sectionId": "militaryLeave"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationDuetoSabbaticals",
+      "ruleId": 456,
+      "sectionId": "sabbatical"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "employeeContributionsTaxedBy",
+      "ruleId": 457,
+      "sectionId": "tax"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "taxChoicePlan",
+      "ruleId": 458,
+      "sectionId": "tax"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "fICARate",
+      "ruleId": 459,
+      "sectionId": "tax"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "productCode",
+      "ruleId": 460,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [
+        {
+          "condition": "includes(['CBUSTD', 'CBULTD'], getIn('generalPlanProvisions.generalPlanProvisions.coverage'))",
+          "action": [
+            "enable('coreBuyUpCode')"
+          ]
+        },
+        {
+          "condition": "!includes(['CBUSTD', 'CBULTD'], getIn('generalPlanProvisions.generalPlanProvisions.coverage'))",
+          "action": [
+            "disable('coreBuyUpCode')"
+          ]
+        },
+        {
+          "condition": "getIn('generalPlanProvisions.generalPlanProvisions.coverage') === 'STD'",
+          "action": [
+            "enable('accidentSicknessEliminationPeriod')"
+          ]
+        },
+        {
+          "condition": "getIn('generalPlanProvisions.generalPlanProvisions.coverage') !== 'STD'",
+          "action": [
+            "disable('accidentSicknessEliminationPeriod')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "includes(['CBUSTD', 'CBULTD'], getIn('generalPlanProvisions.generalPlanProvisions.coverage'))",
+          "action": [
+            "enable('coreBuyUpCode')"
+          ]
+        },
+        {
+          "condition": "getIn('generalPlanProvisions.generalPlanProvisions.coverage') === 'STD'",
+          "action": [
+            "enable('accidentSicknessEliminationPeriod')"
+          ]
+        }
+      ],
+      "questionId": "coverage",
+      "ruleId": 461,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "multiProductPremiumDiscount",
+      "ruleId": 462,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+      ],
+      "questionId": "performanceGuaranteesType",
+      "ruleId": 463,
+      "sectionId": "performanceGuarantees"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "performanceGuaranteesBasedOn",
+      "ruleId": 464,
+      "sectionId": "performanceGuarantees"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "performanceGuaranteesMeasuredWithin",
+      "ruleId": 465,
+      "sectionId": "performanceGuarantees"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "performanceGuaranteesNotSubjecttoanAggregateMaximum",
+      "ruleId": 466,
+      "sectionId": "performanceGuarantees"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "performanceGuaranteesNotSubjecttoanAggregateMaximum_40576.1",
+      "ruleId": 467,
+      "sectionId": "performanceGuarantees"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [
+        {
+          "condition": "getIn('contract.performanceGuarantees.performanceGuaranteesRateReduction') === 'Y'",
+          "action": [
+            "enable('performanceGuaranteesRateReductionPercentage')"
+          ]
+        },
+        {
+          "condition": "getIn('contract.performanceGuarantees.performanceGuaranteesRateReduction') !== 'Y'",
+          "action": [
+            "disable('performanceGuaranteesRateReductionPercentage')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('contract.performanceGuarantees.performanceGuaranteesRateReduction') === 'Y'",
+          "action": [
+            "enable('performanceGuaranteesRateReductionPercentage')"
+          ]
+        },
+        {
+          "condition": "getIn('contract.performanceGuarantees.performanceGuaranteesRateReduction') !== 'Y'",
+          "action": [
+            "disable('performanceGuaranteesRateReductionPercentage')"
+          ]
+        }
+      ],
+      "questionId": "performanceGuaranteesRateReduction",
+      "ruleId": 468,
+      "sectionId": "performanceGuarantees"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "performanceGuaranteesRateReductionPercentage",
+      "ruleId": 469,
+      "sectionId": "performanceGuarantees"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "accidentSicknessEliminationPeriod",
+      "ruleId": 470,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "accidentSicknessEliminationPeriod_40579.1",
+      "ruleId": 471,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "accidentSicknessEliminationPeriod_40579.2",
+      "ruleId": 472,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "definitionofDisabilityEnhanced",
+      "ruleId": 473,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "continuationduetoChangetoPartTimeStatusMode",
+      "ruleId": 474,
+      "sectionId": "changetoPartTime"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "regularlyScheduledEnrollmentforCoverageIndicator",
+      "ruleId": 475,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "minimumBenefitCodeAfterOffsetsDetail",
+      "ruleId": 476,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "otherDefinitionofDisabilityCriteria",
+      "ruleId": 477,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "preExisitingConditionLimitationTwoProngorThreeProngPreEx",
+      "ruleId": 478,
+      "sectionId": "preExistingConditions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "otherNonStandardPredisabilityEarningsDescription",
+      "ruleId": 479,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [
+        {
+          "condition": "getIn('eligibilityProvisions.dateinsuranceTakesEffect.futureIncreaseChangesWillbeEffectiveType') === 12",
+          "action": [
+            "enable('futureIncreaseChangesWillbeEffectiveDetail')"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.dateinsuranceTakesEffect.futureIncreaseChangesWillbeEffectiveType') !== 12",
+          "action": [
+            "disable('futureIncreaseChangesWillbeEffectiveDetail')"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.dateinsuranceTakesEffect.futureIncreaseChangesWillbeEffectiveType') === 2",
+          "action": [
+            "enable('dateIncreaseWillbeEffective')"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.dateinsuranceTakesEffect.futureIncreaseChangesWillbeEffectiveType') !== 2",
+          "action": [
+            "disable('dateIncreaseWillbeEffective')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('eligibilityProvisions.dateinsuranceTakesEffect.futureIncreaseChangesWillbeEffectiveType') === 12",
+          "action": [
+            "enable('futureIncreaseChangesWillbeEffectiveDetail')"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.dateinsuranceTakesEffect.futureIncreaseChangesWillbeEffectiveType') !== 12",
+          "action": [
+            "disable('futureIncreaseChangesWillbeEffectiveDetail')"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.dateinsuranceTakesEffect.futureIncreaseChangesWillbeEffectiveType') === 2",
+          "action": [
+            "enable('dateIncreaseWillbeEffective')"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.dateinsuranceTakesEffect.futureIncreaseChangesWillbeEffectiveType') !== 2",
+          "action": [
+            "disable('dateIncreaseWillbeEffective')"
+          ]
+        }
+      ],
+      "questionId": "futureIncreaseChangesWillbeEffectiveType",
+      "ruleId": 480,
+      "sectionId": "dateinsuranceTakesEffect"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "dateIncreaseWillbeEffective",
+      "ruleId": 481,
+      "sectionId": "dateinsuranceTakesEffect"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "futureIncreaseChangesWillbeEffectiveDetail",
+      "ruleId": 482,
+      "sectionId": "dateinsuranceTakesEffect"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [
+        {
+          "condition": "getIn('eligibilityProvisions.dateinsuranceTakesEffect.futureDecreaseChangesWillbeEffectiveType') === 12",
+          "action": [
+            "enable('futureDecreaseChangesWillbeEffectiveDetail')"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.dateinsuranceTakesEffect.futureDecreaseChangesWillbeEffectiveType') !== 12",
+          "action": [
+            "disable('futureDecreaseChangesWillbeEffectiveDetail')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('eligibilityProvisions.dateinsuranceTakesEffect.futureDecreaseChangesWillbeEffectiveType') === 12",
+          "action": [
+            "enable('futureDecreaseChangesWillbeEffectiveDetail')"
+          ]
+        },
+        {
+          "condition": "getIn('eligibilityProvisions.dateinsuranceTakesEffect.futureDecreaseChangesWillbeEffectiveType') !== 12",
+          "action": [
+            "disable('futureDecreaseChangesWillbeEffectiveDetail')"
+          ]
+        }
+      ],
+      "questionId": "futureDecreaseChangesWillbeEffectiveType",
+      "ruleId": 483,
+      "sectionId": "dateinsuranceTakesEffect"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "dateDecreaseWillbeEffective",
+      "ruleId": 484,
+      "sectionId": "dateinsuranceTakesEffect"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "futureDecreaseChangesWillbeEffectiveDetail",
+      "ruleId": 485,
+      "sectionId": "dateinsuranceTakesEffect"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "otherEstimatedOffsets",
+      "ruleId": 486,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "specialServices",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "withholdPremiumfromBenefitsPayable",
+      "ruleId": 487,
+      "sectionId": "specialServices"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "eachDeductionPreorPostTax",
+      "ruleId": 488,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "totalGracePeriodIncluding31DayLegallyRequiredMinimum",
+      "ruleId": 489,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "totalGracePeriodIncluding31DayLegallyRequiredMinimum_40605.1",
+      "ruleId": 490,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "totalGracePeriodIncluding31DayLegallyRequiredMinimum_40605.2",
+      "ruleId": 491,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [
+        {
+          "condition": "getIn('contract.policy.endPolicyifPercentageofPersonsEligibleforContributoryInsuranceLessThan') === '2 Other'",
+          "action": [
+            "enable(['endPolicyifPercentageofPersonsEligibleforContributoryInsuranceLessThanDetail', 'indicatePercentage'])"
+          ]
+        },
+        {
+          "condition": "getIn('contract.policy.endPolicyifPercentageofPersonsEligibleforContributoryInsuranceLessThan') !== '2 Other'",
+          "action": [
+            "disable(['endPolicyifPercentageofPersonsEligibleforContributoryInsuranceLessThanDetail', 'indicatePercentage'])"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('contract.policy.endPolicyifPercentageofPersonsEligibleforContributoryInsuranceLessThan') === '2 Other'",
+          "action": [
+            "enable(['endPolicyifPercentageofPersonsEligibleforContributoryInsuranceLessThanDetail', 'indicatePercentage'])"
+          ]
+        }
+      ],
+      "questionId": "endPolicyifPercentageofPersonsEligibleforContributoryInsuranceLessThan",
+      "ruleId": 492,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "endPolicyifPercentageofPersonsEligibleforContributoryInsuranceLessThan_40606.1",
+      "ruleId": 493,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "minimumPercentageofPersonsEligibleforContributorySTD",
+      "ruleId": 494,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "endPolicyifPercentageofPersonsEligibleforContributoryInsuranceLessThanDetail",
+      "ruleId": 495,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "indicatePercentage",
+      "ruleId": 496,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "endPolicyifNumberofEmployeesInsuredisLessThan",
+      "ruleId": 497,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "endPolicyifNumberofEmployeesInsuredisLessThan_40611.1",
+      "ruleId": 498,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [
+        {
+          "condition": "getIn('contract.performanceGuarantees.performanceGuarantees') === 'Y'",
+          "action": [
+            "enable('performanceGuaranteesType')"
+          ]
+        },
+        {
+          "condition": "getIn('contract.performanceGuarantees.performanceGuarantees') !== 'Y'",
+          "action": [
+            "disable('performanceGuaranteesType')"
+          ]
+        }
+      ],
+      "onClick": [],
+      "onError": [],
+      "onInit": [
+        {
+          "condition": "getIn('contract.performanceGuarantees.performanceGuarantees') === 'Y'",
+          "action": [
+            "enable('performanceGuaranteesType')"
+          ]
+        },
+        {
+          "condition": "getIn('contract.performanceGuarantees.performanceGuarantees') !== 'Y'",
+          "action": [
+            "disable('performanceGuaranteesType')"
+          ]
+        }
+      ],
+      "questionId": "performanceGuarantees",
+      "ruleId": 499,
+      "sectionId": "performanceGuarantees"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "accidentSicknessEliminationPeriodDetail",
+      "ruleId": 500,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "planName",
+      "ruleId": 501,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatAmountByLengthofServiceServiceFromWeeks",
+      "ruleId": 502,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatAmountByLengthofServiceServiceToWeeks",
+      "ruleId": 503,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "serviceRangeCode",
+      "ruleId": 504,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "percentofSalaryBasedonYearsofServicewithMultipleBenefitPeriodsServiceRangeCode",
+      "ruleId": 505,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "flatDollarAmountbyLengthofServiceandSalaryRangeServiceRangeCode",
+      "ruleId": 506,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "singleSumPregnancyBenefitAmount",
+      "ruleId": 507,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "otherDelayedOffsets",
+      "ruleId": 508,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "incrementalFlatAmountsuptoaPercentSalaryCapMultipleFlatDollarAmountIndicator",
+      "ruleId": 509,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "questionId": "incrementalFlatAmountsuptoaPercentSalaryCapMultipleFlatDollarAmount",
+      "ruleId": 510,
+      "sectionId": "benefitAmount"
+    }
+  ],
+  "sectionRules": [
+    {
+      "categoryId": "generalPlanProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 1,
+      "sectionId": "generalPlanProvisions"
+    },
+    {
+      "categoryId": "eRISAInformation",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 2,
+      "sectionId": "eRISAInformation"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 3,
+      "sectionId": "eligibleClasses"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 4,
+      "sectionId": "generalDefinitions"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 5,
+      "sectionId": "dateofEligibility"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 6,
+      "sectionId": "enrollmentProcess"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 7,
+      "sectionId": "dateInsuranceEnds"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 8,
+      "sectionId": "submission"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 9,
+      "sectionId": "certificate"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 10,
+      "sectionId": "incomeWhichWillReduceBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 11,
+      "sectionId": "preExistingConditions"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 12,
+      "sectionId": "definitionofDisability"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 13,
+      "sectionId": "benefitDuration"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 14,
+      "sectionId": "disabilityBenefits"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 15,
+      "sectionId": "preDisabilityEarnings"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 16,
+      "sectionId": "incomeWhichWillNotReduceBenefit"
+    },
+    {
+      "categoryId": "definitions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 17,
+      "sectionId": "domesticPartners"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 18,
+      "sectionId": "benefitAmount"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 19,
+      "sectionId": "premiumDeductions"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 20,
+      "sectionId": "claimProcessing"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 21,
+      "sectionId": "distribution"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 22,
+      "sectionId": "injurySickness"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 23,
+      "sectionId": "leaveofAbsence"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 24,
+      "sectionId": "layoff"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 25,
+      "sectionId": "strike"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 26,
+      "sectionId": "militaryLeave"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 27,
+      "sectionId": "sabbatical"
+    },
+    {
+      "categoryId": "claims",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 28,
+      "sectionId": "tax"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 29,
+      "sectionId": "policy"
+    },
+    {
+      "categoryId": "eligibilityProvisions",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 30,
+      "sectionId": "dateinsurancetakeseffect"
+    },
+    {
+      "categoryId": "continuationofInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 31,
+      "sectionId": "changetoPartTime"
+    },
+    {
+      "categoryId": "contract",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 32,
+      "sectionId": "performanceGuarantees"
+    },
+    {
+      "categoryId": "scheduleofBenefits",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 33,
+      "sectionId": "eliminationPeriod"
+    },
+    {
+      "categoryId": "evidenceofInsurability",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 34,
+      "sectionId": "evidenceofInsurability"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 35,
+      "sectionId": "additionalLongTermBenefit"
+    },
+    {
+      "categoryId": "disabilityInsurance",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 36,
+      "sectionId": "additionalShortTermBenefit"
+    },
+    {
+      "categoryId": "specialServices",
+      "onChange": [],
+      "onClick": [],
+      "onError": [],
+      "onInit": [],
+      "ruleId": 37,
+      "sectionId": "specialServices"
+    }
+  ]
+}

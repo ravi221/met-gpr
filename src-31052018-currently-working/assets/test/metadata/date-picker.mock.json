@@ -1,0 +1,70 @@
+{
+  "coverageId": "30",
+  "ppcModelName": "PPC_VPI",
+  "ppcVersion": "0.42",
+  "title": "VPI",
+  "categories": [
+    {
+      "categoryId": "setup",
+      "label": "Setup",
+      "order": 1,
+      "state": {
+        "isHidden": false,
+        "isDisabled": false,
+        "isRequired": false
+      },
+      "rules": {
+        "ruleId": 0
+      },
+      "sections": [
+        {
+          "sectionId": "planDetails",
+          "label": "Plan Details",
+          "order": 1,
+          "state": {
+            "isHidden": false,
+            "isDisabled": false,
+            "isRequired": false
+          },
+          "rules": {
+            "ruleId": 0
+          },
+          "questions": [
+            {
+              "questionId": "planName",
+              "label": "Plan Name",
+              "order": 1,
+              "viewModel": "setup.planDetails.planName",
+              "model": "PLN_NM",
+              "xpath": "Organization.Customer.Agreement.Plan.PlanName",
+              "rules": {
+                "ruleId": 1,
+                "onInit": [],
+                "onError": [],
+                "onChange": []
+              },
+              "help": {
+                "helpText": "This is where a unique plan name can be entered to  name,  define or identify each plan",
+                "helpUrlText": "http://calligodocsvcsrisc/calligodms/llisapi.dll?func\u003dll\u0026objId\u003d184274618\u0026objAction\u003dbrowse\u0026viewType\u003d1"
+              },
+              "control": {
+                "type": "date",
+                "hint": "This is where a unique plan name can be entered to  name,  define or identify each plan",
+                "state": {
+                  "isHidden": false,
+                  "isDisabled": false,
+                  "isRequired": true
+                }
+              },
+              "schema": {
+                "type": "VARCHAR",
+                "maxLength": 60
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "id": "5a8bbbb144487639282d6b6d"
+}

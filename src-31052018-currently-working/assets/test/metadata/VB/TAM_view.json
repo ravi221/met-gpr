@@ -1,0 +1,245 @@
+{
+  "formId" : "PPC_TAM",
+  "version" : "0.12",
+  "title" : "TAM",
+  "categories" : [ {
+    "categoryId" : "planInfo",
+    "label" : "Setup",
+    "state" : {
+      "isHidden" : false,
+      "isDisabled" : false
+    },
+    "rules" : {
+      "onInit" : [ ],
+      "onError" : [ ],
+      "onChange" : [ ]
+    },
+    "sections" : [ {
+      "sectionId" : "planDetails",
+      "label" : "Plan Details",
+      "order" : 1,
+      "state" : {
+        "isHidden" : false,
+        "isDisabled" : false
+      },
+      "rules" : {
+        "onInit" : [ ],
+        "onError" : [ ],
+        "onChange" : [ ]
+      },
+      "questions" : [ {
+        "questionId" : "planName",
+        "label" : "Plan Name",
+        "order" : 1,
+        "model" : "PLN_NM",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "maxLength" : 60
+        },
+        "control" : {
+          "type" : "text",
+          "hint" : "This is where a unique plan name can be entered to  name,  define or identify each plan",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          }
+        }
+      }, {
+        "questionId" : "personalDependentCode",
+        "label" : "PD Code",
+        "order" : 3,
+        "model" : "PRVD.PER_DPND_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "A", "B", "C", "D", "E", "N", "P" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "Identifies whether the plan covers employee only or covers employee and dependents. P = Employee B=Dependents",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Both",
+            "value" : "B"
+          }, {
+            "label" : "Dependent",
+            "value" : "D"
+          }, {
+            "label" : "Personal",
+            "value" : "P"
+          } ]
+        }
+      }, {
+        "questionId" : "planFinancialArrangementCode",
+        "label" : "Financial Arrangement",
+        "order" : 4,
+        "model" : "ADMN.CLM_PROC_SPRT.PLN_FIN_ARNG_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "AO", "FI", "MP" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "The identifier which determines who's money is used to pay a claim Fully Insured = MetLife",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Administrative Only",
+            "value" : "AO"
+          }, {
+            "label" : "Fully Insured",
+            "value" : "FI"
+          }, {
+            "label" : "Minimum Premium",
+            "value" : "MP"
+          } ]
+        }
+      }, {
+        "questionId" : "metlifeCompanyOwnershipCode",
+        "label" : "Stock Company Policy",
+        "order" : 5,
+        "model" : "ADMN.MET_CO_OWN_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "MUTL", "STCK" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "Indicates whether a plan was issued after Metlife was converted from a mutual company to a stock company. A Stock Company policy should be used if the customer was effective 04/07/00 or later. The answer to this question, plus the answer to whether a plan is Participating or not determines whether a plan is Participating, Non-Participating, Retro Rated or Non-Retro Rated.",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "No",
+            "value" : "MUTL"
+          }, {
+            "label" : "Yes",
+            "value" : "STCK"
+          } ]
+        }
+      }, {
+        "questionId" : "participatingIndicator",
+        "label" : "Participating/Retro Rated",
+        "order" : 6,
+        "model" : "ADMN.PRTCP_IND",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "Y", "N" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "What is the Financial Arrangement\nParticipating\\Retro, we can return a dividend if there is a premium surplus (more premium than needed to cover claims, reserves and expenses) and/or ask for a retro payment of premium to cover loses up to a specified amount.   With non-participating we set the rate and either we win or lose based on the experience.",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Yes",
+            "value" : "Y"
+          }, {
+            "label" : "No",
+            "value" : "N"
+          } ]
+        }
+      }, {
+        "questionId" : "planTypeCode",
+        "label" : "Coverage Type",
+        "order" : 19,
+        "model" : "PRVD.PLN_TYP_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "121", "221", "421", "PREFERRED", "STANDARD", "NA", "CUSTOM", "BSCWCOUT", "BSCWOCOUT", "FMLA", "FMLATAM", "TAM", "SUPPWCOUT", "SUPPWOCOUT" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "Identifies which coverage sold which can be FLMA (Family Leave Medical Act, TAM (Total Absence Management) or FLMA on TAM.",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Family Medical Leave Act/Absence",
+            "value" : "FMLA"
+          }, {
+            "label" : "FMLA on Total Absence Management",
+            "value" : "FMLATAM"
+          }, {
+            "label" : "Total Absence Management",
+            "value" : "TAM"
+          } ]
+        }
+      }, {
+        "questionId" : "enrollmentSystemCode",
+        "label" : "MPowered Enrollment",
+        "order" : 68,
+        "model" : "ADMN.ENRL_SYS_CD",
+        "rules" : {
+          "onInit" : [ ],
+          "onError" : [ ],
+          "onChange" : [ ]
+        },
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "MPE", "NOTMPE" ]
+        },
+        "control" : {
+          "type" : "radio",
+          "hint" : "A Yes/No indicator that Benefit Focus (Third Party Enroller) will assist in the enrollment of the sold plan",
+          "state" : {
+            "isHidden" : false,
+            "isDisabled" : false,
+            "isRequired" : false
+          },
+          "choices" : [ {
+            "label" : "Yes",
+            "value" : "MPE"
+          }, {
+            "label" : "No",
+            "value" : "NOTMPE"
+          } ]
+        }
+      } ]
+    } ]
+  } ]
+}

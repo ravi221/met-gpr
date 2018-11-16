@@ -1,0 +1,20 @@
+@import "../../../../content/css/variables";
+
+.snack-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  max-height: 48px;
+  background-color: #333;
+  text-align: right;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  z-index: $z-index-snack-bar;
+
+  &[hidden] {
+    display: block;
+    max-height: 0;
+  }
+}

@@ -1,0 +1,24 @@
+div {
+  padding: 20px 0;
+
+  a {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    text-align: left;
+    color: #797979;
+
+    > span {
+      display: inline-block;
+      width: 15px;
+      text-align: center;
+    }
+
+    &:last-child {
+      > span {
+        display: none;
+      }
+    }
+  }
+
+}

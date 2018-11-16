@@ -1,0 +1,32 @@
+@import '../../../../content/css/global';
+@import "../../../../content/css/variables";
+@import "../tooltip/tooltip-content.component";
+
+.help-tooltip{
+    z-index: $z-index-tooltip;
+    margin-top: -5px;
+}
+.help-tooltip-content{
+    padding: 8px 24px 8px 20px;
+    position: relative;
+}
+.icon-24x24 {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+table.help-table-content td {
+  padding: 10px;
+  text-align: left;
+  vertical-align	: top;
+}
+
+table.help-table-close-icon td.td {
+  padding: 10px;
+  text-align: right;
+  vertical-align	: top;
+}
+
+.help-icon.color {
+  color: $c-white;
+}

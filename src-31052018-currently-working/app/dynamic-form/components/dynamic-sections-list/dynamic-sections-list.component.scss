@@ -1,0 +1,41 @@
+@import "../../../../content/css/colors";
+
+.nav-list-stacked {
+  list-style: none;
+  font-size: 12px;
+  line-height: 24px;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 32px;
+
+  li {
+    &.active,
+    &:active {
+
+      a {
+        color: $c-blue-500;
+      }
+    }
+
+    a {
+      color: $c-gray-700;
+      cursor: pointer;
+
+      &.disabled {
+        pointer-events: none;
+        color: $input-disabled;
+      }
+    }
+
+    .validation-icon {
+      margin-left: 9px;
+      position: relative;
+      top: -3px;
+    }
+
+    span {
+      color: $c-gray-300;
+    }
+  }
+
+}

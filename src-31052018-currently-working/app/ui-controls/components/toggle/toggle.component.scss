@@ -1,0 +1,13 @@
+@import "../../../../content/css/colors";
+
+.toggle {
+
+  span {
+    cursor: pointer;
+  }
+
+  .toggle-label {
+    font-weight: 400;
+    color: $c-gray-700;
+  }
+}

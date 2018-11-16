@@ -1,0 +1,14 @@
+@import '../../../../content/css/colors';
+
+input {
+  height: 40px;
+  transform: translate(-0%, -0%) perspective(1px);
+  padding: 0 0 1px 8px
+}
+
+input.invalid-date {
+  background-color: $c-red-100;
+  border: solid 1px $c-red-400;
+  color: $c-red-400;
+}
+

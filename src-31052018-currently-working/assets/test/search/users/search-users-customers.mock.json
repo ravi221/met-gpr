@@ -1,0 +1,52 @@
+{
+  "customers": [
+    {
+      "customerName": "Acme Widgets International",
+      "customerNumber": 5555555,
+      "effectiveDate": "06/01/2017",
+      "status": "Unapproved",
+      "percentageCompleted": 50,
+      "market": "Regional",
+      "hiddenStatus": false
+    },
+    {
+      "customerName": "Clampett Oil, LLP",
+      "customerNumber": 98065,
+      "effectiveDate": "02/15/2018",
+      "status": "Unapproved",
+      "percentageCompleted": 0,
+      "market": "Regional",
+      "hiddenStatus": false
+    },
+    {
+      "customerName": "Cyberdyne Systems Corp.",
+      "customerNumber": 67887,
+      "effectiveDate": "12/01/2017",
+      "status": "Unapproved",
+      "percentageCompleted": 68,
+      "market": "Regional",
+      "hiddenStatus": false
+    },
+    {
+      "customerName": "Globex, Inc.",
+      "customerNumber": 787423,
+      "effectiveDate": "04/01/2017",
+      "status": "Unapproved",
+      "percentageCompleted": 0,
+      "market": "Regional",
+      "hiddenStatus": false
+    },
+    {
+      "customerName": "Nakatomi Inc",
+      "customerNumber": 1234567890,
+      "effectiveDate": "07/20/1988",
+      "status": "Unapproved",
+      "percentageCompleted": 89,
+      "market": "Regional",
+      "hiddenStatus": true
+    }
+  ],
+  "page": 1,
+  "pageSize": 10,
+  "totalCount": 6
+}

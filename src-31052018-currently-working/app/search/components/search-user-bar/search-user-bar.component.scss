@@ -1,0 +1,11 @@
+
+.search-user-bar {
+  padding: 0 15px;
+
+  ::ng-deep .autoSearch {
+    width: 100%;
+    padding: 12px 16px 13px;
+    font: bold 28px/1.17 'Georgia', sans-serif;
+    border-radius: 2px;
+  }
+}

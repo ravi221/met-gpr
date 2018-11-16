@@ -1,0 +1,24 @@
+    <div class="mass-update-tooltip" >
+      <gpr-tooltip-content #errorTooltipContent>
+        <div class="mass-update-tooltip-content" *ngIf="index === 0">
+          <p class="mass-update-tooltip-msg" *ngFor="let plansList of selectedPlansResponse.planNames">
+
+           <small>{{plansList}}</small></p>
+        </div>
+      </gpr-tooltip-content>
+      <span name="validation-error"
+        gprTooltip
+        [tooltipContent]="errorTooltipContent"
+        [position]="'bottom'"
+        [showArrow]="true"
+        [theme]="'white'"
+        [displayCloseIcon]="false"
+        [maxWidth]="300"
+      >
+	  <div *ngFor="let number of [0,1,2]">
+	  <p *ngIf="selectedPlansLength !== 0 && index === number;then content else other_content" class="mass-update-label-message">These attributes have not been sent to any plans yet</p>
+	  </div>
+	  <ng-template #content><span class="mass-update-label-message">sent <a>2 plans</a></span></ng-template>
+      <ng-template #other_content><span class="mass-update-label-message">These attributes have not been sent to any plans yet</span></ng-template>
+      </span>
+    </div>

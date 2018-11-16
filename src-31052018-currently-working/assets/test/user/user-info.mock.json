@@ -1,0 +1,22 @@
+{
+    "userInfos": [
+        {
+            "firstName": "Jonny",
+            "lastName": "Spot",
+            "emailAddress": "jspot@metlife.com",
+            "metnetId": "jspot"
+        },
+        {
+            "firstName": "Hal",
+            "lastName": "Incandeza",
+            "emailAddress": "hincandenza@metlife.com",
+            "metnetId": "hincandenza"
+        },
+        {
+            "firstName": "John",
+            "lastName": "McClane",
+            "emailAddress": "jmcclane@metlife.com",
+            "metnetId": "jmcclane"
+        }
+    ]
+}

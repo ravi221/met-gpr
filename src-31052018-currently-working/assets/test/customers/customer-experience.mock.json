@@ -1,0 +1,58 @@
+{
+  "experiences": [
+    {
+      "experience": "123",
+      "reports": [
+        {
+          "report": "13",
+          "subCodes": [
+            {
+              "subCode": "0001",
+              "claimBranches": [
+                {
+                  "claimBranch": "1",
+                  "planIds": [
+                    "1",
+                    "2",
+                    "3"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "experience": "1234",
+      "reports": [
+        {
+          "report": "4",
+          "subCodes": [
+            {
+              "subCode": "0002",
+              "claimBranches": [
+                {
+                  "claimBranch": "1",
+                  "planIds": [
+                    "1",
+                    "2",
+                    "3"
+                  ]
+                },
+                {
+                  "claimBranch": "2",
+                  "planIds": [
+                    "4",
+                    "5",
+                    "6"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

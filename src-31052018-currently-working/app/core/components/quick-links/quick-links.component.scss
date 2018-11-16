@@ -1,0 +1,29 @@
+@import '../../../../content/css/colors';
+
+.quick-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .quick-link {
+    border-bottom: 1px solid $c-gray-50;
+    color: $c-blue-400;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background: $c-gray-50;
+    }
+
+    .material-icons {
+      margin-right: 8px;
+    }
+  }
+}

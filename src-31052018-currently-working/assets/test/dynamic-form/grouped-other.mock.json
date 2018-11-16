@@ -1,0 +1,57 @@
+{
+  "groupId" : "alcoholDrug",
+  "label" : "Alcohol/Drug",
+  "type" : "radioButtonOther",
+  "order" : 11,
+  "questions" : [ {
+    "questionId": "radioButtons",
+    "label": "Radio Buttons",
+    "order": 11,
+    "model": "RDIO_BTN",
+    "viewModel": "mockCategory.mockSection.radioButtons",
+    "xpath": "test",
+    "schema": {
+      "type": "CHAR",
+      "enum": ["Y", "other"]
+    },
+    "control" : {
+      "type" : "radio",
+      "hint" : "Its a test",
+      "state" : {
+        "isHidden" : false,
+        "isDisabled" : false,
+        "isRequired" : false
+      },
+      "choices": [ {
+        "label" : "Other",
+        "value" : "other",
+        "order" : 1
+      }, {
+        "label" : "Yes",
+        "value" : "Y",
+        "order" : 2
+      } ]
+    }
+
+
+  }, {
+    "questionId": "textBox",
+    "label": "Text Box",
+    "order":12,
+    "model": "TXT_BX",
+    "viewModel": "mockCategory.mockSection.textBox",
+    "xpath": "test1",
+    "schema": {
+      "type": "VARCHAR",
+      "maxLength": 60
+    },
+    "control": {
+      "type": "text",
+      "state": {
+        "isRequired": false,
+        "isDisabled": true,
+        "isHidden": false
+      }
+    }
+  }]
+}

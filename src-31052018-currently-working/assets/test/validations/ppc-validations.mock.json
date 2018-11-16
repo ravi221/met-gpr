@@ -1,0 +1,154 @@
+{
+  "errorCount": "4",
+  "planId": "123456789",
+  "planName": "Example Plan Name",
+  "customerNumber": "5001107",
+  "categories": [
+    {
+        "categoryLabel": "Setup",
+        "categoryId": "setup",
+        "errorCount": "4",
+        "sections": [
+          {
+            "sectionLabel": "Plan Details",
+            "sectionId": "planDetails",
+            "errorCount": "4",
+            "questions":
+              [
+                {
+                  "questionId": "planName",
+                  "questionLabel": "Plan Name",
+                  "questionValue": "Filled Out",
+                  "errors": [
+                    "This field is missing some value because PPC says so..."
+                  ]
+                },
+                {
+                  "questionId": "personalDependentCode",
+                  "questionLabel": "PD Code",
+                  "questionValue": "",
+                  "errors": [
+                    "PPC test",
+                    "This is another PPC message!"
+                  ]
+                },
+                {
+                  "questionId": "planFinancialArrangementCode",
+                  "questionLabel": "Financial Arrangement Code",
+                  "questionValue": "",
+                  "errors": [
+                    "PPC error"
+                  ]
+                },
+                {
+                  "questionId": "enrollmentSystemCode",
+                  "questionLabel": "MPowered Enrollment",
+                  "questionValue": "",
+                  "errors": [
+                    "Invalid PPC value"
+                  ]
+                }
+            ],
+            "totalFieldCount": 0,
+            "completedFieldCount": 0,
+            "completionPercentage": 0
+          },
+          {
+            "sectionLabel": "Plan Details",
+            "sectionId": "planDetails",
+            "errorCount": "4",
+            "questions":
+            [
+              {
+                "questionId": "planName",
+                "questionLabel": "Plan Name",
+                "questionValue": "",
+                "errors": [
+                  "This field is missing some value because PPC says so..."
+                ]
+              },
+              {
+                "questionId": "personalDependentCode",
+                "questionLabel": "PD Code",
+                "questionValue": "",
+                "errors": [
+                  "PPC test",
+                  "This is another PPC message!"
+                ]
+              },
+              {
+                "questionId": "planFinancialArrangementCode",
+                "questionLabel": "Financial Arrangement Code",
+                "questionValue": "",
+                "errors": [
+                  "PPC error"
+                ]
+              },
+              {
+                "questionId": "enrollmentSystemCode",
+                "questionLabel": "MPowered Enrollment",
+                "questionValue": "",
+                "errors": [
+                  "Invalid PPC value"
+                ]
+              }
+            ],
+            "totalFieldCount": 0,
+            "completedFieldCount": 0,
+            "completionPercentage": 0
+          }
+        ]
+    },
+    {
+      "categoryLabel": "Setup",
+      "categoryId": "setup",
+      "errorCount": "4",
+      "sections": [
+        {
+          "sectionLabel": "Plan Details",
+          "sectionId": "planDetails",
+          "errorCount": "4",
+          "questions":
+          [
+            {
+              "questionId": "planName",
+              "questionLabel": "Plan Name",
+              "questionValue": "",
+              "errors": [
+                "This field is missing some value because PPC says so..."
+              ]
+            },
+            {
+              "questionId": "personalDependentCode",
+              "questionLabel": "PD Code",
+              "questionValue": "",
+              "errors": [
+                "PPC test",
+                "This is another PPC message!"
+              ]
+            },
+            {
+              "questionId": "planFinancialArrangementCode",
+              "questionLabel": "Financial Arrangement Code",
+              "questionValue": "",
+              "errors": [
+                "PPC error"
+              ]
+            },
+            {
+              "questionId": "enrollmentSystemCode",
+              "questionLabel": "MPowered Enrollment",
+              "questionValue": "",
+              "errors": [
+                "Invalid PPC value"
+              ]
+            }
+          ],
+          "totalFieldCount": 0,
+          "completedFieldCount": 0,
+          "completionPercentage": 0
+        }
+      ]
+    }
+  ]
+}

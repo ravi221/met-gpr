@@ -1,0 +1,194 @@
+@import "./colors";
+@import "./variables";
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.42857143;
+  background-color: $gray-bg;
+  color: $c-gray-700;
+  padding: 0 48px;
+
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+.clear-nav-bar {
+  margin-top: $nav-bar-height;
+  display: block;
+}
+
+.banner {
+  margin-bottom: 20px;
+
+  > h4 {
+    margin-bottom: 12px;
+    margin-top: 0;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.1;
+    text-align: left;
+    color: $c-gray-700;
+  }
+
+  .subtitle {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    line-height: 1.67;
+    text-align: left;
+    color: $c-gray-700;
+    margin-bottom: 0;
+  }
+}
+
+.card {
+
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.17;
+    text-align: left;
+    color: $c-gray-700;
+    margin-left: 32px;
+  }
+
+  div {
+    &.error {
+      position: relative;
+
+      p {
+        height: 28px;
+        opacity: 0.5;
+        font-size: 20px;
+        line-height: 1.4;
+        text-align: center;
+        color: $c-gray-700;
+      }
+    }
+  }
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brand-icon {
+
+  img {
+    width: 125px;
+    display: block;
+  }
+}
+
+.sort-header {
+  color: $c-gray-700;
+  margin-left: 5px;
+  outline: none;
+  cursor: pointer;
+
+  &.active {
+    color: $c-blue-400;
+  }
+
+  .sort-label {
+    margin-right: 4px;
+  }
+
+  .sort-icon {
+    display: inline-block;
+    width: 24px;
+  }
+}
+
+.clear-left {
+  clear: left;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.affix {
+  position: fixed;
+}
+
+.badge {
+  padding: 4px 16px;
+  border-radius: 16px;
+
+  &.badge-error {
+    background: $c-berry;
+    color: $c-white;
+  }
+
+  &.badge-warning {
+    background: $c-yellow;
+    color: $c-gray-700;
+  }
+}
+
+.tooltip-menu {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 8px 24px 8px 20px;
+
+    li {
+      margin: 8px 0;
+
+      a {
+        color: $c-gray-400;
+      }
+    }
+  }
+
+  .tooltip-options-list {
+    a {
+      color: $c-gray-400;
+
+      &.active {
+        color: $c-gray-700;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+

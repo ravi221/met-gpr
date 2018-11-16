@@ -1,0 +1,80 @@
+[
+    {
+        "customerNumber": 5555555,
+        "planId": "1303000",
+        "planName": "Dental Fully Insured",
+        "status": "Created",
+        "attribute": "",
+        "firstName": "Jonny",
+        "lastName": "Spot",
+        "emailId": "jspot@metlife.com",
+        "metnetId": "jspot",
+        "timestamp": "10-25-2017 10:05:29.509",
+        "totalFlagCount": 50
+    },
+    {
+        "customerNumber": 98065,
+        "planId": "6",
+        "planName": "Another Expensive Plan",
+        "status": "",
+        "attribute": "",
+        "firstName": "Bob",
+        "lastName": "Paulson",
+        "emailId": "bpaulson@metlife.com",
+        "metnetId": "bpaulson",
+        "timestamp": "12-01-2017 10:05:29.509",
+        "totalFlagCount": 0
+    },
+    {
+        "customerNumber": 67887,
+        "planId": "5463456",
+        "planName": "Dental Partially Insured",
+        "status": "Created",
+        "attribute": "",
+        "firstName": "Hal",
+        "lastName": "Incandeza",
+        "emailId": "hincandenza@metlife.com",
+        "metnetId": "hincandenza",
+        "timestamp": "12-09-2017 3:05:29.509",
+        "totalFlagCount": 4
+    },
+    {
+        "customerNumber": 787423,
+        "planId": "897651",
+        "planName": "Globex Employee Package",
+        "status": "",
+        "attribute": "",
+        "firstName": "Dolores",
+        "lastName": "Haze",
+        "emailId": "lolita18@metlife.com",
+        "metnetId": "lolita18",
+        "timestamp": "12-02-2017 10:05:29.509",
+        "totalFlagCount": 0
+    },
+    {
+        "customerNumber": 1234567890,
+        "planId": "4",
+        "planName": "Hans Takeover",
+        "status": "terminated",
+        "attribute": "",
+        "firstName": "John",
+        "lastName": "McClane",
+        "emailId": "jmcclane@metlife.com",
+        "metnetId": "jmcclane",
+        "timestamp": "12-02-2017 12:05:29.509",
+        "totalFlagCount": 3
+    },
+    {
+        "customerNumber": 8673509,
+        "planId": "19",
+        "planName": "Milton",
+        "status": "terminated",
+        "attribute": "",
+        "firstName": "William",
+        "lastName": "Lumbergh",
+        "emailId": "wlumbergh@metlife.com",
+        "metnetId": "wlumbergh",
+        "timestamp": "12-25-2017 12:05:29.509",
+        "totalFlagCount": 7
+    }
+]

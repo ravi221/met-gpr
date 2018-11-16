@@ -1,0 +1,18 @@
+@import "../../../../content/css/colors";
+
+.filter-bar {
+
+  .menus {
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+
+    .menu {
+      margin-right: 12px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

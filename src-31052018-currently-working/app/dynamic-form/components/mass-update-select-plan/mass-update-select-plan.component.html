@@ -1,0 +1,41 @@
+<gpr-card>
+<table class="mass-update-selected-plans-info">
+  <tr>
+    <td>
+      <div class="checkbox-control select-all-checkbox" >
+        <input id="select-plan-checkbox" type="checkbox" 
+        [(ngModel)]="selectAllPlans" (change)="isSelectAllPlans($event.target.checked)"/>
+        <label for="select-plan-checkbox">Select All Plans</label>
+       </div>	  
+	</td>
+	<td valign="top"><small>Collapse all</small></td>
+  </tr>
+  <tr *ngFor="let productLabel of productNames">
+    <td>
+		<div class="checkbox-control select-product-checkbox">
+		  <input id="{{productLabel.name}}" type="checkbox" (change)="isSelectProduct($event.target.checked, productLabel.name)" [(ngModel)]="productLabel.isChecked"/>
+		  <label for="{{productLabel.name}}">{{productLabel.name}}</label>
+		</div>
+		<div [@fadeInOut]="sectionVisibilityState" *ngIf="productLabel.name === selectedProductLabel">
+		<div *ngFor="let productList of products; let i=index">
+		  <div class="checkbox-control select-plans-checkbox" *ngIf="productLabel.name === productList.productName">
+			<input id="{{productList.planName}}-{{i}}" type="checkbox" (change)="isSelectPlan($event.target.checked, productLabel.name)" [(ngModel)]="productList.isChecked"/>
+			<label for="{{productList.planName}}-{{i}}">{{productList.planName}}  <small>Effective:{{productList.effectiveDate}}</small></label>
+		  </div>
+		</div>
+       </div>		
+
+	</td>
+	<td valign="top">
+	  <div>
+	  <gpr-expand-collapse-icon (expand)="togglePlansVisibility($event, productLabel.name)"></gpr-expand-collapse-icon>
+	  </div>
+	</td>
+  </tr>
+  
+</table>
+</gpr-card>
+<div class="pull-right">
+  <button class="btn btn-secondary">Cancel</button>
+  <button class="btn btn-secondary" [disabled]="!canUpdateButtonDisabled"  (click)="getSelectedPlanNames()">Update Plans {{checkedPlansCount}}</button>
+</div>

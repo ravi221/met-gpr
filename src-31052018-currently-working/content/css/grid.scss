@@ -1,0 +1,64 @@
+@import "mixins/grid.scss";
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: map-get($container-min-widths, sm)) {
+  .container {
+    width: 562px;
+  }
+}
+
+@media (min-width: map-get($container-min-widths, md)) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: map-get($container-min-widths, lg)) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: map-get($container-min-widths, xl)) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+@include make-grid-columns;
+
+@include make-grid(xs);
+
+@media (min-width: map-get($container-min-widths, sm)) {
+  @include make-grid(sm);
+}
+
+@media (min-width: map-get($container-min-widths, md)) {
+  @include make-grid(md);
+}
+
+@media (min-width: map-get($container-min-widths, lg)) {
+  @include make-grid(lg);
+}
+
+@media (min-width: map-get($container-min-widths, xl)) {
+  @include make-grid(xl);
+}

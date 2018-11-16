@@ -1,0 +1,30 @@
+// maps for media query min and max width
+$container-min-widths: (
+  xs: 481px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  xs: 480px,
+  sm: 575px,
+  md: 767px,
+  lg: 991px,
+  xl: 1199px
+);
+
+$nav-bar-height: 48px;
+
+$z-index-loading-spinner: 10000;
+$z-index-slide-menu: 9999;
+$z-index-modal: 1050;
+$z-index-modal-backdrop: 1040;
+$z-index-nav: 1030;
+$z-index-notification-banner: 1029;
+$z-index-snack-bar: 1026;
+$z-index-drop-down: 1025;
+$z-index-tooltip: 1020;
+$z-index-scroll-to-top: 1010;
+$z-index-auto-search: 100;

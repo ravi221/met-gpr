@@ -1,0 +1,36 @@
+@import "../../../../content/css/colors";
+
+.attribute {
+  display: flex;
+
+  .attribute-info {
+    flex-grow: 1;
+
+    .attribute-title {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: $c-gray-700;
+      margin: 0;
+
+      .attribute-description {
+        font-family: Arial, sans-serif;
+        font-weight: normal;
+        font-style: italic;
+      }
+
+    }
+
+    .comment-list {
+      margin: 10px 0 0 15px;
+    }
+
+    .attribute-details {
+      font-size: 12px;
+      span {
+        margin-right: 15px;
+      }
+    }
+  }
+}
+

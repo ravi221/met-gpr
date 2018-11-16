@@ -1,0 +1,13 @@
+@import '../../../ui-controls/components/modal/modal';
+@import "../../../../content/css/colors";
+
+::ng-deep .gpr-date-picker{
+    height:25px;
+    width:110px;
+}
+.error{
+    color: $c-red-400;
+}
+.warning{
+    color: $c-yellow;
+}

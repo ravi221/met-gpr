@@ -1,0 +1,25 @@
+@import "../../../../content/css/colors";
+
+.detail-header {
+  display: flex;
+  padding: 0 24px;
+  border-bottom: 2px solid $c-gray-50;
+  align-items: center;
+  height: 48px;
+
+  .detail-heading {
+    margin: 0;
+    font-size: 15px;
+    font-family: 'Arial', sans-serif;
+    flex-grow: 1;
+  }
+
+  .detail-heading-count {
+    color: $c-gray-700;
+    opacity: .5;
+  }
+}
+
+gpr-card ::ng-deep .card {
+  min-height: 0;
+}
